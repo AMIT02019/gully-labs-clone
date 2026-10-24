@@ -37,26 +37,25 @@
   /* ---------------- Product card (uses .products-grid / .product-card) ---- */
   function renderProductCard(p) {
     var secondary = p.secondaryImage || p.primaryImage;
-    var badge = p.badge ? '<span class="product-badge">' + escapeHtml(p.badge) + '</span>' : '';
-    var orig = p.originalPrice
-      ? '<span class="product-price-orig">' + formatINR(p.originalPrice) + '</span>' : '';
+    var isBestseller = p.badge === 'Bestseller';
+    var badge = p.badge ? '<span class="card-badge' + (isBestseller ? ' badge-bestseller' : '') + '">' + escapeHtml(p.badge) + '</span>' : '<span></span>';
+    var rating = p.rating ? '<span class="card-rating"><span>&#9733;</span> ' + escapeHtml(p.rating) + '</span>' : '';
     return '<article class="product-card">' +
+      '<div class="card-top-row">' + badge + rating + '</div>' +
       '<div class="product-card-media">' +
-        '<div class="product-badges">' + badge + '</div>' +
-        '<div class="product-rating"><span aria-hidden="true">&#9733;</span> ' +
-          escapeHtml(p.rating) + ' (' + escapeHtml(p.reviewsCount) + ')</div>' +
         '<a class="product-image-container" href="' + productUrl(p) + '">' +
           '<img src="' + escapeHtml(p.primaryImage) + '" alt="' + escapeHtml(p.title) + '" class="product-img img-primary" loading="lazy">' +
           '<img src="' + escapeHtml(secondary) + '" alt="' + escapeHtml(p.title) + ' second view" class="product-img img-secondary" loading="lazy">' +
         '</a>' +
+        '<a class="card-eye-btn" href="' + productUrl(p) + '" aria-label="View ' + escapeHtml(p.title) + '">' + '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path><circle cx="12" cy="12" r="3"></circle></svg>' + '</a>' +
+        '<a class="card-choose-btn" href="' + productUrl(p) + '">Choose options</a>' +
       '</div>' +
       '<div class="product-info">' +
         '<span class="product-subcat">' + escapeHtml(p.subCategory || p.category) + '</span>' +
-        '<h4 class="product-title"><a href="' + productUrl(p) + '">' + escapeHtml(p.title) + '</a></h4>' +
-        '<div class="product-price-row">' +
-          '<span class="product-price">' + formatINR(p.price) + '</span>' + orig +
+        '<div class="product-title-row">' +
+          '<h4 class="product-title"><a href="' + productUrl(p) + '">' + escapeHtml(p.title) + '</a></h4>' +
+          '<span class="product-price">' + formatINR(p.price) + '</span>' +
         '</div>' +
-        '<a class="site-card-link" href="' + productUrl(p) + '">View product &rarr;</a>' +
       '</div>' +
     '</article>';
   }
@@ -284,6 +283,7 @@
       var filtered = products.filter(function (p) {
         if (category !== 'all' && p.category !== category) return false;
         if (collection !== 'all' && p.subCategory !== collection) return false;
+        if (params.get('sale') === '1' && !(p.originalPrice > p.price)) return false;
         if (q) {
           var hay = [p.title, p.subCategory, p.category, p.materials, (p.tags || []).join(' '), (p.colors || []).join(' ')].join(' ').toLowerCase();
           if (hay.indexOf(q) === -1) return false;
@@ -459,6 +459,17 @@
     initShop();
     initCollections();
     initProduct();
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var footerForm = document.getElementById('newsletterForm');
+    var footerMsg = document.getElementById('footerNewsletterMsg');
+    if (footerForm && footerMsg) footerForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      footerMsg.textContent = 'Thanks \u2014 demo only, no email was sent or stored.';
+      var input = footerForm.querySelector('input');
+      if (input) input.value = '';
+    });
   });
 
   /* Exposed for the inline page scripts and for testing. */
