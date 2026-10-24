@@ -203,66 +203,33 @@ function initHeroSlider() {
    ========================================================================== */
 function createProductCardHTML(product) {
   const secondaryImg = product.secondaryImage || product.primaryImage;
-  const ratingText = product.rating ? `${product.rating} ★ | ${product.reviewsCount} reviews` : '5.0 ★';
-  const badgeHTML = product.badge ? `<span class="badge ${product.badge.toLowerCase().includes('special') ? 'badge-gold' : 'badge-blue'}">${product.badge}</span>` : '';
-  
-  // Default selected size
-  const defaultSize = product.sizes && product.sizes.length ? product.sizes[2] || product.sizes[0] : 'UK 8';
-
-  const sizesHTML = (product.sizes || []).slice(0, 5).map(size => `
-    <button type="button" class="size-pill ${size === defaultSize ? 'selected' : ''}" data-size="${size}" onclick="selectCardSize(this, event)">
-      ${size}
-    </button>
-  `).join('');
-
+  const isBestseller = product.badge === 'Bestseller';
+  const badgeHTML = product.badge ? `<span class="card-badge${isBestseller ? ' badge-bestseller' : ''}">${product.badge}</span>` : '<span></span>';
+  const ratingHTML = product.rating ? `<span class="card-rating"><span>&#9733;</span> ${product.rating}</span>` : '';
   return `
-    <div class="product-card" data-product-id="${product.id}" data-selected-size="${defaultSize}">
+    <div class="product-card" data-product-id="${product.id}">
+      <div class="card-top-row">${badgeHTML}${ratingHTML}</div>
       <div class="product-card-media">
-        <div class="product-badges">${badgeHTML}</div>
-        
-        <div class="product-rating">
-          <svg viewBox="0 0 16 16"><path d="M8 0L9.89 5.81H16L11.06 9.41L12.95 15.22L8 11.62L3.06 15.22L4.94 9.4L0 5.81H6.11L8 0Z"/></svg>
-          <span>${ratingText}</span>
-        </div>
-
-        <button type="button" class="quick-view-btn" onclick="openQuickView('${product.id}')" title="Quick View">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-        </button>
-
-        <a href="javascript:void(0)" class="product-image-container" onclick="openQuickView('${product.id}')">
+        <a href="product.html?id=${product.id}" class="product-image-container">
           <img src="${product.primaryImage}" alt="${product.title}" class="product-img img-primary" loading="lazy">
           <img src="${secondaryImg}" alt="${product.title} angle 2" class="product-img img-secondary" loading="lazy">
         </a>
+        <button type="button" class="card-eye-btn" onclick="openQuickView('${product.id}')" title="Quick view" aria-label="Quick view ${product.title}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        </button>
+        <button type="button" class="card-choose-btn" onclick="openQuickView('${product.id}')">Choose options</button>
       </div>
-
       <div class="product-info">
         <span class="product-subcat">${product.subCategory || product.category}</span>
-        <h4 class="product-title">${product.title}</h4>
-        
-        <div class="product-price-row">
+        <div class="product-title-row">
+          <h4 class="product-title"><a href="product.html?id=${product.id}">${product.title}</a></h4>
           <span class="product-price" data-price-inr="${product.price}">${formatPrice(product.price)}</span>
-          ${product.originalPrice ? `<span class="product-price-orig" data-orig-price-inr="${product.originalPrice}">${formatPrice(product.originalPrice)}</span>` : ''}
         </div>
-
-        <div class="product-sizes-row">
-          ${sizesHTML}
-        </div>
-
-        <button type="button" class="quick-add-btn" onclick="handleCardQuickAdd('${product.id}', this)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          Quick Add
-        </button>
       </div>
     </div>
   `;
 }
+
 
 function selectCardSize(btn, event) {
   event.stopPropagation();
@@ -284,14 +251,14 @@ function renderAllProductSections() {
   // Bestsellers Grid
   const bestsellersGrid = document.getElementById('bestsellersGrid');
   if (bestsellersGrid) {
-    const items = GULLY_PRODUCTS.filter(p => p.tags.includes('bestsellers') || p.category === 'sneakers').slice(0, 6);
+    const items = GULLY_PRODUCTS.filter(p => p.tags.includes('bestsellers'));
     bestsellersGrid.innerHTML = items.map(createProductCardHTML).join('');
   }
 
   // New Arrivals Grid
   const newArrivalsGrid = document.getElementById('newArrivalsGrid');
   if (newArrivalsGrid) {
-    const items = GULLY_PRODUCTS.filter(p => p.tags.includes('new-arrivals')).slice(0, 4);
+    const items = GULLY_PRODUCTS.filter(p => p.tags.includes('new-arrivals') && !p.tags.includes('bestsellers'));
     newArrivalsGrid.innerHTML = items.map(createProductCardHTML).join('');
   }
 
@@ -492,7 +459,7 @@ function renderCart() {
     shippingMeterBar.style.width = `${progress}%`;
 
     if (rawTotal >= AppState.freeShippingThreshold) {
-      shippingMeterText.innerHTML = `🎉 <strong>Congratulations! You have unlocked Free Shipping!</strong>`;
+      shippingMeterText.innerHTML = `<strong>Congratulations! You have unlocked Free Shipping!</strong>`;
     } else {
       const remaining = AppState.freeShippingThreshold - rawTotal;
       shippingMeterText.innerHTML = `Add <strong>${formatPrice(remaining)}</strong> more to unlock <strong>Free Express Shipping</strong>!`;
