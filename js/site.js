@@ -224,6 +224,57 @@
     });
   }
 
+  
+  function initSearch() {
+    var trigger = document.getElementById('searchTrigger');
+    var closeBtn = document.getElementById('searchDrawerClose') || document.getElementById('searchClose');
+    var drawer = document.getElementById('searchDrawer') || document.getElementById('searchModal');
+    var backdrop = document.getElementById('drawerBackdrop');
+    var input = document.getElementById('searchInput');
+    var results = document.getElementById('searchResults');
+
+    if (trigger) {
+      trigger.addEventListener('click', function () {
+        if (drawer) drawer.classList.add('active');
+        if (backdrop) backdrop.classList.add('active');
+        if (input) setTimeout(function () { input.focus(); }, 150);
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        if (drawer) drawer.classList.remove('active');
+        if (backdrop) backdrop.classList.remove('active');
+      });
+    }
+
+    if (input && results) {
+      input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase();
+        if (!q) {
+          results.innerHTML = '<p class="search-placeholder-msg">Type to discover hand-lasted Indian footwear and apparel...</p>';
+          return;
+        }
+        var products = getProducts();
+        var matches = products.filter(function (p) {
+          return (p.title || '').toLowerCase().includes(q) ||
+                 (p.category || '').toLowerCase().includes(q) ||
+                 (p.subCategory || '').toLowerCase().includes(q);
+        });
+        if (matches.length === 0) {
+          results.innerHTML = '<p class="search-placeholder-msg">No silhouettes found matching "' + q + '".</p>';
+          return;
+        }
+        results.innerHTML = matches.slice(0, 5).map(function (p) {
+          return '<a href="product.html?id=' + encodeURIComponent(p.id) + '" style="display:flex; align-items:center; gap:1rem; padding:0.6rem 0; text-decoration:none; color:#111; border-bottom:1px solid #eee;">' +
+            '<img src="' + p.primaryImage + '" style="width:48px; height:48px; object-fit:contain; border-radius:4px; background:#f5f5f5;">' +
+            '<div><div style="font-weight:700; font-size:0.9rem;">' + p.title + '</div><div style="font-size:0.8rem; color:#666;">₹' + Number(p.price).toLocaleString('en-IN') + '</div></div>' +
+          '</a>';
+        }).join('');
+      });
+    }
+  }
+
   function initHeader() {
     var cartTrigger = document.getElementById('cartTrigger');
     if (cartTrigger) cartTrigger.addEventListener('click', openCartDrawer);
@@ -518,6 +569,7 @@
     updateCartCount();
     renderCartDrawer();
     initHeader();
+    initSearch();
     initMegaMenu();
     initShop();
     initCollections();

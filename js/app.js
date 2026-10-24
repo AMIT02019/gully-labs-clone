@@ -662,7 +662,7 @@ function initLookbook() {
    ========================================================================== */
 function initSearch() {
   const searchTrigger = document.getElementById('searchTrigger');
-  const searchClose = document.getElementById('searchDrawerClose');
+  const searchClose = document.getElementById('searchDrawerClose') || document.getElementById('searchClose');
   const searchDrawer = document.getElementById('searchDrawer');
   const searchInput = document.getElementById('searchInput');
   const searchResults = document.getElementById('searchResults');
@@ -716,7 +716,7 @@ function initSearch() {
 }
 
 function openSearchDrawer() {
-  const drawer = document.getElementById('searchDrawer');
+  const drawer = document.getElementById('searchDrawer') || document.getElementById('searchModal');
   const backdrop = document.getElementById('drawerBackdrop');
   if (drawer && backdrop) {
     drawer.classList.add('active');
@@ -729,7 +729,7 @@ function openSearchDrawer() {
 }
 
 function closeSearchDrawer() {
-  const drawer = document.getElementById('searchDrawer');
+  const drawer = document.getElementById('searchDrawer') || document.getElementById('searchModal');
   const backdrop = document.getElementById('drawerBackdrop');
   if (drawer && backdrop) {
     drawer.classList.remove('active');

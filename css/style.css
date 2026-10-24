@@ -2607,3 +2607,126 @@ input, select, textarea {
 .scd-ticker:hover .scd-ticker-track {
   animation-play-state: paused;
 }
+
+
+/* ==========================================================================
+   GLOBAL SEARCH DRAWER & MODAL STYLES (FIXED OFFSCREEN BY DEFAULT)
+   ========================================================================== */
+.search-drawer,
+.search-modal,
+#searchDrawer,
+#searchModal {
+  position: fixed !important;
+  top: -450px !important;
+  left: 0 !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16) !important;
+  z-index: 2200 !important;
+  padding: 2.25rem 1.5rem !important;
+  transition: top 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  display: block !important;
+}
+
+.search-drawer.active,
+.search-modal.active,
+#searchDrawer.active,
+#searchModal.active {
+  top: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.search-modal-content,
+.search-drawer-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 2px solid #111111;
+  padding-bottom: 0.75rem;
+}
+
+.search-input-wrapper svg {
+  flex-shrink: 0;
+  color: #111111;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: transparent;
+  color: #111111;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #a1a1aa;
+  font-weight: 400;
+}
+
+.search-close-btn,
+#searchClose,
+#searchDrawerClose {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: #111111;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-results-container,
+#searchResults {
+  margin-top: 1.5rem;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.search-placeholder-msg {
+  font-size: 0.88rem;
+  color: #71717a;
+}
+
+/* ==========================================================================
+   GLOBAL MOBILE NAVIGATION DRAWER STYLES (FIXED OFFSCREEN BY DEFAULT)
+   ========================================================================== */
+.mobile-nav-drawer,
+#mobileNavDrawer {
+  position: fixed !important;
+  top: 0 !important;
+  left: -360px !important;
+  width: 320px !important;
+  max-width: 85vw !important;
+  height: 100vh !important;
+  background-color: #ffffff !important;
+  box-shadow: 12px 0 36px rgba(0, 0, 0, 0.16) !important;
+  z-index: 2200 !important;
+  padding: 2rem 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+  overflow-y: auto !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.mobile-nav-drawer.active,
+#mobileNavDrawer.active {
+  left: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
