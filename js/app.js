@@ -742,6 +742,10 @@ function closeSearchDrawer() {
    8. CHECKOUT SIMULATION MODAL
    ========================================================================== */
 function openCheckoutModal() {
+  window.location.href = 'checkout.html';
+}
+
+function _legacyCheckoutModal() {
   closeCartDrawer();
   const backdrop = document.getElementById('checkoutBackdrop');
   const content = document.getElementById('checkoutContent');

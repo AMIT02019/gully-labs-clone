@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | Gully Labs</title>
+  <meta name="description" content="Review your hand-lasted Indian sneakers and artisanal apparel before secure checkout.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 1. Top Announcement Marquee Ticker -->
+  <div class="top-bar">
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <span class="marquee-item">Welcome to our store</span>
+        <span class="marquee-item"><span class="highlight">✨ 200 Exclusive pairs with Sienna ✨</span></span>
+        <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
+        <span class="marquee-item">Hand Lasted Indian Sneakers</span>
+        <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
+        <span class="marquee-item">Crafted with Full-Grain Indian Leather</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span class="marquee-item">Welcome to our store</span>
+        <span class="marquee-item"><span class="highlight">✨ 200 Exclusive pairs with Sienna ✨</span></span>
+        <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
+        <span class="marquee-item">Hand Lasted Indian Sneakers</span>
+        <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
+        <span class="marquee-item">Crafted with Full-Grain Indian Leather</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Countdown Announcement Bar -->
+  <div class="scd-bar">
+    <span class="scd-label">ORDER NOW TO GET BEFORE RAKHI</span>
+    <span class="scd-timer">
+      <b id="cdDays">02</b><u>d</u> : <b id="cdHours">14</b><u>h</u> : <b id="cdMins">30</b><u>m</u> : <b id="cdSecs">21</b><u>s</u>
+    </span>
+    <a href="shop.html" class="scd-btn">SHOP NOW</a>
+  </div>
+
+  <!-- 3. Site Header Navigation -->
+  <header class="site-header" id="mainHeader">
+    <div class="container header-inner">
+      <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Navigation Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs" class="logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu with Mega Menus -->
+      <nav class="desktop-nav">
+        <!-- Men Mega Menu -->
+        <div class="nav-item has-mega" data-mega="mega-men">
+          <a href="shop.html?gender=men" class="nav-link">
+            Men
+            <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="m1 1 4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="mega-menu" id="mega-men">
+            <div class="container mega-menu-inner">
+              <div class="mega-sidebar">
+                <span class="mega-sidebar-title">Collections</span>
+                <ul class="mega-sidebar-links">
+                  <li><a href="shop.html?gender=men&category=sneakers" class="mega-cat-link active">Sneakers</a></li>
+                  <li><a href="shop.html?gender=men&category=slides" class="mega-cat-link">Slides</a></li>
+                  <li><a href="shop.html?gender=men&category=apparel" class="mega-cat-link">Clothing &amp; Accessories</a></li>
+                  <li><a href="shop.html?gender=men" class="mega-cat-all">View All Men's &rarr;</a></li>
+                </ul>
+              </div>
+              <div class="mega-products-grid">
+                <a href="product.html?id=prod-001" class="mega-product-card">
+                  <div class="mega-card-img-wrap">
+                    <span class="mega-card-badge">Bestseller</span>
+                    <img src="assets/images/img_001_d54b9d76.jpeg" alt="Baaz Faris Black" loading="lazy">
+                  </div>
+                  <div class="mega-card-info">
+                    <div class="mega-card-rating"><span>★</span> 4.8 (45)</div>
+                    <h4 class="mega-card-title">Baaz Faris Black</h4>
+                    <p class="mega-card-price">&#8377;4,290</p>
+                  </div>
+                </a>
+                <a href="product.html?id=prod-002" class="mega-product-card">
+                  <div class="mega-card-img-wrap">
+                    <span class="mega-card-badge">Limited</span>
+                    <img src="assets/images/img_002_5983bf7c.jpeg" alt="Aandhi Kobicha" loading="lazy">
+                  </div>
+                  <div class="mega-card-info">
+                    <div class="mega-card-rating"><span>★</span> 4.9 (32)</div>
+                    <h4 class="mega-card-title">Aandhi Kobicha</h4>
+                    <p class="mega-card-price">&#8377;4,690</p>
+                  </div>
+                </a>
+                <a href="product.html?id=prod-006" class="mega-product-card">
+                  <div class="mega-card-img-wrap">
+                    <img src="assets/images/img_005_de05f1f9.jpeg" alt="Baaz Noor Yellow" loading="lazy">
+                  </div>
+                  <div class="mega-card-info">
+                    <div class="mega-card-rating"><span>★</span> 4.7 (28)</div>
+                    <h4 class="mega-card-title">Baaz Noor Yellow</h4>
+                    <p class="mega-card-price">&#8377;4,290</p>
+                  </div>
+                </a>
+                <a href="product.html?id=prod-012" class="mega-product-card">
+                  <div class="mega-card-img-wrap">
+                    <img src="assets/images/img_010_52bede2b.jpeg" alt="1928 Turf Olive" loading="lazy">
+                  </div>
+                  <div class="mega-card-info">
+                    <div class="mega-card-rating"><span>★</span> 4.8 (19)</div>
+                    <h4 class="mega-card-title">1928 Turf Olive</h4>
+                    <p class="mega-card-price">&#8377;4,990</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Women Mega Menu -->
+        <div class="nav-item has-mega" data-mega="mega-women">
+          <a href="shop.html?gender=women" class="nav-link">
+            Women
+            <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="m1 1 4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="mega-menu" id="mega-women">
+            <div class="container mega-menu-inner">
+              <div class="mega-sidebar">
+                <span class="mega-sidebar-title">Collections</span>
+                <ul class="mega-sidebar-links">
+                  <li><a href="shop.html?gender=women&category=sneakers" class="mega-cat-link active">Sneakers</a></li>
+                  <li><a href="shop.html?gender=women&category=slides" class="mega-cat-link">Slides</a></li>
+                  <li><a href="shop.html?gender=women&category=apparel" class="mega-cat-link">Clothing &amp; Accessories</a></li>
+                  <li><a href="shop.html?gender=women" class="mega-cat-all">View All Women's &rarr;</a></li>
+                </ul>
+              </div>
+              <div class="mega-products-grid">
+                <a href="product.html?id=prod-003" class="mega-product-card">
+                  <div class="mega-card-img-wrap">
+                    <span class="mega-card-badge">Bestseller</span>
+                    <img src="assets/images/img_003_5cfa92d1.jpeg" alt="Baaz Indrani Edition" loading="lazy">
+                  </div>
+                  <div class="mega-card-info">
+                    <div class="mega-card-rating"><span>★</span> 4.9 (42)</div>
+                    <h4 class="mega-card-title">Baaz Indrani Edition</h4>
+                    <p class="mega-card-price">&#8377;4,590</p>
+                  </div>
+                </a>
+                <a href="product.html?id=prod-011" class="mega-product-card">
+                  <div class="mega-card-img-wrap">
+                    <span class="mega-card-badge">Exclusive</span>
+                    <img src="assets/images/img_051_382939e5.jpeg" alt="Dvaita Calico White" loading="lazy">
+                  </div>
+                  <div class="mega-card-info">
+                    <div class="mega-card-rating"><span>★</span> 4.8 (37)</div>
+                    <h4 class="mega-card-title">Dvaita Calico White</h4>
+                    <p class="mega-card-price">&#8377;4,290</p>
+                  </div>
+                </a>
+                <a href="product.html?id=prod-005" class="mega-product-card">
+                  <div class="mega-card-img-wrap">
+                    <span class="mega-card-badge">Special Drop</span>
+                    <img src="assets/images/img_007_97e07d5b.jpeg" alt="Buransh Red" loading="lazy">
+                  </div>
+                  <div class="mega-card-info">
+                    <div class="mega-card-rating"><span>★</span> 5.0 (29)</div>
+                    <h4 class="mega-card-title">Buransh Red</h4>
+                    <p class="mega-card-price">&#8377;4,890</p>
+                  </div>
+                </a>
+                <a href="product.html?id=prod-014" class="mega-product-card">
+                  <div class="mega-card-img-wrap">
+                    <img src="assets/images/img_013_2db53fb6.jpeg" alt="Saaya Blue" loading="lazy">
+                  </div>
+                  <div class="mega-card-info">
+                    <div class="mega-card-rating"><span>★</span> 4.7 (21)</div>
+                    <h4 class="mega-card-title">Gully 004 - Saaya Blue</h4>
+                    <p class="mega-card-price">&#8377;3,990</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bestsellers Mega Menu -->
+        <div class="nav-item has-mega" data-mega="mega-bestsellers">
+          <a href="index.html#bestsellers" class="nav-link">
+            Bestsellers
+            <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="m1 1 4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="mega-menu" id="mega-bestsellers">
+            <div class="container mega-menu-inner">
+              <div class="mega-tiles-grid">
+                <a href="index.html#bestsellers" class="mega-tile-card">
+                  <div class="mega-tile-img-box">
+                    <img src="assets/images/img_001_d54b9d76.jpeg" alt="Hand-Lasted Sneakers" loading="lazy">
+                  </div>
+                  <div class="mega-tile-content">
+                    <h3 class="mega-tile-title">Hand-Lasted Sneakers</h3>
+                    <p class="mega-tile-desc">Gully No. 001, 002 &amp; Archival Drops</p>
+                    <span class="mega-tile-cta">Shop Sneakers &rarr;</span>
+                  </div>
+                </a>
+
+                <a href="shop.html?category=slides" class="mega-tile-card">
+                  <div class="mega-tile-img-box">
+                    <img src="assets/images/img_013_2db53fb6.jpeg" alt="Architectural Slides" loading="lazy">
+                  </div>
+                  <div class="mega-tile-content">
+                    <h3 class="mega-tile-title">Architectural Slides</h3>
+                    <p class="mega-tile-desc">Gully No. 004 &amp; 005 Everyday Mules</p>
+                    <span class="mega-tile-cta">Shop Slides &rarr;</span>
+                  </div>
+                </a>
+
+                <a href="index.html#apparel" class="mega-tile-card">
+                  <div class="mega-tile-img-box">
+                    <img src="assets/images/img_019_e5a2553c.jpeg" alt="Apparel &amp; Accessories" loading="lazy">
+                  </div>
+                  <div class="mega-tile-content">
+                    <h3 class="mega-tile-title">Apparel &amp; Accessories</h3>
+                    <p class="mega-tile-desc">Heavyweight Twill Shackets, Jerseys &amp; Pants</p>
+                    <span class="mega-tile-cta">Shop Apparel &rarr;</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="index.html#story" class="nav-link">Story</a>
+        <a href="index.html#hidden-gems" class="nav-link">The Archive</a>
+        <a href="help.html#contact" class="nav-link">Find a Store</a>
+      </nav>
+
+      <!-- Header Right Utilities -->
+      <div class="header-actions">
+        <div class="currency-selector-wrapper">
+          <select id="currencySelector" class="currency-select" aria-label="Select Currency">
+            <option value="INR" selected>INR ₹</option>
+            <option value="USD">USD $</option>
+            <option value="EUR">EUR €</option>
+            <option value="GBP">GBP £</option>
+            <option value="AED">AED</option>
+          </select>
+        </div>
+
+        <button type="button" class="action-btn" id="searchTrigger" aria-label="Search Catalog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <button type="button" class="action-btn cart-btn" id="cartTrigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb Bar -->
+    <div class="container pd-breadcrumb-bar">
+      <a href="index.html">Home</a>
+      <span class="pd-crumb-sep">/</span>
+      <span class="pd-crumb-active">Your Cart</span>
+    </div>
+
+    <section class="cart-page-section">
+      <div class="container">
+        <!-- Header -->
+        <div style="margin-bottom: 2rem;">
+          <h1 style="font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem;">Your Shopping Cart</h1>
+          <!-- Free Shipping Progress Meter -->
+          <div class="shipping-meter-box" style="margin-top: 1rem; max-width: 600px;">
+            <div class="shipping-meter-label" id="cartPageShippingText">
+              Add ₹5,000 for Free Express Shipping Across India!
+            </div>
+            <div class="meter-track">
+              <div class="meter-bar" id="cartPageShippingBar" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Layout Grid -->
+        <div class="cart-layout-grid" id="cartActiveLayout">
+          <!-- Left: Items List -->
+          <div class="cart-items-card">
+            <div class="cart-table-header">
+              <span>Product</span>
+              <span style="text-align: center;">Price</span>
+              <span style="text-align: center;">Quantity</span>
+              <span style="text-align: right;">Total</span>
+            </div>
+
+            <div id="cartPageItemsList">
+              <!-- Dynamically populated via js/cart-page.js -->
+            </div>
+
+            <!-- Order Notes -->
+            <div class="cart-order-notes">
+              <label for="cartNotes">Special Instructions / Gift Message (Optional)</label>
+              <textarea id="cartNotes" rows="3" placeholder="Add custom lasting notes or delivery instructions for our Delhi studio..."></textarea>
+            </div>
+          </div>
+
+          <!-- Right: Summary Card -->
+          <div class="cart-summary-card">
+            <h3 class="cart-summary-title">Order Summary</h3>
+
+            <div class="cart-summary-line">
+              <span>Subtotal</span>
+              <span id="cartPageSubtotal">₹0</span>
+            </div>
+
+            <div class="cart-summary-line">
+              <span>Estimated Express Shipping</span>
+              <span id="cartPageShippingCost" style="color: #15803d; font-weight: 700;">FREE</span>
+            </div>
+
+            <div class="cart-summary-line" id="cartPageDiscountRow" style="display:none; color: #dc2626;">
+              <span>Promo Discount</span>
+              <span id="cartPageDiscountVal">-₹0</span>
+            </div>
+
+            <!-- Promo Input -->
+            <div class="promo-box" style="margin: 1.25rem 0;">
+              <input type="text" id="cartPagePromoInput" placeholder="Promo code (e.g. GULLY10)" class="promo-input">
+              <button type="button" id="cartPageApplyPromoBtn" class="promo-btn">Apply</button>
+            </div>
+
+            <div class="cart-summary-total">
+              <span>Estimated Total:</span>
+              <span id="cartPageTotal">₹0</span>
+            </div>
+
+            <p class="drawer-tax-note" style="margin-bottom: 1.5rem;">
+              MRP inclusive of all taxes. Free doorstep size exchange policy applies.
+            </p>
+
+            <a href="checkout.html" class="cart-checkout-btn">
+              <span>Proceed to Checkout</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+
+            <a href="shop.html" class="cart-continue-link">&larr; Continue Exploring Footwear</a>
+          </div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="shop-empty-box" id="cartEmptyView" style="display:none; padding: 4.5rem 1.5rem;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🛍️</div>
+          <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Your Gully Cart is Empty</h2>
+          <p style="color: #71717a; max-width: 450px; margin: 0 auto 1.75rem; font-size: 0.95rem;">
+            You haven't selected any hand-lasted sneakers or artisanal layers yet.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="index.html#bestsellers" class="btn btn-primary">Shop Bestsellers</a>
+            <a href="shop.html" class="btn btn-outline">Explore All Products</a>
+          </div>
+        </div>
+
+        <!-- Recommended Section -->
+        <div style="margin-top: 5rem; padding-top: 3.5rem; border-top: 1px solid #ebebeb;">
+          <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 2rem;">Frequently Added Silhouettes</h3>
+          <div class="product-grid" id="cartRecommendedGrid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs" class="footer-logo">
+          <p class="footer-about">
+            Gully Labs is an independent Indian design studio creating hand-lasted sneakers, heavy-gauge apparel, and archival accessories rooted in subcontinental identity and craftsmanship.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Shop Silhouettes</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#bestsellers">Gully No. 001 - Baaz</a></li>
+            <li><a href="index.html#bestsellers">Gully No. 002 - Turf</a></li>
+            <li><a href="index.html#bestsellers">Gully No. 004 - Saaya</a></li>
+            <li><a href="index.html#bestsellers">Gully No. 005 - Maska</a></li>
+            <li><a href="shop.html">Browse All Footwear</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">The Studio</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#story">Our Story & Philosophy</a></li>
+            <li><a href="index.html#story">Anatomical Wooden Lasts</a></li>
+            <li><a href="index.html#story">Full-Grain Leather Sourcing</a></li>
+            <li><a href="help.html#contact">Find a Retail Store</a></li>
+            <li><a href="help.html">Customer Care & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="help.html#shipping">Free Express Shipping</a></li>
+            <li><a href="help.html#returns">30-Day Doorstep Returns</a></li>
+            <li><a href="help.html#size-guide">Anatomical Size Chart</a></li>
+            <li><a href="help.html#track">Track Live Dispatch</a></li>
+            <li><a href="help.html#contact">support@gullylabs.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 Gully Labs. Hand lasted in India. Crafted with pride.
+        </p>
+        <div class="footer-payment-methods">
+          <span class="pay-pill">UPI</span>
+          <span class="pay-pill">RuPay</span>
+          <span class="pay-pill">Visa</span>
+          <span class="pay-pill">Mastercard</span>
+          <span class="pay-pill">Net Banking</span>
+          <span class="pay-pill">Cash on Delivery</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Drawer -->
+  <div class="search-drawer" id="searchDrawer" role="dialog" aria-modal="true" aria-label="Search Gully Labs">
+    <div class="search-drawer-inner">
+      <div class="search-input-wrapper">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search sneakers, apparel, or silhouettes..." autocomplete="off">
+        <button type="button" id="searchDrawerClose" class="search-close-btn" aria-label="Close Search">&times;</button>
+      </div>
+      <div class="search-results-container" id="searchResults">
+        <p class="search-placeholder-msg">Type to discover hand-lasted Indian footwear and apparel...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Gully Cart</h3>
+      <button type="button" class="drawer-close-btn" id="cartDrawerClose" aria-label="Close Cart">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Meter -->
+    <div class="shipping-meter-box">
+      <div class="shipping-meter-label" id="shippingMeterText">
+        Add ₹5,000 for Free Express Shipping Across India!
+      </div>
+      <div class="meter-track">
+        <div class="meter-bar" id="shippingMeterBar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Live Cart Items Container -->
+    <div class="drawer-items" id="cartDrawerItems">
+      <!-- Populated via renderCart() in js/app.js -->
+    </div>
+
+    <!-- Drawer Footer / Subtotal & Checkout -->
+    <div class="drawer-footer">
+      <div class="promo-box">
+        <input type="text" id="promoInput" placeholder="Promo code (e.g. GULLY10)" class="promo-input">
+        <button type="button" id="applyPromoBtn" class="promo-btn">Apply</button>
+      </div>
+
+      <div class="subtotal-row">
+        <span>Estimated Subtotal:</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <p class="drawer-tax-note">Taxes and express shipping calculated at final checkout step.</p>
+
+      <a href="checkout.html" class="checkout-btn" id="checkoutBtn" style="display:block; text-align:center; text-decoration:none;">Proceed to Secure Checkout</a>
+      <a href="cart.html" style="display:block; text-align:center; margin-top:0.75rem; font-size:0.85rem; font-weight:700; color:#111111; text-decoration:underline;">View Full Shopping Bag &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
+      <span style="font-weight:800; font-size:1.1rem; text-transform:uppercase; letter-spacing:0.05em;">Menu</span>
+      <button type="button" id="mobileNavClose" style="font-size:1.75rem; line-height:1; background:none; border:none; cursor:pointer;">&times;</button>
+    </div>
+    <ul style="list-style:none; display:flex; flex-direction:column; gap:1.25rem;">
+      <li><a href="index.html#bestsellers" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Men</a></li>
+      <li><a href="index.html#bestsellers" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Women</a></li>
+      <li><a href="index.html#bestsellers" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Bestsellers</a></li>
+      <li><a href="index.html#story" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Story</a></li>
+      <li><a href="index.html#hidden-gems" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">The Archive</a></li>
+      <li><a href="help.html#contact" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Find a Store</a></li>
+      <li><a href="shop.html" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Shop All</a></li>
+    </ul>
+  </div>
+
+  <!-- Global Backdrop -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Global Toast Notification -->
+  <div class="toast-msg" id="toastMsg" role="alert"></div>
+
+  <!-- Application Logic -->
+  <script src="data/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/cart-page.js"></script>
+</body>
+</html>
