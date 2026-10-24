@@ -1,11 +1,7 @@
-# Large files & archives
 index.original.backup.html
 archive_unused/
+styles.css
 *.log
-
-# System files
 .DS_Store
 Thumbs.db
-
-# Vercel
 .vercel
