@@ -1568,3 +1568,697 @@ input, select, textarea {
   transform: translateY(0);
   opacity: 1;
 }
+
+/* ==========================================================================
+   PRODUCT DETAIL PAGE (PIXEL-PERFECT GULLY LABS)
+   ========================================================================== */
+
+.pd-breadcrumb-bar {
+  padding: 1.25rem 0;
+  font-size: 0.85rem;
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pd-breadcrumb-bar a {
+  color: #52525b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.pd-breadcrumb-bar a:hover {
+  color: #111111;
+  text-decoration: underline;
+}
+
+.pd-crumb-sep {
+  color: #a1a1aa;
+}
+
+.pd-crumb-active {
+  color: #111111;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pd-section {
+  padding: 0 0 4rem;
+}
+
+.pd-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .pd-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Gallery Column */
+.pd-gallery-col {
+  position: sticky;
+  top: 100px;
+}
+
+@media (max-width: 992px) {
+  .pd-gallery-col {
+    position: static;
+  }
+}
+
+.pd-main-stage {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  background: #f8f8f8;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e5e5;
+}
+
+.pd-main-stage img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.pd-main-stage:hover img {
+  transform: scale(1.03);
+}
+
+.pd-badge-floating {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.pd-thumbnails-track {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.pd-thumb-btn {
+  flex: 0 0 84px;
+  width: 84px;
+  height: 84px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: #f8f8f8;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.pd-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.pd-thumb-btn:hover {
+  border-color: #a1a1aa;
+}
+
+.pd-thumb-btn.selected {
+  border-color: #111111;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.pd-gallery-perks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ebebeb;
+}
+
+.pd-perk-item {
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 0.85rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #27272a;
+}
+
+.pd-perk-item span {
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Info Column */
+.pd-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pd-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #71717a;
+}
+
+.pd-product-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #111111;
+  margin: 0;
+}
+
+.pd-rating-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #4b5563;
+}
+
+.pd-stars {
+  color: #f59e0b;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+}
+
+.pd-review-count {
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pd-pairs-badge {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+/* Price Box */
+.pd-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.pd-price-now {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #111111;
+}
+
+.pd-price-was {
+  font-size: 1.15rem;
+  color: #888888;
+  text-decoration: line-through;
+}
+
+.pd-discount-tag {
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.pd-tax-shipping-sub {
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin-top: 0.15rem;
+}
+
+/* Urgency Bar */
+.pd-urgency-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 0.7rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #92400e;
+}
+
+/* Colors */
+.pd-colors-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pd-section-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #111111;
+}
+
+.pd-color-chips-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pd-color-chip {
+  border: 1.5px solid #d4d4d8;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 0.4rem 0.95rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #27272a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pd-color-chip:hover {
+  border-color: #111111;
+}
+
+.pd-color-chip.selected {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+/* Sizes */
+.pd-sizes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pd-size-guide-link {
+  background: none;
+  border: none;
+  color: #111111;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pd-size-guide-link:hover {
+  color: var(--color-blue);
+}
+
+.pd-sizes-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .pd-sizes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pd-size-pill {
+  height: 46px;
+  border: 1.5px solid #e4e4e7;
+  border-radius: 6px;
+  background: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #111111;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-size-pill:hover {
+  border-color: #111111;
+}
+
+.pd-size-pill.selected {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Purchase Action Row */
+.pd-actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.pd-btn-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.pd-qty-box {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #111111;
+  border-radius: 6px;
+  min-width: 110px;
+  height: 50px;
+  background: #ffffff;
+}
+
+.pd-qty-btn {
+  width: 36px;
+  height: 100%;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.pd-qty-btn:hover {
+  background: #f4f4f5;
+}
+
+.pd-qty-display {
+  flex: 1;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.pd-add-to-cart-btn {
+  flex: 1;
+  height: 50px;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.2s ease;
+}
+
+.pd-add-to-cart-btn:hover {
+  background: #27272a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pd-buy-now-btn {
+  width: 100%;
+  height: 50px;
+  background: #d62828;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-buy-now-btn:hover {
+  background: #b71c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(214, 40, 40, 0.25);
+}
+
+/* Pincode Delivery Check */
+.pd-pincode-card {
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  background: #fafafa;
+}
+
+.pd-pincode-card-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #27272a;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pd-pincode-input-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pd-pincode-field {
+  flex: 1;
+  padding: 0.55rem 0.85rem;
+  border: 1.5px solid #d4d4d8;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.pd-pincode-field:focus {
+  border-color: #111111;
+}
+
+.pd-pincode-submit {
+  padding: 0.55rem 1.15rem;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pd-pincode-submit:hover {
+  background: #27272a;
+}
+
+.pd-pincode-result {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #15803d;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+/* Trust Badges Grid */
+.pd-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.pd-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 0.85rem;
+  background: #f8f8f8;
+  border: 1px solid #ededed;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #27272a;
+}
+
+.pd-trust-item svg {
+  flex-shrink: 0;
+  color: #111111;
+}
+
+/* Accordions */
+.pd-accordion-wrap {
+  border-top: 1px solid #e4e4e7;
+  margin-top: 1rem;
+}
+
+.pd-accordion-item {
+  border-bottom: 1px solid #e4e4e7;
+}
+
+.pd-accordion-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 0;
+  background: none;
+  border: none;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #111111;
+  cursor: pointer;
+  text-align: left;
+}
+
+.pd-accordion-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.pd-accordion-item.active .pd-accordion-btn svg {
+  transform: rotate(180deg);
+}
+
+.pd-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #52525b;
+}
+
+.pd-accordion-item.active .pd-accordion-body {
+  max-height: 500px;
+  padding-bottom: 1.25rem;
+}
+
+/* Size Guide Modal */
+.size-guide-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 5000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.size-guide-modal-backdrop.open {
+  display: flex;
+}
+
+.size-guide-modal-content {
+  background: #ffffff;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: modalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalScaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.size-guide-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  line-height: 1;
+  color: #111111;
+}
+
+.size-guide-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 0.25rem;
+}
+
+.size-guide-desc {
+  font-size: 0.85rem;
+  color: #666666;
+  margin-bottom: 1.25rem;
+}
+
+.size-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.size-table th, .size-table td {
+  border: 1px solid #e4e4e7;
+  padding: 0.65rem 0.75rem;
+  text-align: center;
+}
+
+.size-table th {
+  background: #f4f4f5;
+  font-weight: 800;
+  color: #111111;
+}
+
+.size-table tr:hover td {
+  background: #fafafa;
+}

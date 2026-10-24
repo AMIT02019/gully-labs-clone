@@ -23,7 +23,12 @@ const AppState = {
     GBP: { symbol: '£', rate: 0.0095, name: 'GBP (£)' },
     AED: { symbol: 'AED ', rate: 0.044, name: 'AED' }
   },
-  cart: [],
+  cart: (() => {
+    try {
+      const raw = localStorage.getItem('gully_cart');
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) { return []; }
+  })(),
   promoDiscount: 0,
   freeShippingThreshold: 5000, // INR
   activeHeroSlide: 0,
@@ -436,6 +441,10 @@ function removeCartItem(index) {
 }
 
 function renderCart() {
+  try {
+    localStorage.setItem('gully_cart', JSON.stringify(AppState.cart));
+  } catch (e) {}
+
   const countBadges = document.querySelectorAll('.cart-count-badge');
   const totalItems = AppState.cart.reduce((sum, item) => sum + item.quantity, 0);
   countBadges.forEach(b => b.textContent = totalItems);
