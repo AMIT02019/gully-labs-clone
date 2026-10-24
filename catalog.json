@@ -1,0 +1,732 @@
+[
+  {
+    "title": "Baaz Faris Black",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_001_d54b9d76.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Bestseller"
+  },
+  {
+    "title": "Aandhi Kobicha",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_002_5983bf7c.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Bestseller"
+  },
+  {
+    "title": "Baaz Indrani",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_003_5cfa92d1.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Bestseller"
+  },
+  {
+    "title": "Megh White",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_004_7acc4d63.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Noor Yellow",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_005_de05f1f9.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Leila Navy",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_006_8fd2d838.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Buransh Red",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_007_97e07d5b.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Barfi Burgundy",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_008_3480155b.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Parni White",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_009_90081c18.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Turf Olive",
+    "price": 7490.0,
+    "price_display": "INR 7,490.00",
+    "images": [
+      "assets/images/img_010_52bede2b.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Sal Brown",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_011_fb7c1694.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Pitai Blue",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_012_1fbcdaaf.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Saaya Blue",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_013_2db53fb6.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Suva Green",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_014_4fbfda63.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Koyar Black",
+    "price": 2700.0,
+    "price_display": "INR 2,700.00",
+    "images": [
+      "assets/images/img_015_8654a166.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Maska Yellow",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_016_aaefc0ce.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Khakhi Beige",
+    "price": 3200.0,
+    "price_display": "INR 3,200.00",
+    "images": [
+      "assets/images/img_017_92a1dd2a.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Sebal Black",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_018_054a2b71.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Toggle Shacket - Olive Green",
+    "price": 3775.0,
+    "price_display": "INR 3,775.00",
+    "images": [
+      "assets/images/img_019_e5a2553c.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Saddle Stitch Shirt - Powder Blue",
+    "price": 3425.0,
+    "price_display": "INR 3,425.00",
+    "images": [
+      "assets/images/img_020_7824d691.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Utility Shacket - Black",
+    "price": 3775.0,
+    "price_display": "INR 3,775.00",
+    "images": [
+      "assets/images/img_021_a406b3c4.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Saddle Stitch Shirt - Light Brown",
+    "price": 3425.0,
+    "price_display": "INR 3,425.00",
+    "images": [
+      "assets/images/img_022_841785df.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Saddle Stitch Shirt - Dark Brown",
+    "price": 3425.0,
+    "price_display": "INR 3,425.00",
+    "images": [
+      "assets/images/img_023_fe058f04.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Deconstructed Shirt - Butter Yellow",
+    "price": 2499.0,
+    "price_display": "INR 2,499.00",
+    "images": [
+      "assets/images/img_024_f79e7438.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Deconstructed Shirt - Powder Blue",
+    "price": 2499.0,
+    "price_display": "INR 2,499.00",
+    "images": [
+      "assets/images/img_025_1baee70c.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Deconstructed Shirt - Black",
+    "price": 2499.0,
+    "price_display": "INR 2,499.00",
+    "images": [
+      "assets/images/img_026_e32fb864.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Indrani for Women",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_027_0c05f703.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Barfi Burgundy for Women",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_028_a796132b.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Noor Yellow for Women",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_029_81758b00.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Parni White for Women",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_030_00cc227a.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Faris Black for Women",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_031_3c8459c8.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Leila Navy for Women",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_032_33bbe555.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Firozi Green for Women",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_033_460d3ff9.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Falak Blue for Women",
+    "price": 4290.0,
+    "price_display": "INR 4,290.00",
+    "images": [
+      "assets/images/img_034_7faffbaf.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Kopal Green for Women",
+    "price": 4490.0,
+    "price_display": "INR 4,490.00",
+    "images": [
+      "assets/images/img_035_b61426a8.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Buransh Red for Women",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_036_df8d9ad1.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Sebal Black for Women",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_037_216cf5d2.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Sal Brown for Women",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_038_85718317.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Atlas Black For Women",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_039_e7a12856.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Maska Yellow For Women",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_040_0525a2b7.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Pitai Blue For Women",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_012_1fbcdaaf.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Suva Green For Women",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_014_4fbfda63.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Saaya Blue For Women",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_013_2db53fb6.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Koyar Black For Women",
+    "price": 2700.0,
+    "price_display": "INR 2,700.00",
+    "images": [
+      "assets/images/img_015_8654a166.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Utility Shacket - Dark Brown",
+    "price": 3775.0,
+    "price_display": "INR 3,775.00",
+    "images": [
+      "assets/images/img_041_25dd0259.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Pintuck Pant - Olive Green",
+    "price": 2995.0,
+    "price_display": "INR 2,995.00",
+    "images": [
+      "assets/images/img_042_071b5b28.png"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Cross Collar Shirt - Butter Yellow",
+    "price": 3425.0,
+    "price_display": "INR 3,425.00",
+    "images": [
+      "assets/images/img_043_ccfeaacb.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Workwear Shirt - Navy",
+    "price": 2995.0,
+    "price_display": "INR 2,995.00",
+    "images": [
+      "assets/images/img_044_6888ef56.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Cross Collar Shirt - Olive Green",
+    "price": 3425.0,
+    "price_display": "INR 3,425.00",
+    "images": [
+      "assets/images/img_045_9ca1088b.jpeg"
+    ],
+    "category": "Apparel",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Tezz Green (Crew Neck)",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_046_af626e07.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Udaan Blue (Crew Neck)",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_047_945d3a0d.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Filter Brown",
+    "price": 4490.0,
+    "price_display": "INR 4,490.00",
+    "images": [
+      "assets/images/img_082_ddab48c9.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Baaz Bitter Black",
+    "price": 4490.0,
+    "price_display": "INR 4,490.00",
+    "images": [
+      "assets/images/img_083_7078dc96.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Rekhe Brown",
+    "price": 8990.0,
+    "price_display": "INR 8,990.00",
+    "images": [
+      "assets/images/img_084_a9b39775.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Kharif Green",
+    "price": 6990.0,
+    "price_display": "INR 6,990.00",
+    "images": [
+      "assets/images/img_085_d00da94f.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully 17 Jersey - Gati Beige (Crew Neck)",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_103_dec6d4ae.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully 17 Trousers - Josh Black",
+    "price": 2990.0,
+    "price_display": "INR 2,990.00",
+    "images": [
+      "assets/images/img_104_3b6c2d1c.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 002 \u2013 Gati Beige",
+    "price": 3600.0,
+    "price_display": "INR 3,600.00",
+    "images": [
+      "assets/images/img_105_ebc21ddd.png"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully 17 Jersey - Gati Beige (Polo Neck)",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_107_9577a2dd.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully 17 Trousers - Aaroh Brown",
+    "price": 2990.0,
+    "price_display": "INR 2,990.00",
+    "images": [
+      "assets/images/img_108_0e2e8161.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 002 \u2013 Tezz Green For Women",
+    "price": 4490.0,
+    "price_display": "INR 4,490.00",
+    "images": [
+      "assets/images/img_109_0da281b5.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully 17 Jersey - Tezz Green (Crew Neck)",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_111_b0036f84.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully 17 Jersey - Udaan Blue (Crew Neck)",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_113_9d0139b6.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully 17 Jersey - Udaan Blue (Polo Neck)",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_114_afe61387.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 002 \u2013 Udaan Blue",
+    "price": 5490.0,
+    "price_display": "INR 5,490.00",
+    "images": [
+      "assets/images/img_116_a262728c.png"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 001 - Dvaita Calico White",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_051_382939e5.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 002 - 1928 Turf Olive",
+    "price": 7490.0,
+    "price_display": "INR 7,490.00",
+    "images": [
+      "assets/images/img_010_52bede2b.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 001 - Naadu",
+    "price": 5990.0,
+    "price_display": "INR 5,990.00",
+    "images": [
+      "assets/images/img_117_9b7a259a.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 001 - Saaj Orange",
+    "price": 8990.0,
+    "price_display": "INR 8,990.00",
+    "images": [
+      "assets/images/img_118_60621abb.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "GULLY NUMBER 001 - Baaz Taal Blue",
+    "price": 4490.0,
+    "price_display": "INR 4,490.00",
+    "images": [
+      "assets/images/img_064_aba032a0.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 004 -  Saaya Blue",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_013_2db53fb6.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 004 - Suva Green",
+    "price": 3790.0,
+    "price_display": "INR 3,790.00",
+    "images": [
+      "assets/images/img_014_4fbfda63.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  },
+  {
+    "title": "Gully Number 005 \u2013 Maska Yellow",
+    "price": 1990.0,
+    "price_display": "INR 1,990.00",
+    "images": [
+      "assets/images/img_016_aaefc0ce.jpeg"
+    ],
+    "category": "Sneakers",
+    "badge": "Hand-Lasted"
+  }
+]

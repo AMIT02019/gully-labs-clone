@@ -1,0 +1,12 @@
+# Large backup and scrapings
+index.original.backup.html
+archive_unused/
+styles.css
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# Vercel
+.vercel
