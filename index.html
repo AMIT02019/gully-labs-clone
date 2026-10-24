@@ -10,12 +10,12 @@
 </head>
 <body>
 
-  <!-- Top Announcement Bar (Marquee Ticker) -->
+    <!-- Top Announcement Bar (Marquee Ticker) -->
   <div class="top-bar">
     <div class="marquee-container">
       <div class="marquee-track">
         <span class="marquee-item">Welcome to our store</span>
-        <span class="marquee-item"><span class="highlight">Γ£¿ 200 Exclusive pairs with Sienna Γ£¿</span></span>
+        <span class="marquee-item"><span class="highlight">✨ 200 Exclusive pairs with Sienna ✨</span></span>
         <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
         <span class="marquee-item">Hand Lasted Indian Sneakers</span>
         <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
@@ -23,13 +23,22 @@
       </div>
       <div class="marquee-track" aria-hidden="true">
         <span class="marquee-item">Welcome to our store</span>
-        <span class="marquee-item"><span class="highlight">Γ£¿ 200 Exclusive pairs with Sienna Γ£¿</span></span>
+        <span class="marquee-item"><span class="highlight">✨ 200 Exclusive pairs with Sienna ✨</span></span>
         <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
         <span class="marquee-item">Hand Lasted Indian Sneakers</span>
         <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
         <span class="marquee-item">Crafted with Full-Grain Indian Leather</span>
       </div>
     </div>
+  </div>
+
+  <!-- Countdown Announcement Bar -->
+  <div class="scd-bar">
+    <span class="scd-label">⚡ LIMITED DROP ARCHIVE — DISPATCHING DAILY</span>
+    <span class="scd-timer">
+      <b id="cdDays">02</b><u>d</u> : <b id="cdHours">14</b><u>h</u> : <b id="cdMins">30</b><u>m</u> : <b id="cdSecs">45</b><u>s</u>
+    </span>
+    <a href="#bestsellers" class="scd-btn">SHOP NOW</a>
   </div>
 
   <!-- Site Sticky Navigation Header -->
@@ -51,62 +60,13 @@
 
       <!-- Desktop Navigation Menu -->
       <nav class="desktop-nav">
-        <!-- Sneakers Dropdown -->
-        <div class="nav-item-dropdown">
-          <a href="#bestsellers" class="nav-link">Sneakers</a>
-          <div class="mega-menu">
-            <div class="mega-menu-col">
-              <h4>Silhouettes</h4>
-              <ul class="mega-menu-list">
-                <li><a href="#bestsellers">Bestsellers <span>ΓåÆ</span></a></li>
-                <li><a href="#new-arrivals">New Arrivals <span>ΓåÆ</span></a></li>
-                <li><a href="#hidden-gems">Gully Number 001 <span>ΓåÆ</span></a></li>
-                <li><a href="#hidden-gems">Gully Number 002 (1928) <span>ΓåÆ</span></a></li>
-                <li><a href="#hidden-gems">Gully Number 004 (Saaya) <span>ΓåÆ</span></a></li>
-                <li><a href="#bestsellers">Collaborations <span>ΓåÆ</span></a></li>
-              </ul>
-            </div>
-            <div class="mega-menu-col">
-              <div class="mega-card">
-                <img src="assets/images/img_001_d54b9d76.jpeg" alt="Featured Sneaker">
-                <div class="mega-card-overlay">
-                  <span>Iconic Court Shoe</span>
-                  <strong>Baaz Faris Black</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Apparel Dropdown -->
-        <div class="nav-item-dropdown">
-          <a href="#apparel" class="nav-link">Apparel</a>
-          <div class="mega-menu">
-            <div class="mega-menu-col">
-              <h4>Collections</h4>
-              <ul class="mega-menu-list">
-                <li><a href="#apparel">Kara Utility Shackets <span>ΓåÆ</span></a></li>
-                <li><a href="#apparel">Pintuck Streetwear Pants <span>ΓåÆ</span></a></li>
-                <li><a href="#apparel">Saddle-Stitch Shirts <span>ΓåÆ</span></a></li>
-                <li><a href="#lookbook">Gully 17 Track Jerseys <span>ΓåÆ</span></a></li>
-              </ul>
-            </div>
-            <div class="mega-menu-col">
-              <div class="mega-card">
-                <img src="assets/images/img_019_e5a2553c.jpeg" alt="Featured Apparel">
-                <div class="mega-card-overlay">
-                  <span>380 GSM Twill</span>
-                  <strong>Toggle Shacket</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <a href="#story" class="nav-link">Our Story</a>
-        <a href="javascript:void(0)" onclick="openSizeGuideModal()" class="nav-link">Size Guide</a>
-        <a href="#lookbook" class="nav-link">Lookbook</a>
-        <a href="#reviews" class="nav-link">Press & Reviews</a>
+        <a href="#bestsellers" class="nav-link">Men</a>
+        <a href="#bestsellers" class="nav-link">Women</a>
+        <a href="#bestsellers" class="nav-link">Bestsellers</a>
+        <a href="#apparel" class="nav-link">Apparel</a>
+        <a href="#story" class="nav-link">Story</a>
+        <a href="#hidden-gems" class="nav-link">The Archive</a>
+        <a href="#reviews" class="nav-link">Find a Store</a>
       </nav>
 
       <!-- Header Right Utilities -->
@@ -261,37 +221,51 @@
             <span class="section-tag">Collections</span>
             <h2 class="section-title">Shop by Collection</h2>
           </div>
-          <a href="#bestsellers" class="view-all-link">View All Catalog <span>ΓåÆ</span></a>
+          <a href="#bestsellers" class="view-all-link">View All Catalog <span>&rarr;</span></a>
         </div>
 
         <div class="categories-grid">
-          <!-- Card 1 -->
+          <!-- Card 1: Baaz -->
           <a href="#bestsellers" class="category-card">
-            <img src="assets/images/img_087_ad5f8296.jpeg" alt="Sneakers Collection" loading="lazy">
+            <img src="assets/images/img_087_ad5f8296.jpeg" alt="Baaz Collection" loading="lazy">
             <div class="category-overlay">
-              <span class="category-tag">Footwear</span>
-              <h3 class="category-title">Hand-Lasted Sneakers</h3>
-              <span class="category-link">Explore 40+ Styles <span>ΓåÆ</span></span>
+              <span class="category-tag">26 Styles</span>
+              <h3 class="category-title">Baaz</h3>
+              <p class="category-subtext">The Daily Beater</p>
+              <span class="category-link">Shop Collection <span>&rarr;</span></span>
             </div>
           </a>
 
-          <!-- Card 2 -->
+          <!-- Card 2: Karwaan -->
           <a href="#bestsellers" class="category-card">
-            <img src="assets/images/img_088_800c511a.jpeg" alt="Collaborations Collection" loading="lazy">
+            <img src="assets/images/img_088_800c511a.jpeg" alt="Karwaan Collection" loading="lazy">
             <div class="category-overlay">
-              <span class="category-tag">Limited Drops</span>
-              <h3 class="category-title">Artist Collaborations</h3>
-              <span class="category-link">Raga & Aryan Katoch <span>ΓåÆ</span></span>
+              <span class="category-tag">6 Styles</span>
+              <h3 class="category-title">Karwaan</h3>
+              <p class="category-subtext">For the Community</p>
+              <span class="category-link">Shop Collection <span>&rarr;</span></span>
             </div>
           </a>
 
-          <!-- Card 3 -->
+          <!-- Card 3: Chappal / Slides -->
+          <a href="#bestsellers" class="category-card">
+            <img src="assets/images/img_011_fb7c1694.jpeg" alt="Chappal / Slides Collection" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-tag">12 Styles</span>
+              <h3 class="category-title">Chappal / Slides</h3>
+              <p class="category-subtext">GL Slides</p>
+              <span class="category-link">Shop Collection <span>&rarr;</span></span>
+            </div>
+          </a>
+
+          <!-- Card 4: GL002 -->
           <a href="#hidden-gems" class="category-card">
-            <img src="assets/images/img_089_035772de.png" alt="Heritage Runners Collection" loading="lazy">
+            <img src="assets/images/img_089_035772de.png" alt="GL002 Collection" loading="lazy">
             <div class="category-overlay">
-              <span class="category-tag">Heritage Archive</span>
-              <h3 class="category-title">1928 Olympic Turf</h3>
-              <span class="category-link">Discover Heritage <span>ΓåÆ</span></span>
+              <span class="category-tag">20 Styles</span>
+              <h3 class="category-title">GL002</h3>
+              <p class="category-subtext">The Trainer</p>
+              <span class="category-link">Shop Collection <span>&rarr;</span></span>
             </div>
           </a>
         </div>
@@ -312,8 +286,9 @@
           <div class="filter-tabs" data-target-grid="bestsellersGrid">
             <button type="button" class="tab-btn active" data-filter="all">All</button>
             <button type="button" class="tab-btn" data-filter="sneakers">Sneakers</button>
-            <button type="button" class="tab-btn" data-filter="men">Men</button>
-            <button type="button" class="tab-btn" data-filter="women">Women</button>
+            <button type="button" class="tab-btn" data-filter="slides">Slides</button>
+            <button type="button" class="tab-btn" data-filter="apparel">Apparel</button>
+            <button type="button" class="tab-btn" data-filter="accessories">Accessories</button>
           </div>
         </div>
 
@@ -393,6 +368,54 @@
             <h2 class="section-title">Apparel</h2>
             <p class="section-sub">Structured silhouettes engineered with 380 GSM twill, horn toggles, and archival motorsport jerseys.</p>
           </div>
+          <a href="#lookbook" class="view-all-link">View Lookbook <span>&rarr;</span></a>
+        </div>
+
+        <!-- Apparel Categories Grid -->
+        <div class="categories-grid" style="margin-bottom: 2.5rem;">
+          <!-- Apparel 1: Shackets -->
+          <a href="#apparel" class="category-card">
+            <img src="assets/images/img_098_3d0a0ae1.png" alt="Shackets" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-tag">6 Styles</span>
+              <h3 class="category-title">Shackets</h3>
+              <p class="category-subtext">Heavyweight 380 GSM Twill</p>
+              <span class="category-link">Shop Category <span>&rarr;</span></span>
+            </div>
+          </a>
+
+          <!-- Apparel 2: Jerseys -->
+          <a href="#apparel" class="category-card">
+            <img src="assets/images/img_100_d0d22761.png" alt="Jerseys" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-tag">12 Styles</span>
+              <h3 class="category-title">Jerseys</h3>
+              <p class="category-subtext">Archival Motorsport</p>
+              <span class="category-link">Shop Category <span>&rarr;</span></span>
+            </div>
+          </a>
+
+          <!-- Apparel 3: Shirts -->
+          <a href="#apparel" class="category-card">
+            <img src="assets/images/img_020_7824d691.jpeg" alt="Shirts" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-tag">12 Styles</span>
+              <h3 class="category-title">Shirts</h3>
+              <p class="category-subtext">Saddle-Stitch Poplin</p>
+              <span class="category-link">Shop Category <span>&rarr;</span></span>
+            </div>
+          </a>
+
+          <!-- Apparel 4: Trousers -->
+          <a href="#apparel" class="category-card">
+            <img src="assets/images/img_099_75ffa795.png" alt="Trousers" loading="lazy">
+            <div class="category-overlay">
+              <span class="category-tag">13 Styles</span>
+              <h3 class="category-title">Trousers</h3>
+              <p class="category-subtext">Tailored Pintuck Pants</p>
+              <span class="category-link">Shop Category <span>&rarr;</span></span>
+            </div>
+          </a>
         </div>
 
         <div class="products-grid" id="apparelGrid">

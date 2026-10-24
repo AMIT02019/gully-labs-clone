@@ -685,5 +685,146 @@ const GULLY_PRODUCTS = [
       "apparel",
       "collaborations"
     ]
+  },
+  {
+    "id": "prod-019",
+    "title": "Gully Leather Slide - Charcoal Tan",
+    "handle": "gully-leather-slide-charcoal",
+    "category": "slides",
+    "subCategory": "Chappal / Slides",
+    "price": 2990,
+    "originalPrice": 3490,
+    "rating": 4.8,
+    "reviewsCount": 34,
+    "badge": "Comfort",
+    "gender": "Unisex",
+    "description": "Ergonomically contoured slide crafted with supple oily-pullup Indian leather, cushioned microfiber footbed lining, and non-slip rubber tread.",
+    "materials": "100% Genuine Oily Pull-Up Leather, Cork-EVA Midsole, Textured Rubber Outsole",
+    "colors": [
+      "Charcoal Tan",
+      "Raw Umber",
+      "Pitch Black"
+    ],
+    "sizes": [
+      "UK 6",
+      "UK 7",
+      "UK 8",
+      "UK 9",
+      "UK 10",
+      "UK 11"
+    ],
+    "primaryImage": "assets/images/img_011_fb7c1694.jpeg",
+    "secondaryImage": "assets/images/img_012_1fbcdaaf.jpeg",
+    "gallery": [
+      "assets/images/img_011_fb7c1694.jpeg",
+      "assets/images/img_012_1fbcdaaf.jpeg"
+    ],
+    "tags": [
+      "slides",
+      "bestsellers"
+    ]
+  },
+  {
+    "id": "prod-020",
+    "title": "Gully Chappal 01 - Raw Vachetta",
+    "handle": "gully-chappal-raw-vachetta",
+    "category": "slides",
+    "subCategory": "Chappal / Slides",
+    "price": 3490,
+    "originalPrice": 3990,
+    "rating": 4.9,
+    "reviewsCount": 27,
+    "badge": "Hand-Lasted",
+    "gender": "Unisex",
+    "description": "Reinventing the authentic Indian chappal silhouette through artisanal hand-lasting, vegetable-tanned leather, and modern urban comfort.",
+    "materials": "Vegetable-Tanned Vachetta Leather, Memory Foam Cushion, Arch Support Outsole",
+    "colors": [
+      "Natural Tan",
+      "Deep Espresso"
+    ],
+    "sizes": [
+      "UK 6",
+      "UK 7",
+      "UK 8",
+      "UK 9",
+      "UK 10"
+    ],
+    "primaryImage": "assets/images/img_012_1fbcdaaf.jpeg",
+    "secondaryImage": "assets/images/img_011_fb7c1694.jpeg",
+    "gallery": [
+      "assets/images/img_012_1fbcdaaf.jpeg",
+      "assets/images/img_011_fb7c1694.jpeg"
+    ],
+    "tags": [
+      "slides",
+      "bestsellers"
+    ]
+  },
+  {
+    "id": "prod-021",
+    "title": "Gully Heavyweight Crew Socks (3-Pack)",
+    "handle": "gully-crew-socks-3pack",
+    "category": "accessories",
+    "subCategory": "Accessories",
+    "price": 990,
+    "originalPrice": 1290,
+    "rating": 4.7,
+    "reviewsCount": 52,
+    "badge": "Essential",
+    "gender": "Unisex",
+    "description": "Combed cotton heavyweight crew socks with reinforced heel & toe, arch compression band, and signature Gully Labs knit branding.",
+    "materials": "85% Combed Cotton, 12% Polyamide, 3% Elastane",
+    "colors": [
+      "Chalk / Olive / Charcoal",
+      "All White",
+      "All Black"
+    ],
+    "sizes": [
+      "One Size (UK 6-11)"
+    ],
+    "primaryImage": "assets/images/img_013_2db53fb6.jpeg",
+    "secondaryImage": "assets/images/img_014_4fbfda63.jpeg",
+    "gallery": [
+      "assets/images/img_013_2db53fb6.jpeg",
+      "assets/images/img_014_4fbfda63.jpeg"
+    ],
+    "tags": [
+      "accessories",
+      "bestsellers"
+    ]
+  },
+  {
+    "id": "prod-022",
+    "title": "Gully Embossed Leather Belt",
+    "handle": "gully-embossed-leather-belt",
+    "category": "accessories",
+    "subCategory": "Accessories",
+    "price": 1990,
+    "originalPrice": 2490,
+    "rating": 4.9,
+    "reviewsCount": 19,
+    "badge": "Handcrafted",
+    "gender": "Unisex",
+    "description": "Hand-stitched full-grain leather belt featuring subtle debossed Gully typography and antique brass hardware.",
+    "materials": "100% Full-Grain Harness Leather, Solid Cast Brass Buckle",
+    "colors": [
+      "Rich Tan",
+      "Obsidian Black"
+    ],
+    "sizes": [
+      "30-34",
+      "34-38",
+      "38-42"
+    ],
+    "primaryImage": "assets/images/img_014_4fbfda63.jpeg",
+    "secondaryImage": "assets/images/img_013_2db53fb6.jpeg",
+    "gallery": [
+      "assets/images/img_014_4fbfda63.jpeg",
+      "assets/images/img_013_2db53fb6.jpeg"
+    ],
+    "tags": [
+      "accessories",
+      "bestsellers"
+    ]
   }
 ];

@@ -63,6 +63,7 @@ const AppState = {
 
 // DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
+  initCountdownTimer();
   initCurrencySelector();
   initHeroSlider();
   renderAllProductSections();
@@ -74,6 +75,36 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initStickyHeader();
 });
+
+/* ==========================================================================
+   0. COUNTDOWN PROMO TIMER
+   ========================================================================== */
+function initCountdownTimer() {
+  const cdDays = document.getElementById('cdDays');
+  const cdHours = document.getElementById('cdHours');
+  const cdMins = document.getElementById('cdMins');
+  const cdSecs = document.getElementById('cdSecs');
+  if (!cdDays || !cdHours || !cdMins || !cdSecs) return;
+
+  // Set an authoritative countdown clock
+  const targetTime = Date.now() + (2 * 24 * 3600 + 14 * 3600 + 30 * 60 + 45) * 1000;
+
+  function update() {
+    const diff = Math.max(0, targetTime - Date.now());
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    cdDays.textContent = String(days).padStart(2, '0');
+    cdHours.textContent = String(hours).padStart(2, '0');
+    cdMins.textContent = String(minutes).padStart(2, '0');
+    cdSecs.textContent = String(seconds).padStart(2, '0');
+  }
+
+  update();
+  setInterval(update, 1000);
+}
 
 /* ==========================================================================
    1. CURRENCY CONVERSION & FORMATTING
@@ -291,15 +322,19 @@ function renderAllProductSections() {
 
       let filtered = GULLY_PRODUCTS;
       if (filterType === 'all') {
-        filtered = GULLY_PRODUCTS.slice(0, 6);
+        filtered = GULLY_PRODUCTS.slice(0, 8);
       } else if (filterType === 'sneakers') {
-        filtered = GULLY_PRODUCTS.filter(p => p.category === 'sneakers').slice(0, 6);
+        filtered = GULLY_PRODUCTS.filter(p => p.category === 'sneakers').slice(0, 8);
+      } else if (filterType === 'slides') {
+        filtered = GULLY_PRODUCTS.filter(p => p.category === 'slides').slice(0, 8);
       } else if (filterType === 'apparel') {
-        filtered = GULLY_PRODUCTS.filter(p => p.category === 'apparel').slice(0, 6);
+        filtered = GULLY_PRODUCTS.filter(p => p.category === 'apparel').slice(0, 8);
+      } else if (filterType === 'accessories') {
+        filtered = GULLY_PRODUCTS.filter(p => p.category === 'accessories').slice(0, 8);
       } else if (filterType === 'men') {
-        filtered = GULLY_PRODUCTS.filter(p => p.gender === 'Unisex' || p.gender === 'Men').slice(0, 6);
+        filtered = GULLY_PRODUCTS.filter(p => p.gender === 'Unisex' || p.gender === 'Men').slice(0, 8);
       } else if (filterType === 'women') {
-        filtered = GULLY_PRODUCTS.filter(p => p.gender === 'Unisex' || p.gender === 'Women').slice(0, 6);
+        filtered = GULLY_PRODUCTS.filter(p => p.gender === 'Unisex' || p.gender === 'Women').slice(0, 8);
       }
 
       targetGrid.innerHTML = filtered.map(createProductCardHTML).join('');
