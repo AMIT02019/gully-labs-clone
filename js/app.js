@@ -203,28 +203,50 @@ function initHeroSlider() {
    ========================================================================== */
 function createProductCardHTML(product) {
   const secondaryImg = product.secondaryImage || product.primaryImage;
-  const isBestseller = product.badge === 'Bestseller';
-  const badgeHTML = product.badge ? `<span class="card-badge${isBestseller ? ' badge-bestseller' : ''}">${product.badge}</span>` : '<span></span>';
-  const ratingHTML = product.rating ? `<span class="card-rating"><span>&#9733;</span> ${product.rating}</span>` : '';
+  const badgeHTML = product.badge ? `<span class="card-badge">${product.badge}</span>` : '';
+  const ratingText = product.rating ? `<span>★</span> ${product.rating} | ${product.reviewsCount} reviews` : '<span>★</span> 5.0';
+  const defaultSize = product.sizes && product.sizes.length ? product.sizes[2] || product.sizes[0] : 'UK 8';
+
+  const sizesHTML = (product.sizes || []).slice(0, 5).map(size => `
+    <button type="button" class="card-size-pill ${size === defaultSize ? 'selected' : ''}" data-size="${size}" onclick="selectCardSize(this, event)">
+      ${size}
+    </button>
+  `).join('');
+
   return `
-    <div class="product-card" data-product-id="${product.id}">
-      <div class="card-top-row">${badgeHTML}${ratingHTML}</div>
-      <div class="product-card-media">
-        <a href="product.html?id=${product.id}" class="product-image-container">
-          <img src="${product.primaryImage}" alt="${product.title}" class="product-img img-primary" loading="lazy">
-          <img src="${secondaryImg}" alt="${product.title} angle 2" class="product-img img-secondary" loading="lazy">
-        </a>
-        <button type="button" class="card-eye-btn" onclick="openQuickView('${product.id}')" title="Quick view" aria-label="Quick view ${product.title}">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+    <div class="product-card" data-product-id="${product.id}" data-selected-size="${defaultSize}">
+      <div class="card-media">
+        ${badgeHTML}
+        <button type="button" class="card-plus-btn" onclick="handleCardQuickAdd('${product.id}', this)" aria-label="Quick add">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
         </button>
-        <button type="button" class="card-choose-btn" onclick="openQuickView('${product.id}')">Choose options</button>
+        <span class="card-rating">${ratingText}</span>
+        <a href="product.html?id=${product.id}">
+          <img src="${product.primaryImage}" alt="${product.title}" class="img-primary" loading="lazy">
+          <img src="${secondaryImg}" alt="${product.title} angle 2" class="img-secondary" loading="lazy">
+        </a>
       </div>
-      <div class="product-info">
-        <span class="product-subcat">${product.subCategory || product.category}</span>
-        <div class="product-title-row">
-          <h4 class="product-title"><a href="product.html?id=${product.id}">${product.title}</a></h4>
-          <span class="product-price" data-price-inr="${product.price}">${formatPrice(product.price)}</span>
+      <div class="card-info">
+        <span class="card-subcat">${product.subCategory || product.category}</span>
+        <h4 class="card-title"><a href="product.html?id=${product.id}">${product.title}</a></h4>
+        <div class="card-price-row">
+          <span class="card-price" data-price-inr="${product.price}">${formatPrice(product.price)}</span>
+          ${product.originalPrice ? `<span class="card-price-orig" data-orig-price-inr="${product.originalPrice}">${formatPrice(product.originalPrice)}</span>` : ''}
         </div>
+        <div class="card-sizes">
+          ${sizesHTML}
+        </div>
+        <button type="button" class="card-quick-add" onclick="handleCardQuickAdd('${product.id}', this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          Quick Add
+        </button>
       </div>
     </div>
   `;
@@ -234,7 +256,7 @@ function createProductCardHTML(product) {
 function selectCardSize(btn, event) {
   event.stopPropagation();
   const card = btn.closest('.product-card');
-  card.querySelectorAll('.size-pill').forEach(b => b.classList.remove('selected'));
+  card.querySelectorAll('.card-size-pill, .size-pill').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   card.setAttribute('data-selected-size', btn.getAttribute('data-size'));
 }
@@ -258,7 +280,7 @@ function renderAllProductSections() {
   // New Arrivals Grid
   const newArrivalsGrid = document.getElementById('newArrivalsGrid');
   if (newArrivalsGrid) {
-    const items = GULLY_PRODUCTS.filter(p => p.tags.includes('new-arrivals') && !p.tags.includes('bestsellers'));
+    const items = GULLY_PRODUCTS.filter(p => p.tags.includes('new-arrivals') || p.id === 'prod-007' || p.id === 'prod-008' || p.id === 'prod-009' || p.id === 'prod-010').slice(0, 4);
     newArrivalsGrid.innerHTML = items.map(createProductCardHTML).join('');
   }
 
@@ -284,7 +306,7 @@ function renderAllProductSections() {
       tab.classList.add('active');
 
       const filterType = tab.getAttribute('data-filter');
-      const targetGrid = document.getElementById(parent.getAttribute('data-target-grid'));
+      const targetGrid = document.getElementById(parent.getAttribute('data-target') || parent.getAttribute('data-target-grid') || 'bestsellersGrid');
       if (!targetGrid) return;
 
       let filtered = GULLY_PRODUCTS;
