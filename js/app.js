@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletter();
   initMobileNav();
   initStickyHeader();
+  initMegaMenu();
 });
 
 /* ==========================================================================
@@ -970,4 +971,53 @@ function showToast(message, type = 'info') {
     toast.style.transform = 'translateY(10px)';
     setTimeout(() => toast.remove(), 300);
   }, 3500);
+}
+
+/* ==========================================================================
+   MEGA MENU CONTROLLER
+   ========================================================================== */
+function initMegaMenu() {
+  const megaItems = document.querySelectorAll('.nav-item.has-mega');
+  megaItems.forEach(item => {
+    let timeoutId = null;
+
+    item.addEventListener('mouseenter', () => {
+      clearTimeout(timeoutId);
+      megaItems.forEach(other => {
+        if (other !== item) other.classList.remove('is-active');
+      });
+      item.classList.add('is-active');
+    });
+
+    item.addEventListener('mouseleave', () => {
+      timeoutId = setTimeout(() => {
+        item.classList.remove('is-active');
+      }, 180);
+    });
+
+    const trigger = item.querySelector('.nav-link');
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        if (window.innerWidth >= 900) {
+          if (!item.classList.contains('is-active')) {
+            e.preventDefault();
+            megaItems.forEach(other => other.classList.remove('is-active'));
+            item.classList.add('is-active');
+          }
+        }
+      });
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item.has-mega')) {
+      megaItems.forEach(item => item.classList.remove('is-active'));
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      megaItems.forEach(item => item.classList.remove('is-active'));
+    }
+  });
 }

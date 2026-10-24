@@ -177,6 +177,53 @@
   }
 
   /* ---------------- Header / drawer wiring ------------------------------- */
+  
+  function initMegaMenu() {
+    var megaItems = document.querySelectorAll('.nav-item.has-mega');
+    megaItems.forEach(function (item) {
+      var timeoutId = null;
+
+      item.addEventListener('mouseenter', function () {
+        clearTimeout(timeoutId);
+        megaItems.forEach(function (other) {
+          if (other !== item) other.classList.remove('is-active');
+        });
+        item.classList.add('is-active');
+      });
+
+      item.addEventListener('mouseleave', function () {
+        timeoutId = setTimeout(function () {
+          item.classList.remove('is-active');
+        }, 180);
+      });
+
+      var trigger = item.querySelector('.nav-link');
+      if (trigger) {
+        trigger.addEventListener('click', function (e) {
+          if (window.innerWidth >= 900) {
+            if (!item.classList.contains('is-active')) {
+              e.preventDefault();
+              megaItems.forEach(function (other) { other.classList.remove('is-active'); });
+              item.classList.add('is-active');
+            }
+          }
+        });
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-item.has-mega')) {
+        megaItems.forEach(function (item) { item.classList.remove('is-active'); });
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        megaItems.forEach(function (item) { item.classList.remove('is-active'); });
+      }
+    });
+  }
+
   function initHeader() {
     var cartTrigger = document.getElementById('cartTrigger');
     if (cartTrigger) cartTrigger.addEventListener('click', openCartDrawer);
@@ -471,6 +518,7 @@
     updateCartCount();
     renderCartDrawer();
     initHeader();
+    initMegaMenu();
     initShop();
     initCollections();
     initProduct();
