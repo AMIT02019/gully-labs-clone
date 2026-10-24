@@ -358,7 +358,22 @@
     var products = getProducts();
     var params = new URLSearchParams(window.location.search);
     var id = params.get('id');
-    var product = id ? products.find(function (p) { return p.id === id; }) : products[0];
+    var handle = params.get('handle');
+    var product = null;
+    if (id) {
+      product = products.find(function (p) { return p.id === id || p.handle === id; });
+    }
+    if (!product && handle) {
+      var normHandle = handle.toLowerCase().replace(/[^a-z0-9]/g, '');
+      product = products.find(function (p) {
+        var normP = (p.handle || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        var normTitle = (p.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        return normP === normHandle || normHandle.indexOf(normP) !== -1 || normP.indexOf(normHandle) !== -1 || normHandle.indexOf(normTitle) !== -1 || normTitle.indexOf(normHandle) !== -1;
+      });
+    }
+    if (!product) {
+      product = products[0];
+    }
 
     if (!product) {
       detail.innerHTML = '<div class="site-empty"><h2>Product not found</h2>' +
