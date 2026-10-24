@@ -16,18 +16,16 @@
       </button>
       <a href="index.html" class="site-logo"><img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs demo logo"></a>
       <nav class="desktop-nav">
-        <a href="shop.html" class="nav-link">Sneakers</a>
-        <a href="shop.html?category=apparel" class="nav-link">Apparel</a>
+        <a href="#bestsellers" class="nav-link">Bestsellers</a>
         <a href="shop.html" class="nav-link">Shop All</a>
-        <a href="story.html" class="nav-link">Our Story</a>
-        <a href="collections.html" class="nav-link">Collections</a>
-        <a href="help.html" class="nav-link">Help</a>
-        <a href="help.html#size-guide" class="nav-link">Size Guide</a>
+        <a href="shop.html?sale=1" class="nav-link">Sale</a>
+        <a href="story.html" class="nav-link">Story</a>
       </nav>
       <div class="header-actions">
         <button type="button" class="action-btn" id="searchTrigger" aria-label="Search Catalog">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </button>
+        <a href="help.html#contact" class="action-btn" aria-label="Account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"></path></svg></a>
         <button type="button" class="action-btn" id="cartTrigger" aria-label="Shopping Cart">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
           <span class="cart-count-badge">0</span>
@@ -52,40 +50,44 @@
     </section>
 
   </main>
-<footer class="site-footer">
+<footer class="site-footer r-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <p class="footer-tagline">Hand-lasted footwear and apparel, made in small runs and shaped by the streets they come from. This demo site studies that craft.</p>
-        </div>
+      <div class="r-footer-grid">
         <div class="footer-col">
           <h5>Shop</h5>
           <ul class="footer-links">
+            <li><a href="shop.html">Bestsellers</a></li>
             <li><a href="shop.html">Shop All</a></li>
-            <li><a href="shop.html?category=sneakers">Sneakers</a></li>
-            <li><a href="shop.html?category=apparel">Apparel</a></li>
+            <li><a href="shop.html?sale=1">Sale</a></li>
+            <li><a href="shop.html?collection=New%20Arrivals">New Arrivals</a></li>
             <li><a href="collections.html">Collections</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>About</h5>
+          <h5>Quick Links</h5>
           <ul class="footer-links">
             <li><a href="story.html">Our Story</a></li>
+            <li><a href="help.html">Help</a></li>
             <li><a href="help.html#size-guide">Size Guide</a></li>
+            <li><a href="help.html#track">Track Your Order</a></li>
+            <li><a href="help.html#returns">Returns &amp; Exchanges</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h5>Support</h5>
-          <ul class="footer-links">
-            <li><a href="help.html#shipping">Shipping Information</a></li>
-            <li><a href="help.html#returns">Returns &amp; Exchanges</a></li>
-            <li><a href="help.html#track">Track Your Order</a></li>
-            <li><a href="help.html#contact">Contact Us</a></li>
-          </ul>
+        <div class="r-footer-brand">
+          <p class="r-footer-brandname">Gully Labs Demo</p>
+          <p class="footer-tagline">Hand-lasted sneakers and easy layers, made in small runs. This is a demo store.</p>
+          <form class="r-newsletter-form" id="newsletterForm">
+            <label class="r-sr-only" for="footerEmail">Email address</label>
+            <input type="email" id="footerEmail" placeholder="Email for demo updates" required>
+            <button type="submit" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </form>
+          <p class="r-newsletter-note" id="footerNewsletterMsg">Demo only &mdash; no email is sent or stored.</p>
+          <p class="r-social"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a> <a href="https://twitter.com" target="_blank" rel="noopener">X</a></p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Gully Labs demo. Hand Lasted in India.</p>
+      <div class="r-footer-bottom">
+        <p><a href="help.html#shipping">Privacy</a> &middot; <a href="help.html#shipping">Terms</a> &middot; <a href="help.html#shipping">Shipping</a> &middot; <a href="help.html#returns">Returns</a></p>
+        <p class="r-payments">UPI &middot; RuPay &middot; Visa &middot; Mastercard &middot; Net Banking &middot; Cash on Delivery</p>
         <p class="demo-note">Demo study &mdash; not affiliated with Gully Labs, no real orders or payments.</p>
       </div>
     </div>
@@ -124,10 +126,10 @@
       <button type="button" class="drawer-close-btn" id="mobileNavClose" aria-label="Close Menu">&times;</button>
     </div>
     <ul class="mobile-nav-links">
-      <li><a href="shop.html">Sneakers</a></li>
-      <li><a href="shop.html?category=apparel">Apparel</a></li>
+      <li><a href="shop.html">Bestsellers</a></li>
       <li><a href="shop.html">Shop All</a></li>
-      <li><a href="story.html">Our Story</a></li>
+      <li><a href="shop.html?sale=1">Sale</a></li>
+      <li><a href="story.html">Story</a></li>
       <li><a href="collections.html">Collections</a></li>
       <li><a href="help.html">Help</a></li>
       <li><a href="help.html#size-guide">Size Guide</a></li>

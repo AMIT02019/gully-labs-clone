@@ -1,828 +1,282 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gully Labs ΓÇö Hand Lasted Indian Sneakers</title>
-  <meta name="description" content="Hand-lasted Indian sneakers rooted in culture, storytelling, and bespoke craftsmanship. Engineered with full-grain leather, anatomical wooden lasts, and modern streetwear aesthetics.">
-  <link rel="icon" type="image/png" href="assets/images/img_000_4ea6318a.png">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gully Labs Demo &mdash; Hand-Lasted Sneakers</title>
+<meta name="description" content="A demo storefront for hand-lasted sneakers and easy layers, with shop, product, collection and help pages. Demo only, no real orders.">
+<link rel="icon" type="image/png" href="assets/images/img_000_4ea6318a.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-
-  <!-- Top Announcement Bar (Marquee Ticker) -->
-  <div class="top-bar">
-    <div class="marquee-container">
-      <div class="marquee-track">
-        <span class="marquee-item">Welcome to our store</span>
-        <span class="marquee-item"><span class="highlight">Γ£¿ 200 Exclusive pairs with Sienna Γ£¿</span></span>
-        <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
-        <span class="marquee-item">Hand Lasted Indian Sneakers</span>
-        <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
-        <span class="marquee-item">Crafted with Full-Grain Indian Leather</span>
-      </div>
-      <div class="marquee-track" aria-hidden="true">
-        <span class="marquee-item">Welcome to our store</span>
-        <span class="marquee-item"><span class="highlight">Γ£¿ 200 Exclusive pairs with Sienna Γ£¿</span></span>
-        <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
-        <span class="marquee-item">Hand Lasted Indian Sneakers</span>
-        <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
-        <span class="marquee-item">Crafted with Full-Grain Indian Leather</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Site Sticky Navigation Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <!-- Mobile Nav Toggle -->
-      <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-
-      <!-- Brand Logo -->
-      <a href="index.html" class="site-logo">
-        <img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs Official Logo">
-      </a>
-
-      <!-- Desktop Navigation Menu -->
-      <nav class="desktop-nav">
-        <!-- Sneakers Dropdown -->
-        <div class="nav-item-dropdown">
-          <a href="shop.html" class="nav-link">Sneakers</a>
-          <div class="mega-menu">
-            <div class="mega-menu-col">
-              <h4>Silhouettes</h4>
-              <ul class="mega-menu-list">
-                <li><a href="#bestsellers">Bestsellers <span>ΓåÆ</span></a></li>
-                <li><a href="#new-arrivals">New Arrivals <span>ΓåÆ</span></a></li>
-                <li><a href="#hidden-gems">Gully Number 001 <span>ΓåÆ</span></a></li>
-                <li><a href="#hidden-gems">Gully Number 002 (1928) <span>ΓåÆ</span></a></li>
-                <li><a href="#hidden-gems">Gully Number 004 (Saaya) <span>ΓåÆ</span></a></li>
-                <li><a href="#bestsellers">Collaborations <span>ΓåÆ</span></a></li>
-              </ul>
-            </div>
-            <div class="mega-menu-col">
-              <div class="mega-card">
-                <img src="assets/images/img_001_d54b9d76.jpeg" alt="Featured Sneaker">
-                <div class="mega-card-overlay">
-                  <span>Iconic Court Shoe</span>
-                  <strong>Baaz Faris Black</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Apparel Dropdown -->
-        <div class="nav-item-dropdown">
-          <a href="shop.html?category=apparel" class="nav-link">Apparel</a>
-          <div class="mega-menu">
-            <div class="mega-menu-col">
-              <h4>Collections</h4>
-              <ul class="mega-menu-list">
-                <li><a href="#apparel">Kara Utility Shackets <span>ΓåÆ</span></a></li>
-                <li><a href="#apparel">Pintuck Streetwear Pants <span>ΓåÆ</span></a></li>
-                <li><a href="#apparel">Saddle-Stitch Shirts <span>ΓåÆ</span></a></li>
-                <li><a href="#lookbook">Gully 17 Track Jerseys <span>ΓåÆ</span></a></li>
-              </ul>
-            </div>
-            <div class="mega-menu-col">
-              <div class="mega-card">
-                <img src="assets/images/img_019_e5a2553c.jpeg" alt="Featured Apparel">
-                <div class="mega-card-overlay">
-                  <span>380 GSM Twill</span>
-                  <strong>Toggle Shacket</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <a href="story.html" class="nav-link">Our Story</a>
-        <a href="help.html#size-guide" class="nav-link">Size Guide</a>
-        <a href="collections.html" class="nav-link">Collections</a>
-        <a href="help.html" class="nav-link">Help</a>
-        <a href="#lookbook" class="nav-link">Lookbook</a>
-        <a href="#reviews" class="nav-link">Press & Reviews</a>
+<div class="r-announce">Demo store &mdash; 10% off with code GULLY10 &middot; Free shipping over &#8377;5,000</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    <a href="index.html" class="site-logo"><img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs demo logo"></a>
+    <nav class="desktop-nav">
+        <a href="#bestsellers" class="nav-link">Bestsellers</a>
+        <a href="shop.html" class="nav-link">Shop All</a>
+        <a href="shop.html?sale=1" class="nav-link">Sale</a>
+        <a href="story.html" class="nav-link">Story</a>
       </nav>
-
-      <!-- Header Right Utilities -->
-      <div class="header-actions">
-        <!-- Currency Selector -->
-        <div class="currency-select-wrapper">
-          <select id="currencySelector" class="currency-select" aria-label="Select Currency">
-            <option value="INR">INR (Γé╣)</option>
-            <option value="USD">USD ($)</option>
-            <option value="EUR">EUR (Γé¼)</option>
-            <option value="GBP">GBP (┬ú)</option>
-            <option value="AED">AED</option>
-          </select>
-          <span class="currency-icon">Γû╝</span>
-        </div>
-
-        <!-- Search Button -->
-        <button type="button" class="action-btn" id="searchTrigger" aria-label="Search Catalog">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </button>
-
-        <!-- Cart Button -->
-        <button type="button" class="action-btn" id="cartTrigger" aria-label="Shopping Cart">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          <span class="cart-count-badge">0</span>
-        </button>
+    <div class="header-actions">
+        <button type="button" class="action-btn" id="searchTrigger" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+        <a href="help.html#contact" class="action-btn" aria-label="Account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"></path></svg></a>
+        <button type="button" class="action-btn" id="cartTrigger" aria-label="Shopping bag"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span class="cart-count-badge">0</span></button>
+      </div>
+  </div>
+</header>
+<main>
+  <section class="hero-slider-section r-hero">
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-slide active">
+        <img src="assets/images/img_087_ad5f8296.jpeg" alt="Model wearing sneakers and a skateboard" class="hero-slide-bg">
+        <div class="hero-overlay"><div class="container"><div class="hero-content hero-panel">
+          <h1 class="hero-title">Made for the street, worn everywhere</h1>
+          <p class="hero-description">Hand-lasted sneakers and easy layers, made in small runs.</p>
+          <div class="hero-btn-group"><a href="#bestsellers" class="btn btn-gold">Shop bestsellers</a></div>
+        </div></div></div>
+      </div>
+      <div class="hero-slide">
+        <img src="assets/images/img_001_d54b9d76.jpeg" alt="Black court shoe on a white background" class="hero-slide-bg">
+        <div class="hero-overlay"><div class="container"><div class="hero-content hero-panel">
+          <h2 class="hero-title">The court shoe, hand lasted</h2>
+          <p class="hero-description">A black canvas pair with a clean white sole, made to break in, not break down.</p>
+          <div class="hero-btn-group"><a href="product.html?id=prod-001" class="btn btn-gold">Shop this pair</a></div>
+        </div></div></div>
+      </div>
+      <div class="hero-slide">
+        <img src="assets/images/img_088_800c511a.jpeg" alt="A group of sneakers arranged as a still life" class="hero-slide-bg">
+        <div class="hero-overlay"><div class="container"><div class="hero-content hero-panel">
+          <h2 class="hero-title">Small runs, considered colour</h2>
+          <p class="hero-description">A few pairs at a time, in colours picked for everyday wear.</p>
+          <div class="hero-btn-group"><a href="shop.html" class="btn btn-gold">Shop all</a></div>
+        </div></div></div>
+      </div>
+      <div class="hero-controls">
+        <span class="hero-counter" id="heroSlideCounter">01 / 03</span>
+        <button type="button" class="hero-nav-btn" id="heroPrevBtn" aria-label="Previous slide">&#8249;</button>
+        <button type="button" class="hero-nav-btn" id="heroNextBtn" aria-label="Next slide">&#8250;</button>
+      </div>
+      <div class="r-hero-dots" role="tablist" aria-label="Hero slides">
+        <button type="button" class="r-hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button type="button" class="r-hero-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button type="button" class="r-hero-dot" data-slide="2" aria-label="Slide 3"></button>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- Hero Slideshow Banner -->
-    <section class="hero-slider-section">
-      <div class="hero-slider" id="heroSlider">
-        <!-- Slide 1 -->
-        <div class="hero-slide active">
-          <img src="assets/images/img_069_b42d4713.png" alt="Gully Labs Hand-Lasted Sneakers" class="hero-slide-bg">
-          <div class="hero-overlay">
-            <div class="container">
-              <div class="hero-content">
-                <span class="hero-pill">Hand Lasted In India</span>
-                <h1 class="hero-title">Sneakers Rooted in Indian Culture</h1>
-                <p class="hero-description">
-                  Crafted pair-by-pair using traditional lasting techniques, supple full-grain leathers, and modern ergonomics. Engineered for life on the streets.
-                </p>
-                <div class="hero-btn-group">
-                  <a href="#bestsellers" class="btn btn-primary">Shop Bestsellers</a>
-                  <a href="#story" class="btn btn-outline-white">The Craft</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <section class="r-trust">
+    <div class="container r-trust-grid">
+      <div class="r-trust-item"><span class="r-trust-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><line x1="3" y1="12" x2="21" y2="12"></line><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"></path></svg></span><div><h4>Global shipping</h4><p>Tracked delivery to 40+ countries</p></div></div>
+      <div class="r-trust-item"><span class="r-trust-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="14" height="11" rx="1"></rect><path d="M15 10h4l3 3v4h-7z"></path><circle cx="6" cy="18" r="1.8"></circle><circle cx="18" cy="18" r="1.8"></circle></svg></span><div><h4>Next day dispatch</h4><p>Checked and packed within 24 hours</p></div></div>
+      <div class="r-trust-item"><span class="r-trust-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 3-6.7"></path><polyline points="3 4 3 9 8 9"></polyline></svg></span><div><h4>30 day returns</h4><p>Easy size exchanges and returns</p></div></div>
+      <div class="r-trust-item"><span class="r-trust-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="3"></circle></svg></span><div><h4>Cash on delivery</h4><p>Pay when your order arrives</p></div></div>
+    </div>
+  </section>
 
-        <!-- Slide 2 -->
-        <div class="hero-slide">
-          <img src="assets/images/img_097_8e5f1c1d.png" alt="Gully Labs Archival Drops" class="hero-slide-bg">
-          <div class="hero-overlay">
-            <div class="container">
-              <div class="hero-content">
-                <span class="hero-pill">Archival Drop</span>
-                <h2 class="hero-title">Gully 17 Motorsport Apparel</h2>
-                <p class="hero-description">
-                  A celebration of vintage speed, heavyweight French terry, and tailored street track silhouettes that drape seamlessly over our sneakers.
-                </p>
-                <div class="hero-btn-group">
-                  <a href="#apparel" class="btn btn-primary">Explore Apparel</a>
-                  <a href="#lookbook" class="btn btn-outline-white">View Lookbook</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="hero-slide">
-          <img src="assets/images/img_088_800c511a.jpeg" alt="Gully x Raga Collaboration" class="hero-slide-bg">
-          <div class="hero-overlay">
-            <div class="container">
-              <div class="hero-content">
-                <span class="hero-pill">Collaborations</span>
-                <h2 class="hero-title">Gully X Raga: Aandhi Kobicha</h2>
-                <p class="hero-description">
-                  Harmonizing earth-pigment Japanese Kobicha suede with raw Indian edge-finishing. Strictly 200 numbered pairs worldwide.
-                </p>
-                <div class="hero-btn-group">
-                  <a href="#bestsellers" class="btn btn-primary">Shop Collaboration</a>
-                  <a href="#hidden-gems" class="btn btn-outline-white">Hidden Gems</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide Controls -->
-        <div class="hero-controls">
-          <span class="hero-counter" id="heroSlideCounter">01 / 03</span>
-          <button type="button" class="hero-nav-btn" id="heroPrevBtn" aria-label="Previous Slide">ΓÇ╣</button>
-          <button type="button" class="hero-nav-btn" id="heroNextBtn" aria-label="Next Slide">ΓÇ║</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Value Propositions Bar -->
-    <section class="value-props-section">
-      <div class="container">
-        <div class="value-props-grid">
-          <div class="value-prop-card">
-            <div class="value-prop-icon">≡ƒîì</div>
-            <div class="value-prop-info">
-              <h4>Global Shipping</h4>
-              <p>Reliable tracked courier delivery to over 40+ countries.</p>
-            </div>
-          </div>
-          <div class="value-prop-card">
-            <div class="value-prop-icon">ΓÜí</div>
-            <div class="value-prop-info">
-              <h4>Next Day Dispatch</h4>
-              <p>Hand-inspected, packed, and dispatched within 24 hours.</p>
-            </div>
-          </div>
-          <div class="value-prop-card">
-            <div class="value-prop-icon">≡ƒöä</div>
-            <div class="value-prop-info">
-              <h4>30 Days Returns</h4>
-              <p>Hassle-free size exchanges and doorstep returns.</p>
-            </div>
-          </div>
-          <div class="value-prop-card">
-            <div class="value-prop-icon">≡ƒÆ╡</div>
-            <div class="value-prop-info">
-              <h4>Cash on Delivery</h4>
-              <p>Available across 19,000+ Indian pincodes.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Shop by Collection Categories -->
-    <section class="categories-section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-tag">Collections</span>
-            <h2 class="section-title">Shop by Collection</h2>
-          </div>
-          <a href="#bestsellers" class="view-all-link">View All Catalog <span>ΓåÆ</span></a>
-        </div>
-
-        <div class="categories-grid">
-          <!-- Card 1 -->
-          <a href="#bestsellers" class="category-card">
-            <img src="assets/images/img_087_ad5f8296.jpeg" alt="Sneakers Collection" loading="lazy">
-            <div class="category-overlay">
-              <span class="category-tag">Footwear</span>
-              <h3 class="category-title">Hand-Lasted Sneakers</h3>
-              <span class="category-link">Explore 40+ Styles <span>ΓåÆ</span></span>
-            </div>
-          </a>
-
-          <!-- Card 2 -->
-          <a href="#bestsellers" class="category-card">
-            <img src="assets/images/img_088_800c511a.jpeg" alt="Collaborations Collection" loading="lazy">
-            <div class="category-overlay">
-              <span class="category-tag">Limited Drops</span>
-              <h3 class="category-title">Artist Collaborations</h3>
-              <span class="category-link">Raga & Aryan Katoch <span>ΓåÆ</span></span>
-            </div>
-          </a>
-
-          <!-- Card 3 -->
-          <a href="#hidden-gems" class="category-card">
-            <img src="assets/images/img_089_035772de.png" alt="Heritage Runners Collection" loading="lazy">
-            <div class="category-overlay">
-              <span class="category-tag">Heritage Archive</span>
-              <h3 class="category-title">1928 Olympic Turf</h3>
-              <span class="category-link">Discover Heritage <span>ΓåÆ</span></span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bestsellers Section -->
-    <section class="product-showcase-section" id="bestsellers">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-tag">Most Wanted</span>
-            <h2 class="section-title">Bestsellers</h2>
-            <p class="section-sub">Our most celebrated silhouettes, crafted in small batches with full-grain Indian leather.</p>
-          </div>
-
-          <!-- Category filter tabs -->
-          <div class="filter-tabs" data-target-grid="bestsellersGrid">
-            <button type="button" class="tab-btn active" data-filter="all">All</button>
-            <button type="button" class="tab-btn" data-filter="sneakers">Sneakers</button>
-            <button type="button" class="tab-btn" data-filter="men">Men</button>
-            <button type="button" class="tab-btn" data-filter="women">Women</button>
-          </div>
-        </div>
-
-        <!-- Dynamic Product Cards Grid -->
-        <div class="products-grid" id="bestsellersGrid">
-          <!-- Filled dynamically via app.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Editorial Story / Craftsmanship Banner -->
-    <section class="story-banner-section" id="story">
-      <div class="container">
-        <div class="story-grid">
-          <div class="story-media">
-            <img src="assets/images/img_097_8e5f1c1d.png" alt="Gully Labs Hand-Lasting Process" loading="lazy">
-          </div>
-
-          <div class="story-content">
-            <span class="story-tag">The Indian Shoemaking Renaissance</span>
-            <h2 class="story-title">The Art of Hand-Lasting</h2>
-            <p class="story-desc">
-              Unlike mass-manufactured molded sneakers, each Gully Labs shoe is pulled, tensioned, and hammered over an anatomical wooden last by master Indian artisans. This ancient technique allows the leather to memorize the contours of your feet for lifelong comfort.
-            </p>
-
-            <div class="story-points">
-              <div class="story-point">
-                <h5>Full-Grain Leather</h5>
-                <p>Sourced ethically from historic Indian tanneries, developing a bespoke patina with wear.</p>
-              </div>
-              <div class="story-point">
-                <h5>Cupsole Construction</h5>
-                <p>Sidewall-stitched durable rubber soles that never delaminate under Indian monsoon conditions.</p>
-              </div>
-              <div class="story-point">
-                <h5>Anatomical Insole</h5>
-                <p>Custom memory-foam and natural cork composite that cushions every street stride.</p>
-              </div>
-              <div class="story-point">
-                <h5>Indian Subcultures</h5>
-                <p>Every colorway carries our vernacular DNA ΓÇö from filter coffee to Himalayan flora.</p>
-              </div>
-            </div>
-
-            <div style="margin-top:1rem;">
-              <a href="#bestsellers" class="btn btn-primary" style="background-color:#ffffff; color:#0a0a0a;">Explore The Collection</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- New Arrivals Section -->
-    <section class="product-showcase-section" id="new-arrivals">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-tag">Fresh Release</span>
-            <h2 class="section-title">New Arrivals</h2>
-            <p class="section-sub">Latest silhouettes featuring seasonal earth tones, washed suedes, and contemporary lines.</p>
-          </div>
-          <a href="#bestsellers" class="view-all-link">Shop All Drops <span>ΓåÆ</span></a>
-        </div>
-
-        <div class="products-grid" id="newArrivalsGrid">
-          <!-- Filled dynamically via app.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Apparel & Streetwear Section -->
-    <section class="product-showcase-section" id="apparel" style="background-color: var(--color-lighter-gray);">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-tag">Streetwear & Layering</span>
-            <h2 class="section-title">Apparel</h2>
-            <p class="section-sub">Structured silhouettes engineered with 380 GSM twill, horn toggles, and archival motorsport jerseys.</p>
-          </div>
-        </div>
-
-        <div class="products-grid" id="apparelGrid">
-          <!-- Filled dynamically via app.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Shoppable Lookbook ("SHOP THE LOOK") -->
-    <section class="lookbook-section" id="lookbook">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-tag">Style Inspiration</span>
-            <h2 class="section-title">Shop The Look</h2>
-            <p class="section-sub">Click the interactive pulsing hotspot pins on the model to view and shop each outfit component.</p>
-          </div>
-        </div>
-
-        <div class="lookbook-container">
-          <img src="assets/images/img_102_60f12da0.jpeg" alt="Gully Labs Streetwear Lookbook" class="lookbook-image">
-
-          <!-- Hotspot Pin 1: Jersey -->
-          <div class="lookbook-pin" style="top: 32%; left: 52%;">
-            <div class="pin-pulse"></div>
-            <div class="pin-core"></div>
-            <div class="pin-popover">
-              <img src="assets/images/img_103_dec6d4ae.jpeg" alt="Gully 17 Jersey" class="pin-thumb">
-              <div class="pin-details">
-                <strong>Gully 17 Jersey - Gati Beige</strong>
-                <span data-price-inr="1990">Γé╣1,990</span>
-                <button type="button" class="pin-add-btn" onclick="addToCart('prod-018', 'M', 1)">+ Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hotspot Pin 2: Pintuck Pant -->
-          <div class="lookbook-pin" style="top: 62%; left: 48%;">
-            <div class="pin-pulse"></div>
-            <div class="pin-core"></div>
-            <div class="pin-popover">
-              <img src="assets/images/img_042_071b5b28.png" alt="Kara Pintuck Pant" class="pin-thumb">
-              <div class="pin-details">
-                <strong>Kara Pintuck Pant - Olive</strong>
-                <span data-price-inr="2995">Γé╣2,995</span>
-                <button type="button" class="pin-add-btn" onclick="addToCart('prod-017', 'M (32)', 1)">+ Add to Cart</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hotspot Pin 3: Sneaker -->
-          <div class="lookbook-pin" style="top: 86%; left: 46%;">
-            <div class="pin-pulse"></div>
-            <div class="pin-core"></div>
-            <div class="pin-popover">
-              <img src="assets/images/img_010_52bede2b.jpeg" alt="1928 Turf Olive" class="pin-thumb">
-              <div class="pin-details">
-                <strong>1928 Turf Olive Runner</strong>
-                <span data-price-inr="7490">Γé╣7,490</span>
-                <button type="button" class="pin-add-btn" onclick="addToCart('prod-012', 'UK 8', 1)">+ Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Hidden Gems Section -->
-    <section class="product-showcase-section" id="hidden-gems">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-tag">Archival & Rare</span>
-            <h2 class="section-title">Hidden Gems</h2>
-            <p class="section-sub">Low-profile experimental drops and collector editions cherished by footwear enthusiasts.</p>
-          </div>
-        </div>
-
-        <div class="products-grid" id="hiddenGemsGrid">
-          <!-- Filled dynamically via app.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Press & Customer Reviews -->
-    <section class="testimonials-section" id="reviews">
-      <div class="container">
-        <!-- Press Quotes -->
-        <div class="press-bar">
-          <div class="press-quote">
-            <blockquote>"Gully Labs is quietly pioneering true hand-crafted sneaker culture across India."</blockquote>
-            <cite>ΓÇö GQ India</cite>
-          </div>
-          <div class="press-quote">
-            <blockquote>"The rare intersection of authentic Indian subcultural stories and brutalist street design."</blockquote>
-            <cite>ΓÇö Vogue India</cite>
-          </div>
-          <div class="press-quote">
-            <blockquote>"From Mumbai alleyways to global sneakerheads, Gully Labs makes every pair count."</blockquote>
-            <cite>ΓÇö Rolling Stone</cite>
-          </div>
-        </div>
-
-        <div class="section-header">
-          <div>
-            <span class="section-tag">Community</span>
-            <h2 class="section-title">What The Gully Says</h2>
-            <p class="section-sub">Over 4,500+ five-star verified buyer reviews across the globe.</p>
-          </div>
-        </div>
-
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
-            <p class="review-text">
-              "The leather quality on the Baaz Faris Black is unreal for this price point. Rivals luxury Italian brands I own. The break-in was instantaneous thanks to the wooden last shaping."
-            </p>
-            <div class="review-author">
-              <div class="author-info">
-                <strong>Aditya Sharma</strong>
-                <span>Bengaluru ΓÇó Baaz Faris Black (UK 9)</span>
-              </div>
-              <span class="verified-badge">Γ£ô Verified Buyer</span>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
-            <p class="review-text">
-              "The Aandhi Kobicha is a work of art. The Japanese Kobicha suede is buttery soft and the numbered heel detail makes it feel like an ultra-rare collectible. Proud to wear Indian craftsmanship."
-            </p>
-            <div class="review-author">
-              <div class="author-info">
-                <strong>Rhea Sen</strong>
-                <span>Mumbai ΓÇó Gully x Raga (UK 6)</span>
-              </div>
-              <span class="verified-badge">Γ£ô Verified Buyer</span>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-stars">ΓÿàΓÿàΓÿàΓÿàΓÿà</div>
-            <p class="review-text">
-              "Bought the 1928 Turf Olive for daily commute in London. Super comfortable arch support and turns heads everywhere. Shipping arrived in 3 days!"
-            </p>
-            <div class="review-author">
-              <div class="author-info">
-                <strong>Karan Malhotra</strong>
-                <span>London, UK ΓÇó 1928 Turf Olive (UK 10)</span>
-              </div>
-              <span class="verified-badge">Γ£ô Verified Buyer</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-      <div class="container">
-        <div class="newsletter-content">
-          <span class="section-tag" style="color:#ffde59;">Secret Drops & Access</span>
-          <h2 class="newsletter-title">Join The Gully</h2>
-          <p class="newsletter-desc">
-            Subscribe for early access to numbered collaborations, secret warehouse archives, and private community releases.
-          </p>
-          <form class="newsletter-form" id="newsletterForm">
-            <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
-            <button type="submit" class="btn">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
+  <section class="r-section" id="bestsellers">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/images/img_119_66279144.png" alt="Gully Labs" class="footer-logo">
-          <p class="footer-tagline">
-            Hand-lasted Indian sneakers rooted in vernacular culture. Reimagining modern footwear through artisanal shoemaking heritage.
-          </p>
-          <div class="social-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Twitter">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-            </a>
-          </div>
-        </div>
+      <div class="r-section-head"><h2>Bestsellers</h2><div class="r-head-actions"><a href="shop.html" class="r-view-all">View all &rarr;</a><span class="r-arrows"><button type="button" class="r-arrow" data-carousel-prev="bestsellersGrid" aria-label="Previous bestsellers">&#8249;</button><button type="button" class="r-arrow" data-carousel-next="bestsellersGrid" aria-label="Next bestsellers">&#8250;</button></span></div></div>
+      <div class="r-carousel-track" id="bestsellersTrack"><div class="products-grid r-carousel-grid" id="bestsellersGrid"></div></div>
+    </div>
+  </section>
 
+  <section class="r-section" id="lookbook">
+    <div class="container">
+      <div class="r-section-head"><h2>Shop the look</h2><a href="shop.html" class="r-view-all">View all &rarr;</a></div>
+      <div class="r-look-grid">
+        <article class="r-look-card">
+          <div class="r-look-photo"><img src="assets/images/img_102_60f12da0.jpeg" alt="Runner on a track in a jersey and sneakers" loading="lazy"><span class="r-look-dot" style="top:62%;left:72%"></span></div>
+          <a class="r-look-strip" href="product.html?id=prod-012"><img src="assets/images/img_010_52bede2b.jpeg" alt="1928 Turf Olive sneaker"><span><strong>Gully Number 002 - 1928 Turf Olive</strong><span class="r-look-price">&#8377;7,490</span></span></a>
+        </article>
+        <article class="r-look-card">
+          <div class="r-look-photo"><img src="assets/images/img_106_bbff3a50.jpeg" alt="Runner on a track in a polo jersey" loading="lazy"><span class="r-look-dot" style="top:38%;left:60%"></span></div>
+          <a class="r-look-strip" href="product.html?id=prod-018"><img src="assets/images/img_103_dec6d4ae.jpeg" alt="Gully 17 jersey"><span><strong>Gully 17 Jersey - Gati Beige</strong><span class="r-look-price">&#8377;1,990</span></span></a>
+        </article>
+        <article class="r-look-card">
+          <div class="r-look-photo"><img src="assets/images/img_115_46d5cd89.jpeg" alt="Blue sneakers on a running track" loading="lazy"><span class="r-look-dot" style="top:58%;left:32%"></span></div>
+          <a class="r-look-strip" href="product.html?id=prod-014"><img src="assets/images/img_013_2db53fb6.jpeg" alt="Saaya Blue sneaker"><span><strong>Gully Number 004 - Saaya Blue</strong><span class="r-look-price">&#8377;3,790</span></span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="r-section" id="new-arrivals">
+    <div class="container">
+      <div class="r-section-head"><h2>New arrivals</h2><div class="r-head-actions"><a href="shop.html?collection=New%20Arrivals" class="r-view-all">View all &rarr;</a><span class="r-arrows"><button type="button" class="r-arrow" data-carousel-prev="newArrivalsGrid" aria-label="Previous new arrivals">&#8249;</button><button type="button" class="r-arrow" data-carousel-next="newArrivalsGrid" aria-label="Next new arrivals">&#8250;</button></span></div></div>
+      <div class="r-carousel-track" id="newArrivalsTrack"><div class="products-grid r-carousel-grid" id="newArrivalsGrid"></div></div>
+    </div>
+  </section>
+
+  <section class="r-section r-reviews" id="reviews">
+    <div class="container">
+      <div class="r-section-head"><h2>Around the globe</h2></div>
+      <div class="reviews-grid">
+        <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">The leather quality on the Baaz Faris Black is unreal for this price point. The break-in was instantaneous thanks to the wooden last shaping.</p><div class="review-author"><div class="author-info"><strong>Aditya Sharma</strong><span>Bengaluru &middot; Baaz Faris Black (UK 9)</span></div><span class="verified-badge">Verified buyer</span></div></div>
+        <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">The Aandhi Kobicha is a work of art. The suede is buttery soft and the numbered heel detail makes it feel like an ultra-rare collectible.</p><div class="review-author"><div class="author-info"><strong>Rhea Sen</strong><span>Mumbai &middot; Gully x Raga (UK 6)</span></div><span class="verified-badge">Verified buyer</span></div></div>
+        <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Bought the 1928 Turf Olive for daily commute in London. Super comfortable arch support and turns heads everywhere. Shipping arrived in 3 days.</p><div class="review-author"><div class="author-info"><strong>Karan Malhotra</strong><span>London, UK &middot; 1928 Turf Olive (UK 10)</span></div><span class="verified-badge">Verified buyer</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="r-section" id="feed">
+    <div class="container">
+      <div class="r-section-head"><h2>Shop the feed</h2><a href="shop.html" class="r-view-all">View all &rarr;</a></div>
+      <div class="r-feed-grid">
+        <a href="shop.html" class="r-feed-tile"><img src="assets/images/img_110_75dca487.jpeg" alt="Model in a striped jersey by a goal net" loading="lazy"><span>Match day layers</span></a>
+        <a href="shop.html" class="r-feed-tile"><img src="assets/images/img_087_ad5f8296.jpeg" alt="Model with a skateboard and sneakers" loading="lazy"><span>Street, off duty</span></a>
+        <a href="shop.html" class="r-feed-tile"><img src="assets/images/img_106_bbff3a50.jpeg" alt="Runner sitting on a track" loading="lazy"><span>Track days</span></a>
+        <a href="shop.html" class="r-feed-tile"><img src="assets/images/img_115_46d5cd89.jpeg" alt="Blue sneakers mid-stride on a track" loading="lazy"><span>Blue, in motion</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="r-section" id="collections">
+    <div class="container">
+      <div class="r-section-head"><h2>Shop by collection</h2><a href="collections.html" class="r-view-all">View all &rarr;</a></div>
+      <div class="r-col-grid">
+        <a href="shop.html?collection=Gully%20Number%20001" class="r-col-card"><img src="assets/images/img_001_d54b9d76.jpeg" alt="Gully Number 001 sneaker" loading="lazy"><span><strong>Gully Number 001</strong><span>4 products</span></span></a>
+        <a href="shop.html?collection=Collaborations" class="r-col-card"><img src="assets/images/img_002_5983bf7c.jpeg" alt="Collaboration sneaker" loading="lazy"><span><strong>Collaborations</strong><span>2 products</span></span></a>
+        <a href="shop.html?collection=New%20Arrivals" class="r-col-card"><img src="assets/images/img_082_ddab48c9.jpeg" alt="New arrival sneaker" loading="lazy"><span><strong>New arrivals</strong><span>4 products</span></span></a>
+        <a href="shop.html?category=apparel" class="r-col-card"><img src="assets/images/img_019_e5a2553c.jpeg" alt="Apparel shacket" loading="lazy"><span><strong>Apparel</strong><span>4 products</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer r-footer">
+    <div class="container">
+      <div class="r-footer-grid">
         <div class="footer-col">
           <h5>Shop</h5>
           <ul class="footer-links">
-            <li><a href="shop.html">Bestsellers</a></li>
+            <li><a href="#bestsellers">Bestsellers</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="shop.html?sale=1">Sale</a></li>
             <li><a href="shop.html?collection=New%20Arrivals">New Arrivals</a></li>
-            <li><a href="shop.html?collection=Gully%20Number%20001">Gully Number 001</a></li>
-            <li><a href="shop.html?collection=Gully%20Number%20002">1928 Turf Series</a></li>
-            <li><a href="shop.html?category=apparel">Apparel &amp; Shackets</a></li>
-            <li><a href="shop.html?collection=Collaborations">Collaborations</a></li>
+            <li><a href="collections.html">Collections</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
-          <h5>About Gully</h5>
+          <h5>Quick Links</h5>
           <ul class="footer-links">
-            <li><a href="story.html">The Hand-Lasted Story</a></li>
-            <li><a href="story.html">Indian Leather Tanneries</a></li>
-            <li><a href="#reviews">Press & Media</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="help.html">Help</a></li>
             <li><a href="help.html#size-guide">Size Guide</a></li>
-            <li><a href="#reviews">Verified Reviews</a></li>
+            <li><a href="help.html#track">Track Your Order</a></li>
+            <li><a href="help.html#returns">Returns &amp; Exchanges</a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
-          <h5>Support & Concierge</h5>
-          <ul class="footer-links">
-            <li><a href="help.html#contact">Demo contact (see Help page)</a></li>
-            <li><a href="help.html#track">Track Your Order</a></li>
-            <li><a href="help.html#returns">30-Day Returns &amp; Exchanges</a></li>
-            <li><a href="help.html#shipping">Shipping Information</a></li>
-            <li><a href="javascript:void(0)">WhatsApp Concierge: +91 98765 43210</a></li>
-          </ul>
+        <div class="r-footer-brand">
+          <p class="r-footer-brandname">Gully Labs Demo</p>
+          <p class="footer-tagline">Hand-lasted sneakers and easy layers, made in small runs. This is a demo store.</p>
+          <form class="r-newsletter-form" id="newsletterForm">
+            <label class="r-sr-only" for="footerEmail">Email address</label>
+            <input type="email" id="footerEmail" placeholder="Email for demo updates" required>
+            <button type="submit" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </form>
+          <p class="r-newsletter-note" id="footerNewsletterMsg">Demo only &mdash; no email is sent or stored.</p>
+          <p class="r-social"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a> <a href="https://twitter.com" target="_blank" rel="noopener">X</a></p>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>┬⌐ 2026 Gully Labs. Hand Lasted in India. All Rights Reserved.</p>
-        <p class="demo-note">Demo study &mdash; not affiliated with Gully Labs.</p>
-        <div class="payment-methods">
-          <span class="payment-badge">UPI</span>
-          <span class="payment-badge">RuPay</span>
-          <span class="payment-badge">Visa</span>
-          <span class="payment-badge">Mastercard</span>
-          <span class="payment-badge">Net Banking</span>
-          <span class="payment-badge">Cash on Delivery</span>
-        </div>
+      <div class="r-footer-bottom">
+        <p><a href="help.html#shipping">Privacy</a> &middot; <a href="help.html#shipping">Terms</a> &middot; <a href="help.html#shipping">Shipping</a> &middot; <a href="help.html#returns">Returns</a></p>
+        <p class="r-payments">UPI &middot; RuPay &middot; Visa &middot; Mastercard &middot; Net Banking &middot; Cash on Delivery</p>
+        <p class="demo-note">Demo study &mdash; not affiliated with Gully Labs, no real orders or payments.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Slide-out Cart Drawer -->
-  <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
-    <div class="drawer-header">
-      <h3 class="drawer-title">Your Cart</h3>
-      <button type="button" class="drawer-close-btn" id="cartDrawerClose" aria-label="Close Cart">&times;</button>
-    </div>
-
-    <!-- Free Shipping Progress Meter -->
-    <div class="shipping-meter-box">
-      <div class="shipping-meter-label" id="shippingMeterText">
-        Add Γé╣5,000 for Free Express Shipping Across India!
-      </div>
-      <div class="meter-track">
-        <div class="meter-bar" id="shippingMeterBar" style="width: 0%;"></div>
-      </div>
-    </div>
-
-    <!-- Items List -->
-    <div class="drawer-items" id="cartDrawerItems">
-      <!-- Populated dynamically via app.js -->
-    </div>
-
-    <!-- Drawer Footer -->
+  <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <div class="drawer-header"><h3 class="drawer-title">Your cart</h3><button type="button" class="drawer-close-btn" id="cartDrawerClose" aria-label="Close cart">&times;</button></div>
+    <div class="shipping-meter-box"><div class="shipping-meter-label" id="shippingMeterText">Add &#8377;5,000 for free express shipping across India.</div><div class="meter-track"><div class="meter-bar" id="shippingMeterBar" style="width:0%;"></div></div></div>
+    <div class="drawer-items" id="cartDrawerItems"></div>
     <div class="drawer-footer">
-      <div class="promo-row">
-        <input type="text" placeholder="Promo code (e.g. GULLY10)" id="promoInput" class="promo-input">
-        <button type="button" id="applyPromoBtn" class="promo-btn">Apply</button>
-      </div>
-
-      <div class="subtotal-row">
-        <span>Subtotal:</span>
-        <span id="cartSubtotal">Γé╣0</span>
-      </div>
-
-      <p class="drawer-note">Taxes and free express shipping calculated at checkout.</p>
-      <button type="button" class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout</button>
+      <div class="promo-row"><input type="text" placeholder="Promo code (e.g. GULLY10)" id="promoInput" class="promo-input"><button type="button" id="applyPromoBtn" class="promo-btn">Apply</button></div>
+      <div class="subtotal-row"><span>Subtotal:</span><span id="cartSubtotal">&#8377;0</span></div>
+      <p class="drawer-note">Taxes and free express shipping calculated at checkout. Demo only.</p>
+      <button type="button" class="btn btn-primary btn-full" id="checkoutBtn">Proceed to checkout</button>
     </div>
   </div>
 
-  <!-- Slide-down Instant Search Drawer -->
   <div class="search-drawer" id="searchDrawer" role="dialog" aria-modal="true" aria-label="Search">
     <div class="search-inner">
-      <div style="display:flex; justify-content:flex-end; margin-bottom:1rem;">
-        <button type="button" class="drawer-close-btn" id="searchDrawerClose" aria-label="Close Search">&times;</button>
-      </div>
-      <div class="search-input-box">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" id="searchInput" placeholder="Search sneakers, apparel, or colorways..." autofocus>
-      </div>
-
-      <div class="search-tags">
-        <span>Popular:</span>
-        <button type="button" class="search-tag-pill" data-tag="Baaz">Baaz Faris</button>
-        <button type="button" class="search-tag-pill" data-tag="Kobicha">Kobicha</button>
-        <button type="button" class="search-tag-pill" data-tag="Shacket">Shacket</button>
-        <button type="button" class="search-tag-pill" data-tag="1928">1928 Turf</button>
-        <button type="button" class="search-tag-pill" data-tag="Buransh">Buransh Red</button>
-      </div>
-
-      <div class="search-results-list" id="searchResults">
-        <!-- Results rendered here -->
-      </div>
+      <div style="display:flex;justify-content:flex-end;margin-bottom:1rem;"><button type="button" class="drawer-close-btn" id="searchDrawerClose" aria-label="Close search">&times;</button></div>
+      <div class="search-input-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" id="searchInput" placeholder="Search sneakers, apparel, or colourways..."></div>
+      <div class="search-tags"><span>Popular:</span><button type="button" class="search-tag-pill" data-tag="Baaz">Baaz Faris</button><button type="button" class="search-tag-pill" data-tag="Kobicha">Kobicha</button><button type="button" class="search-tag-pill" data-tag="Shacket">Shacket</button><button type="button" class="search-tag-pill" data-tag="1928">1928 Turf</button><button type="button" class="search-tag-pill" data-tag="Buransh">Buransh Red</button></div>
+      <div class="search-results-list" id="searchResults"></div>
     </div>
   </div>
 
-  <!-- Quick View Modal -->
-  <div class="modal-backdrop" id="quickViewBackdrop">
-    <div class="modal-dialog">
-      <button type="button" class="modal-close-btn" id="quickViewClose" aria-label="Close Quick View">&times;</button>
-      <div id="quickViewContent">
-        <!-- Filled dynamically via openQuickView() -->
-      </div>
-    </div>
-  </div>
+  <div class="modal-backdrop" id="quickViewBackdrop"><div class="modal-dialog"><button type="button" class="modal-close-btn" id="quickViewClose" aria-label="Close quick view">&times;</button><div id="quickViewContent"></div></div></div>
+  <div class="modal-backdrop" id="checkoutBackdrop"><div class="modal-dialog"><div id="checkoutContent"></div></div></div>
 
-  <!-- Checkout Simulation Modal -->
-  <div class="modal-backdrop" id="checkoutBackdrop">
-    <div class="modal-dialog">
-      <div id="checkoutContent">
-        <!-- Filled dynamically via openCheckoutModal() -->
-      </div>
-    </div>
-  </div>
+  <div class="modal-backdrop" id="sizeGuideModal"><div class="modal-dialog" style="max-width:650px;padding:2.5rem;">
+    <button type="button" class="modal-close-btn" onclick="closeSizeGuideModal()" aria-label="Close size guide">&times;</button>
+    <h3 style="font-size:1.5rem;font-weight:800;text-transform:none;margin-bottom:0.5rem;">Footwear size guide</h3>
+    <p style="font-size:0.85rem;color:var(--color-gray);margin-bottom:1.5rem;">Sneakers are crafted true to standard UK shoe size. If you fall between sizes or have a wider foot, we recommend sizing up by half a size.</p>
+    <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.85rem;margin-bottom:1.5rem;">
+      <thead><tr style="border-bottom:2px solid var(--color-black);"><th style="padding:0.5rem 0;">UK / India</th><th>US Men</th><th>EU</th><th>Foot length (cm)</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:0.6rem 0;font-weight:700;">UK 6</td><td>US 7</td><td>EU 40</td><td>25.0 cm</td></tr>
+        <tr><td style="padding:0.6rem 0;font-weight:700;">UK 7</td><td>US 8</td><td>EU 41</td><td>25.8 cm</td></tr>
+        <tr><td style="padding:0.6rem 0;font-weight:700;">UK 8</td><td>US 9</td><td>EU 42</td><td>26.7 cm</td></tr>
+        <tr><td style="padding:0.6rem 0;font-weight:700;">UK 9</td><td>US 10</td><td>EU 43</td><td>27.5 cm</td></tr>
+        <tr><td style="padding:0.6rem 0;font-weight:700;">UK 10</td><td>US 11</td><td>EU 44</td><td>28.3 cm</td></tr>
+        <tr><td style="padding:0.6rem 0;font-weight:700;">UK 11</td><td>US 12</td><td>EU 45</td><td>29.2 cm</td></tr>
+      </tbody>
+    </table>
+    <div style="background:var(--color-lighter-gray);padding:1rem;border-radius:6px;font-size:0.8rem;"><strong>How to measure:</strong> Stand on a sheet of paper against a wall. Trace the outline of your heel to your longest toe. Measure the distance in centimetres and compare with the table above.</div>
+  </div></div>
 
-  <!-- Size Guide Modal -->
-  <div class="modal-backdrop" id="sizeGuideModal">
-    <div class="modal-dialog" style="max-width: 650px; padding: 2.5rem;">
-      <button type="button" class="modal-close-btn" onclick="closeSizeGuideModal()" aria-label="Close Size Guide">&times;</button>
-      <h3 style="font-size: 1.5rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">Footwear Size Guide</h3>
-      <p style="font-size: 0.85rem; color: var(--color-gray); margin-bottom: 1.5rem;">
-        Gully Labs sneakers are crafted true to standard UK shoe size. If you fall between sizes or have a wider foot, we recommend sizing up by half a size.
-      </p>
-
-      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; margin-bottom: 1.5rem;">
-        <thead>
-          <tr style="border-bottom: 2px solid var(--color-black);">
-            <th style="padding: 0.5rem 0;">UK / INDIA</th>
-            <th style="padding: 0.5rem 0;">US MEN</th>
-            <th style="padding: 0.5rem 0;">EU</th>
-            <th style="padding: 0.5rem 0;">FOOT LENGTH (CM)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom: 1px solid var(--color-lighter-gray);">
-            <td style="padding: 0.6rem 0; font-weight: 700;">UK 6</td>
-            <td>US 7</td>
-            <td>EU 40</td>
-            <td>25.0 cm</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--color-lighter-gray);">
-            <td style="padding: 0.6rem 0; font-weight: 700;">UK 7</td>
-            <td>US 8</td>
-            <td>EU 41</td>
-            <td>25.8 cm</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--color-lighter-gray);">
-            <td style="padding: 0.6rem 0; font-weight: 700;">UK 8</td>
-            <td>US 9</td>
-            <td>EU 42</td>
-            <td>26.7 cm</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--color-lighter-gray);">
-            <td style="padding: 0.6rem 0; font-weight: 700;">UK 9</td>
-            <td>US 10</td>
-            <td>EU 43</td>
-            <td>27.5 cm</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--color-lighter-gray);">
-            <td style="padding: 0.6rem 0; font-weight: 700;">UK 10</td>
-            <td>US 11</td>
-            <td>EU 44</td>
-            <td>28.3 cm</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--color-lighter-gray);">
-            <td style="padding: 0.6rem 0; font-weight: 700;">UK 11</td>
-            <td>US 12</td>
-            <td>EU 45</td>
-            <td>29.2 cm</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div style="background: var(--color-lighter-gray); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.8rem;">
-        <strong>How to measure:</strong> Stand on a sheet of paper against a wall. Trace the outline of your heel to your longest toe. Measure the distance in centimeters and compare with the table above.
-      </div>
-    </div>
-  </div>
-
-  <!-- Mobile Navigation Drawer -->
   <div class="mobile-nav-drawer" id="mobileNavDrawer">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-      <img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs" style="height:32px;">
-      <button type="button" class="drawer-close-btn" id="mobileNavClose">&times;</button>
-    </div>
-
+    <div style="display:flex;justify-content:space-between;align-items:center;"><img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs demo" style="height:32px;"><button type="button" class="drawer-close-btn" id="mobileNavClose">&times;</button></div>
     <ul class="mobile-nav-links">
-      <li><a href="shop.html" onclick="closeMobileNav()">Sneakers</a></li>
-      <li><a href="shop.html?collection=New%20Arrivals" onclick="closeMobileNav()">New Arrivals</a></li>
-      <li><a href="shop.html?category=apparel" onclick="closeMobileNav()">Apparel</a></li>
-      <li><a href="story.html" onclick="closeMobileNav()">Our Story</a></li>
-      <li><a href="#lookbook" onclick="closeMobileNav()">Lookbook</a></li>
-      <li><a href="#reviews" onclick="closeMobileNav()">Press & Reviews</a></li>
-      <li><a href="help.html#size-guide" onclick="closeMobileNav()">Size Guide</a></li>
+      <li><a href="#bestsellers" onclick="closeMobileNav()">Bestsellers</a></li>
+      <li><a href="shop.html" onclick="closeMobileNav()">Shop All</a></li>
+      <li><a href="shop.html?sale=1" onclick="closeMobileNav()">Sale</a></li>
+      <li><a href="story.html" onclick="closeMobileNav()">Story</a></li>
       <li><a href="collections.html" onclick="closeMobileNav()">Collections</a></li>
       <li><a href="help.html" onclick="closeMobileNav()">Help</a></li>
+      <li><a href="help.html#size-guide" onclick="closeMobileNav()">Size Guide</a></li>
     </ul>
-
-    <div style="margin-top:auto; padding-top:1.5rem; border-top:1px solid var(--color-light-gray);">
-      <p style="font-size:0.8rem; color:var(--color-gray); margin-bottom:0.5rem;">Need assistance?</p>
-      <a href="help.html#contact" style="font-size:0.9rem; font-weight:700;">Demo contact (see Help page)</a>
-    </div>
+    <div style="margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--color-light-gray);"><p style="font-size:0.8rem;color:var(--color-gray);margin-bottom:0.5rem;">Need assistance?</p><a href="help.html#contact" style="font-size:0.9rem;font-weight:700;">Demo contact (see Help page)</a></div>
   </div>
-
-  <!-- Global Backdrop for Drawers & Modals -->
   <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
-  <!-- Scripts -->
   <script src="data/products.js"></script>
   <script src="js/app.js"></script>
+  <script>
+  (function () {
+    document.querySelectorAll('[data-carousel-prev],[data-carousel-next]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var id = btn.getAttribute('data-carousel-prev') || btn.getAttribute('data-carousel-next');
+        var track = document.getElementById(id);
+        if (!track) return;
+        var dir = btn.hasAttribute('data-carousel-prev') ? -1 : 1;
+        var scroller = track.closest('.r-carousel-track') || track;
+        scroller.scrollBy({ left: dir * scroller.clientWidth * 0.8, behavior: 'smooth' });
+      });
+    });
+    var slider = document.getElementById('heroSlider');
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.r-hero-dot'));
+    var counter = document.getElementById('heroSlideCounter');
+    function setSlide(i) {
+      var slides = slider.querySelectorAll('.hero-slide');
+      slides.forEach(function (s, j) { s.classList.toggle('active', j === i); });
+      dots.forEach(function (d, j) { d.classList.toggle('active', j === i); });
+      if (counter) counter.textContent = '0' + (i + 1) + ' / 03';
+    }
+    dots.forEach(function (d) { d.addEventListener('click', function () { setSlide(parseInt(d.getAttribute('data-slide'), 10)); }); });
+    if (slider && window.MutationObserver) {
+      new MutationObserver(function () {
+        var slides = slider.querySelectorAll('.hero-slide');
+        slides.forEach(function (s, j) { if (s.classList.contains('active')) dots.forEach(function (d, k) { d.classList.toggle('active', k === j); }); });
+      }).observe(slider, { attributes: true, subtree: true, attributeFilter: ['class'] });
+    }
+  })();
+  </script>
 </body>
 </html>
