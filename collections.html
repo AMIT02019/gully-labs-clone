@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collections | Gully Labs Demo</title>
+  <meta name="description" content="Browse the demo catalogue by collection.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+      <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <a href="index.html" class="site-logo"><img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs demo logo"></a>
+      <nav class="desktop-nav">
+        <a href="shop.html" class="nav-link">Sneakers</a>
+        <a href="shop.html?category=apparel" class="nav-link">Apparel</a>
+        <a href="shop.html" class="nav-link">Shop All</a>
+        <a href="story.html" class="nav-link">Our Story</a>
+        <a href="collections.html" class="nav-link">Collections</a>
+        <a href="help.html" class="nav-link">Help</a>
+        <a href="help.html#size-guide" class="nav-link">Size Guide</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="action-btn" id="searchTrigger" aria-label="Search Catalog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button type="button" class="action-btn" id="cartTrigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Collections</h1>
+        <p>Every collection in the demo catalogue, with its product count.</p>
+      </div>
+    </section>
+    <section class="page-body">
+      <div class="container">
+        <p>Each collection below groups the demo catalogue by its collection name. Pick one to see just those products.</p>
+        <div class="collections-grid" id="collectionsGrid" style="margin-top: 1.5rem;"></div>
+        <p class="demo-note">Demo study &mdash; not affiliated with Gully Labs, no real orders or payments.</p>
+      </div>
+    </section>
+
+  </main>
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-tagline">Hand-lasted footwear and apparel, made in small runs and shaped by the streets they come from. This demo site studies that craft.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul class="footer-links">
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="shop.html?category=sneakers">Sneakers</a></li>
+            <li><a href="shop.html?category=apparel">Apparel</a></li>
+            <li><a href="collections.html">Collections</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>About</h5>
+          <ul class="footer-links">
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="help.html#size-guide">Size Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul class="footer-links">
+            <li><a href="help.html#shipping">Shipping Information</a></li>
+            <li><a href="help.html#returns">Returns &amp; Exchanges</a></li>
+            <li><a href="help.html#track">Track Your Order</a></li>
+            <li><a href="help.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Gully Labs demo. Hand Lasted in India.</p>
+        <p class="demo-note">Demo study &mdash; not affiliated with Gully Labs, no real orders or payments.</p>
+      </div>
+    </div>
+  </footer>
+
+<div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Cart</h3>
+      <button type="button" class="drawer-close-btn" id="cartDrawerClose" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="shipping-meter-box">
+      <div class="shipping-meter-label" id="shippingMeterText">Add &#8377;5,000 for Free Express Shipping!</div>
+      <div class="meter-track"><div class="meter-bar" id="shippingMeterBar" style="width: 0%;"></div></div>
+    </div>
+    <div class="drawer-items" id="cartDrawerItems"></div>
+    <div class="drawer-footer">
+      <div class="subtotal-row"><span>Subtotal:</span><span id="cartSubtotal">&#8377;0</span></div>
+      <p class="drawer-note">Demo checkout only. No payment is taken and no card details are ever asked for.</p>
+      <button type="button" class="btn btn-primary btn-full" id="demoCheckoutBtn">Demo checkout</button>
+      <div id="demoCheckoutForm" hidden>
+        <form id="demoCheckoutFields" class="demo-form">
+          <label for="demoName">Name (optional)</label>
+          <input type="text" id="demoName" name="name" autocomplete="name">
+          <label for="demoAddress">Delivery address (optional)</label>
+          <textarea id="demoAddress" name="address" rows="3" autocomplete="street-address"></textarea>
+          <button type="submit" class="btn btn-primary btn-full">Confirm demo order</button>
+        </form>
+      </div>
+      <p id="demoCheckoutMsg" class="demo-result" hidden></p>
+    </div>
+  </div>
+
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <span style="font-weight:800; text-transform:uppercase;">Menu</span>
+      <button type="button" class="drawer-close-btn" id="mobileNavClose" aria-label="Close Menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="shop.html">Sneakers</a></li>
+      <li><a href="shop.html?category=apparel">Apparel</a></li>
+      <li><a href="shop.html">Shop All</a></li>
+      <li><a href="story.html">Our Story</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="help.html">Help</a></li>
+      <li><a href="help.html#size-guide">Size Guide</a></li>
+    </ul>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <script src="data/products.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
