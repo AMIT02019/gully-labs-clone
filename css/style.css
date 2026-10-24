@@ -2546,3 +2546,64 @@ input, select, textarea {
   color: #111111;
   text-decoration: underline;
 }
+
+
+/* Top Bar & Marquee */
+.top-bar, .scd-ticker {
+  background-color: #111111;
+  color: #ffffff;
+  height: 36px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  z-index: 1002;
+}
+
+.marquee-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.marquee-track, .scd-ticker-track {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 2.5rem;
+  padding-right: 2.5rem;
+  animation: scdMarquee 26s linear infinite;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.marquee-item .highlight {
+  color: #fbbf24;
+}
+
+@keyframes scdMarquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.top-bar:hover .marquee-track,
+.scd-ticker:hover .scd-ticker-track {
+  animation-play-state: paused;
+}
