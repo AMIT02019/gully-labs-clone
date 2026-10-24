@@ -1,50 +1,56 @@
 /* ==========================================================================
    GULLY LABS - HAND LASTED INDIAN SNEAKERS
-   Official Web Experience Clone Stylesheet
+   Pixel-Perfect Design System & Styling
    ========================================================================== */
 
 :root {
-  --font-primary: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
-  --font-heading: "Helvetica Neue", Arial, sans-serif;
+  /* Typography */
+  --font-sans: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  
-  /* Color Palette */
+
+  /* Color System */
   --color-black: #0a0a0a;
-  --color-dark: #141414;
-  --color-dark-gray: #242424;
+  --color-dark: #121212;
+  --color-dark-gray: #222222;
   --color-gray: #666666;
-  --color-light-gray: #e6e6e6;
-  --color-lighter-gray: #f5f5f5;
+  --color-muted: #888888;
+  --color-light-gray: #e8e8e8;
+  --color-border: #e5e5e5;
+  --color-bg-light: #f7f7f7;
   --color-white: #ffffff;
-  --color-accent: #0f52dc;
+  
+  /* Brand Accents */
+  --color-accent: #0f52dc;         /* Gully Labs signature electric blue */
   --color-accent-hover: #0a3bb0;
   --color-accent-gold: #c8963e;
+  --color-yellow: #ffde59;
+  --color-green: #1b8738;
   --color-red: #d32f2f;
-  --color-green: #2e7d32;
 
-  /* Layout & Spacing */
-  --header-height: 72px;
+  /* Layout Spacing */
+  --container-max: 1360px;
+  --header-height: 76px;
   --topbar-height: 38px;
-  --container-max: 1440px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
   --radius-lg: 16px;
   --radius-pill: 9999px;
-  
-  /* Transitions */
-  --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
-  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Shadows */
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
-  --shadow-drawer: -4px 0 24px rgba(0, 0, 0, 0.15);
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-dropdown: 0 12px 36px rgba(0, 0, 0, 0.12);
+  --shadow-drawer: -6px 0 30px rgba(0, 0, 0, 0.2);
+
+  /* Transitions */
+  --ease-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* --------------------------------------------------------------------------
-   Reset & Base
+   CSS Reset & Base Rules
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -59,7 +65,7 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-sans);
   color: var(--color-black);
   background-color: var(--color-white);
   line-height: 1.5;
@@ -75,11 +81,7 @@ body.drawer-open {
 a {
   color: inherit;
   text-decoration: none;
-  transition: opacity var(--transition-fast);
-}
-
-a:hover {
-  opacity: 0.8;
+  transition: opacity var(--ease-fast), color var(--ease-fast);
 }
 
 img {
@@ -105,23 +107,29 @@ input, select, textarea {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
 }
 
 @media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
   .container {
     padding: 0 2.5rem;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Typography & Utilities
+   Typography & Reusable Headers
    -------------------------------------------------------------------------- */
 .section-header {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
 }
 
 @media (min-width: 768px) {
@@ -134,20 +142,21 @@ input, select, textarea {
 
 .section-tag {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: 0.25rem;
+  display: inline-block;
 }
 
 .section-title {
-  font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   line-height: 1.1;
+  color: var(--color-black);
 }
 
 @media (min-width: 768px) {
@@ -158,35 +167,38 @@ input, select, textarea {
 
 .section-sub {
   color: var(--color-gray);
-  font-size: 1rem;
-  max-width: 600px;
+  font-size: 0.95rem;
+  max-width: 580px;
+  line-height: 1.5;
+  margin-top: 0.35rem;
 }
 
 .view-all-link {
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding-bottom: 0.25rem;
+  gap: 0.4rem;
+  padding-bottom: 0.2rem;
   border-bottom: 2px solid var(--color-black);
-  transition: all var(--transition-fast);
+  transition: all var(--ease-fast);
+  white-space: nowrap;
 }
 
 .view-all-link:hover {
-  opacity: 1;
   color: var(--color-accent);
   border-color: var(--color-accent);
+  opacity: 1;
 }
 
 /* Badges */
 .badge {
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.68rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   padding: 0.35rem 0.75rem;
   border-radius: var(--radius-pill);
   background-color: var(--color-black);
@@ -194,7 +206,7 @@ input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .badge.badge-blue {
@@ -205,24 +217,19 @@ input, select, textarea {
   background-color: var(--color-accent-gold);
 }
 
-.badge.badge-white {
-  background-color: var(--color-white);
-  color: var(--color-black);
-}
-
 /* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.9rem 1.8rem;
+  padding: 0.85rem 1.75rem;
   border-radius: var(--radius-pill);
-  transition: all var(--transition-fast);
+  transition: all var(--ease-fast);
   text-align: center;
   white-space: nowrap;
 }
@@ -230,7 +237,7 @@ input, select, textarea {
 .btn-primary {
   background-color: var(--color-black);
   color: var(--color-white);
-  border: 1px solid var(--color-black);
+  border: 1.5px solid var(--color-black);
 }
 
 .btn-primary:hover {
@@ -238,18 +245,7 @@ input, select, textarea {
   border-color: var(--color-accent);
   color: var(--color-white);
   opacity: 1;
-}
-
-.btn-secondary {
-  background-color: var(--color-white);
-  color: var(--color-black);
-  border: 1px solid var(--color-black);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  opacity: 1;
+  transform: translateY(-1px);
 }
 
 .btn-outline-white {
@@ -269,7 +265,7 @@ input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   Announcement Bar (Marquee Ticker)
+   Top Announcement Marquee Ticker
    -------------------------------------------------------------------------- */
 .top-bar {
   background-color: var(--color-black);
@@ -278,9 +274,9 @@ input, select, textarea {
   overflow: hidden;
   position: relative;
   z-index: 100;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -297,10 +293,10 @@ input, select, textarea {
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  animation: scrollMarquee 28s linear infinite;
+  animation: scrollTicker 30s linear infinite;
   white-space: nowrap;
-  gap: 3rem;
-  padding-right: 3rem;
+  gap: 3.5rem;
+  padding-right: 3.5rem;
 }
 
 .marquee-container:hover .marquee-track {
@@ -313,33 +309,33 @@ input, select, textarea {
   gap: 0.5rem;
 }
 
-.marquee-item span.highlight {
-  color: #ffde59;
+.marquee-item .highlight {
+  color: var(--color-yellow);
 }
 
-@keyframes scrollMarquee {
+@keyframes scrollTicker {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
 
 /* --------------------------------------------------------------------------
-   Navigation Header
+   Sticky Site Header & Navigation
    -------------------------------------------------------------------------- */
 .site-header {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  z-index: 90;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all var(--transition-fast);
+  z-index: 95;
+  border-bottom: 1px solid var(--color-border);
+  transition: all var(--ease-fast);
 }
 
 .site-header.scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-subtle);
 }
 
 .header-inner {
@@ -350,13 +346,12 @@ input, select, textarea {
   gap: 1.5rem;
 }
 
-/* Mobile Toggle */
 .mobile-nav-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   color: var(--color-black);
 }
 
@@ -370,16 +365,15 @@ input, select, textarea {
 .site-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .site-logo img {
-  height: 38px;
+  height: 34px;
   width: auto;
   object-fit: contain;
 }
 
-/* Desktop Nav Links */
+/* Desktop Navigation */
 .desktop-nav {
   display: none;
 }
@@ -388,19 +382,19 @@ input, select, textarea {
   .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 2.25rem;
   }
 }
 
 .nav-link {
   font-size: 0.825rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-black);
   position: relative;
   padding: 0.5rem 0;
-  transition: color var(--transition-fast);
+  transition: color var(--ease-fast);
 }
 
 .nav-link::after {
@@ -411,7 +405,7 @@ input, select, textarea {
   width: 0;
   height: 2px;
   background-color: var(--color-accent);
-  transition: width var(--transition-fast);
+  transition: width var(--ease-fast);
 }
 
 .nav-link:hover {
@@ -423,7 +417,7 @@ input, select, textarea {
   width: 100%;
 }
 
-/* Nav Item with Dropdown */
+/* Dropdown / Mega Menu */
 .nav-item-dropdown {
   position: relative;
 }
@@ -432,18 +426,18 @@ input, select, textarea {
   position: absolute;
   top: 100%;
   left: -20px;
-  width: 580px;
+  width: 540px;
   background: var(--color-white);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-dropdown);
   padding: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: all var(--transition-smooth);
+  transform: translateY(8px);
+  transition: all var(--ease-smooth);
   pointer-events: none;
   z-index: 100;
 }
@@ -456,31 +450,32 @@ input, select, textarea {
 }
 
 .mega-menu-col h4 {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-gray);
+  color: var(--color-muted);
   margin-bottom: 0.75rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid var(--color-lighter-gray);
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .mega-menu-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .mega-menu-list a {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.825rem;
+  font-weight: 700;
   color: var(--color-black);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.35rem 0;
+  transition: all var(--ease-fast);
 }
 
 .mega-menu-list a:hover {
@@ -500,7 +495,7 @@ input, select, textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-smooth);
+  transition: transform var(--ease-smooth);
 }
 
 .mega-card:hover img {
@@ -510,7 +505,7 @@ input, select, textarea {
 .mega-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%);
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -522,7 +517,7 @@ input, select, textarea {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .mega-card-overlay strong {
@@ -530,7 +525,7 @@ input, select, textarea {
   font-weight: 800;
 }
 
-/* Header Utilities */
+/* Header Action Icons */
 .header-actions {
   display: flex;
   align-items: center;
@@ -551,12 +546,12 @@ input, select, textarea {
 .currency-select {
   appearance: none;
   -webkit-appearance: none;
-  background: var(--color-lighter-gray);
-  border: 1px solid var(--color-light-gray);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  padding: 0.4rem 1.7rem 0.4rem 0.8rem;
+  padding: 0.45rem 1.75rem 0.45rem 0.85rem;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.05em;
   cursor: pointer;
   color: var(--color-black);
@@ -564,7 +559,7 @@ input, select, textarea {
 
 .currency-icon {
   position: absolute;
-  right: 0.6rem;
+  right: 0.65rem;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
@@ -575,16 +570,16 @@ input, select, textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   color: var(--color-black);
   position: relative;
-  transition: background-color var(--transition-fast);
+  transition: background-color var(--ease-fast);
 }
 
 .action-btn:hover {
-  background-color: var(--color-lighter-gray);
+  background-color: var(--color-bg-light);
 }
 
 .cart-count-badge {
@@ -601,11 +596,10 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(15, 82, 220, 0.4);
 }
 
 /* --------------------------------------------------------------------------
-   Hero Slideshow
+   Hero Slideshow Section
    -------------------------------------------------------------------------- */
 .hero-slider-section {
   position: relative;
@@ -616,9 +610,9 @@ input, select, textarea {
 .hero-slider {
   position: relative;
   width: 100%;
-  height: 75vh;
+  height: 80vh;
   min-height: 520px;
-  max-height: 820px;
+  max-height: 840px;
 }
 
 @media (max-width: 768px) {
@@ -649,7 +643,7 @@ input, select, textarea {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.05);
+  transform: scale(1.04);
   transition: transform 6s ease-out;
 }
 
@@ -662,9 +656,9 @@ input, select, textarea {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.75) 100%
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.8) 100%
   );
   display: flex;
   align-items: flex-end;
@@ -679,7 +673,7 @@ input, select, textarea {
 
 .hero-content {
   color: var(--color-white);
-  max-width: 760px;
+  max-width: 780px;
 }
 
 .hero-pill {
@@ -689,16 +683,15 @@ input, select, textarea {
   backdrop-filter: blur(8px);
   color: var(--color-white);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 0.4rem 1rem;
+  padding: 0.45rem 1.15rem;
   border-radius: var(--radius-pill);
   margin-bottom: 1.25rem;
 }
 
 .hero-title {
-  font-family: var(--font-heading);
   font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -716,7 +709,7 @@ input, select, textarea {
 .hero-description {
   font-size: 1.05rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   margin-bottom: 2rem;
   max-width: 580px;
 }
@@ -727,7 +720,7 @@ input, select, textarea {
   gap: 1rem;
 }
 
-/* Slider Controls */
+/* Hero Controls */
 .hero-controls {
   position: absolute;
   bottom: 2rem;
@@ -742,6 +735,7 @@ input, select, textarea {
   color: var(--color-white);
   font-family: var(--font-mono);
   font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
 }
 
@@ -749,14 +743,15 @@ input, select, textarea {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(8px);
-  transition: all var(--transition-fast);
+  font-size: 1.2rem;
+  transition: all var(--ease-fast);
 }
 
 .hero-nav-btn:hover {
@@ -765,12 +760,12 @@ input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   Value Props Banner
+   Value Propositions (Trust Bar)
    -------------------------------------------------------------------------- */
 .value-props-section {
-  background-color: var(--color-lighter-gray);
-  border-bottom: 1px solid var(--color-light-gray);
-  padding: 2rem 0;
+  background-color: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border);
+  padding: 2.25rem 0;
 }
 
 .value-props-grid {
@@ -788,21 +783,21 @@ input, select, textarea {
 
 .value-prop-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
 }
 
 .value-prop-icon {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-accent);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
 }
 
@@ -841,17 +836,17 @@ input, select, textarea {
 
 .category-card {
   position: relative;
-  height: 380px;
+  height: 420px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background-color: var(--color-lighter-gray);
+  background-color: var(--color-bg-light);
   cursor: pointer;
   display: block;
 }
 
 @media (min-width: 1024px) {
   .category-card {
-    height: 460px;
+    height: 480px;
   }
 }
 
@@ -859,17 +854,17 @@ input, select, textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-slow);
+  transition: transform var(--ease-slow);
 }
 
 .category-card:hover img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .category-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -879,15 +874,14 @@ input, select, textarea {
 
 .category-tag {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #ffde59;
+  color: var(--color-yellow);
   margin-bottom: 0.25rem;
 }
 
 .category-title {
-  font-family: var(--font-heading);
   font-size: 1.6rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -897,7 +891,7 @@ input, select, textarea {
 
 .category-link {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   display: inline-flex;
@@ -907,10 +901,10 @@ input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   Product Cards & Grid
+   Product Grids & Card Layouts
    -------------------------------------------------------------------------- */
 .product-showcase-section {
-  padding: 4rem 0 5rem;
+  padding: 4.5rem 0 5.5rem;
   background-color: var(--color-white);
 }
 
@@ -930,14 +924,14 @@ input, select, textarea {
 
 .tab-btn {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0.6rem 1.25rem;
+  padding: 0.6rem 1.35rem;
   border-radius: var(--radius-pill);
-  background-color: var(--color-lighter-gray);
+  background-color: var(--color-bg-light);
   color: var(--color-dark-gray);
-  transition: all var(--transition-fast);
+  transition: all var(--ease-fast);
   white-space: nowrap;
 }
 
@@ -966,21 +960,21 @@ input, select, textarea {
   }
 }
 
-/* Individual Product Card */
+/* Product Card */
 .product-card {
   position: relative;
   display: flex;
   flex-direction: column;
   background: var(--color-white);
   border-radius: var(--radius-md);
-  transition: transform var(--transition-fast);
+  height: 100%;
 }
 
 .product-card-media {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: #f7f7f7;
+  background-color: var(--color-bg-light);
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: 1rem;
@@ -999,7 +993,7 @@ input, select, textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+  transition: opacity var(--ease-smooth), transform var(--ease-smooth);
 }
 
 .product-img.img-secondary {
@@ -1015,7 +1009,7 @@ input, select, textarea {
   transform: scale(1.04);
 }
 
-/* Product Card Badges & Ratings */
+/* Badges & Overlays */
 .product-badges {
   position: absolute;
   top: 0.75rem;
@@ -1031,16 +1025,16 @@ input, select, textarea {
   position: absolute;
   bottom: 0.75rem;
   left: 0.75rem;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
   border-radius: var(--radius-pill);
-  padding: 0.25rem 0.6rem;
+  padding: 0.25rem 0.65rem;
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 800;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  box-shadow: var(--shadow-sm);
+  gap: 0.35rem;
+  box-shadow: var(--shadow-subtle);
   z-index: 2;
 }
 
@@ -1062,10 +1056,10 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-subtle);
   opacity: 0;
   transform: translateY(-4px);
-  transition: all var(--transition-fast);
+  transition: all var(--ease-fast);
   z-index: 3;
 }
 
@@ -1079,66 +1073,70 @@ input, select, textarea {
   color: var(--color-white);
 }
 
-/* Product Info */
+/* Card Details Alignment */
 .product-info {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
   flex-grow: 1;
 }
 
 .product-subcat {
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-gray);
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
 }
 
 .product-title {
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.3;
   color: var(--color-black);
+  min-height: 2.6em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product-price-row {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 0.15rem;
 }
 
 .product-price {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--color-black);
 }
 
 .product-price-orig {
-  font-size: 0.825rem;
-  color: var(--color-gray);
+  font-size: 0.85rem;
+  color: var(--color-muted);
   text-decoration: line-through;
 }
 
-/* Size Pills Inside Card */
+/* Size Pill Selector */
 .product-sizes-row {
   display: flex;
   align-items: center;
   gap: 0.35rem;
   flex-wrap: wrap;
-  margin-top: 0.4rem;
+  margin-top: 0.25rem;
 }
 
 .size-pill {
   font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.25rem 0.55rem;
-  border-radius: var(--radius-sm);
-  background-color: var(--color-lighter-gray);
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-bg-light);
   color: var(--color-dark-gray);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all var(--ease-fast);
 }
 
 .size-pill:hover, .size-pill.selected {
@@ -1148,25 +1146,26 @@ input, select, textarea {
 
 /* Quick Add Button */
 .quick-add-btn {
-  margin-top: 0.75rem;
+  margin-top: 0.85rem;
   width: 100%;
-  padding: 0.65rem 1rem;
+  padding: 0.75rem 1rem;
   background-color: var(--color-black);
   color: var(--color-white);
   border-radius: var(--radius-pill);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: background-color var(--transition-fast);
+  transition: background-color var(--ease-fast), transform var(--ease-fast);
 }
 
 .quick-add-btn:hover {
   background-color: var(--color-accent);
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
@@ -1176,7 +1175,7 @@ input, select, textarea {
   position: relative;
   background-color: var(--color-dark);
   overflow: hidden;
-  padding: 6rem 0;
+  padding: 6.5rem 0;
   color: var(--color-white);
 }
 
@@ -1189,8 +1188,8 @@ input, select, textarea {
 
 @media (min-width: 1024px) {
   .story-grid {
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4.5rem;
   }
 }
 
@@ -1218,28 +1217,27 @@ input, select, textarea {
   font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #ffde59;
+  color: var(--color-yellow);
 }
 
 .story-title {
-  font-family: var(--font-heading);
   font-size: 2.5rem;
   font-weight: 800;
   text-transform: uppercase;
-  line-height: 1.1;
+  line-height: 1.08;
   letter-spacing: -0.02em;
 }
 
 @media (min-width: 768px) {
   .story-title {
-    font-size: 3.2rem;
+    font-size: 3.25rem;
   }
 }
 
 .story-desc {
   font-size: 1.05rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .story-points {
@@ -1258,16 +1256,16 @@ input, select, textarea {
 
 .story-point p {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.45;
 }
 
 /* --------------------------------------------------------------------------
    Shoppable Lookbook ("SHOP THE LOOK")
    -------------------------------------------------------------------------- */
 .lookbook-section {
-  padding: 5rem 0;
-  background-color: var(--color-lighter-gray);
+  padding: 5.5rem 0;
+  background-color: var(--color-bg-light);
 }
 
 .lookbook-container {
@@ -1280,7 +1278,7 @@ input, select, textarea {
 .lookbook-image {
   width: 100%;
   height: auto;
-  max-height: 680px;
+  max-height: 700px;
   object-fit: cover;
   display: block;
 }
@@ -1288,8 +1286,8 @@ input, select, textarea {
 /* Hotspot Pins */
 .lookbook-pin {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   transform: translate(-50%, -50%);
   cursor: pointer;
   z-index: 10;
@@ -1306,7 +1304,7 @@ input, select, textarea {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: transform var(--transition-fast);
+  transition: transform var(--ease-fast);
 }
 
 .pin-pulse {
@@ -1326,23 +1324,22 @@ input, select, textarea {
   transform: translate(-50%, -50%) scale(1.3);
 }
 
-/* Hotspot Popover Card */
 .pin-popover {
   position: absolute;
   bottom: calc(100% + 12px);
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  width: 240px;
+  transform: translateX(-50%) translateY(8px);
+  width: 250px;
   background-color: var(--color-white);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-dropdown);
   padding: 0.85rem;
   display: flex;
   gap: 0.75rem;
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-smooth);
+  transition: all var(--ease-smooth);
   pointer-events: none;
   z-index: 20;
 }
@@ -1372,7 +1369,7 @@ input, select, textarea {
 
 .pin-details strong {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1386,7 +1383,7 @@ input, select, textarea {
 
 .pin-add-btn {
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   color: var(--color-black);
   text-decoration: underline;
@@ -1395,10 +1392,10 @@ input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   Press & Customer Testimonials
+   Press Quotes & Verified Reviews
    -------------------------------------------------------------------------- */
 .testimonials-section {
-  padding: 5rem 0;
+  padding: 5.5rem 0;
   background-color: var(--color-white);
 }
 
@@ -1407,10 +1404,10 @@ input, select, textarea {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 2rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid var(--color-lighter-gray);
-  margin-bottom: 3.5rem;
+  gap: 2.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 4rem;
 }
 
 .press-quote {
@@ -1448,23 +1445,24 @@ input, select, textarea {
 }
 
 .review-card {
-  background-color: var(--color-lighter-gray);
+  background-color: var(--color-bg-light);
   border-radius: var(--radius-md);
-  padding: 1.75rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .review-stars {
   display: flex;
-  gap: 0.2rem;
+  gap: 0.25rem;
   color: #f5a623;
+  font-size: 1.1rem;
 }
 
 .review-text {
   font-size: 0.925rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--color-black);
   flex-grow: 1;
 }
@@ -1473,19 +1471,19 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--color-light-gray);
-  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.85rem;
 }
 
 .author-info strong {
   display: block;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .author-info span {
   font-size: 0.75rem;
-  color: var(--color-gray);
+  color: var(--color-muted);
 }
 
 .verified-badge {
@@ -1494,7 +1492,7 @@ input, select, textarea {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
@@ -1503,7 +1501,7 @@ input, select, textarea {
 .newsletter-section {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 4.5rem 0;
+  padding: 5rem 0;
   text-align: center;
 }
 
@@ -1517,8 +1515,7 @@ input, select, textarea {
 }
 
 .newsletter-title {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 2.25rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -1526,7 +1523,7 @@ input, select, textarea {
 
 .newsletter-desc {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.5;
   margin-bottom: 0.75rem;
 }
@@ -1542,11 +1539,11 @@ input, select, textarea {
   flex-grow: 1;
   padding: 0.85rem 1.25rem;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--color-white);
   outline: none;
-  transition: border-color var(--transition-fast);
+  transition: border-color var(--ease-fast);
 }
 
 .newsletter-input:focus {
@@ -1566,12 +1563,12 @@ input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   Footer
+   Site Footer
    -------------------------------------------------------------------------- */
 .site-footer {
   background-color: var(--color-dark);
   color: var(--color-white);
-  padding: 4.5rem 0 2rem;
+  padding: 5rem 0 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -1595,14 +1592,14 @@ input, select, textarea {
 }
 
 .footer-logo {
-  height: 44px;
+  height: 42px;
   width: auto;
   object-fit: contain;
 }
 
 .footer-tagline {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
 }
 
@@ -1613,16 +1610,16 @@ input, select, textarea {
 }
 
 .social-icon-btn {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: all var(--ease-fast);
 }
 
 .social-icon-btn:hover {
@@ -1650,7 +1647,7 @@ input, select, textarea {
 .footer-links a {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.65);
-  transition: color var(--transition-fast);
+  transition: color var(--ease-fast);
 }
 
 .footer-links a:hover {
@@ -1685,26 +1682,26 @@ input, select, textarea {
 
 .payment-badge {
   background: rgba(255, 255, 255, 0.1);
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-xs);
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.85);
 }
 
 /* --------------------------------------------------------------------------
-   Slide-out Cart Drawer
+   Slide-Out Cart Drawer
    -------------------------------------------------------------------------- */
 .drawer-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(4px);
   z-index: 998;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-smooth);
+  transition: all var(--ease-smooth);
 }
 
 .drawer-backdrop.active {
@@ -1725,7 +1722,7 @@ input, select, textarea {
   flex-direction: column;
   box-shadow: var(--shadow-drawer);
   transform: translateX(100%);
-  transition: transform var(--transition-smooth);
+  transition: transform var(--ease-smooth);
 }
 
 .cart-drawer.active {
@@ -1734,7 +1731,7 @@ input, select, textarea {
 
 .drawer-header {
   padding: 1.5rem;
-  border-bottom: 1px solid var(--color-light-gray);
+  border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1754,8 +1751,9 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-lighter-gray);
+  background: var(--color-bg-light);
   color: var(--color-black);
+  font-size: 1.25rem;
 }
 
 /* Free Shipping Meter */
@@ -1767,9 +1765,9 @@ input, select, textarea {
 
 .shipping-meter-label {
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-accent);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -1790,7 +1788,7 @@ input, select, textarea {
   transition: width 0.4s ease;
 }
 
-/* Drawer Cart Items */
+/* Items List */
 .drawer-items {
   flex-grow: 1;
   overflow-y: auto;
@@ -1809,14 +1807,14 @@ input, select, textarea {
 
 .cart-empty-state svg {
   margin: 0 auto 1rem;
-  color: var(--color-light-gray);
+  color: var(--color-muted);
 }
 
 .cart-item {
   display: flex;
   gap: 1rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--color-lighter-gray);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .cart-item-img {
@@ -1824,7 +1822,7 @@ input, select, textarea {
   height: 80px;
   border-radius: var(--radius-sm);
   object-fit: cover;
-  background-color: var(--color-lighter-gray);
+  background-color: var(--color-bg-light);
   flex-shrink: 0;
 }
 
@@ -1844,14 +1842,15 @@ input, select, textarea {
 
 .cart-item-title {
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.3;
 }
 
 .cart-item-remove {
-  color: var(--color-gray);
-  font-size: 0.8rem;
+  color: var(--color-muted);
+  font-size: 1.2rem;
   cursor: pointer;
+  line-height: 1;
   padding: 0.2rem;
 }
 
@@ -1875,7 +1874,7 @@ input, select, textarea {
 .qty-control {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--color-light-gray);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
   overflow: hidden;
 }
@@ -1887,25 +1886,25 @@ input, select, textarea {
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  background: var(--color-lighter-gray);
+  background: var(--color-bg-light);
 }
 
 .qty-val {
   width: 32px;
   text-align: center;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .cart-item-price {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 800;
 }
 
 /* Drawer Footer */
 .drawer-footer {
   padding: 1.5rem;
-  border-top: 1px solid var(--color-light-gray);
+  border-top: 1px solid var(--color-border);
   background: #fafafa;
 }
 
@@ -1918,7 +1917,7 @@ input, select, textarea {
 .promo-input {
   flex-grow: 1;
   padding: 0.5rem 0.85rem;
-  border: 1px solid var(--color-light-gray);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -1930,14 +1929,14 @@ input, select, textarea {
   color: var(--color-white);
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
 .subtotal-row {
   display: flex;
   justify-content: space-between;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
 }
@@ -1950,7 +1949,7 @@ input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   Search Drawer
+   Instant Search Drawer
    -------------------------------------------------------------------------- */
 .search-drawer {
   position: fixed;
@@ -1959,10 +1958,10 @@ input, select, textarea {
   right: 0;
   background: var(--color-white);
   z-index: 999;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-dropdown);
   padding: 2.5rem 1.5rem;
   transform: translateY(-100%);
-  transition: transform var(--transition-smooth);
+  transition: transform var(--ease-smooth);
 }
 
 .search-drawer.active {
@@ -1986,8 +1985,8 @@ input, select, textarea {
 .search-input-box input {
   flex-grow: 1;
   border: none;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 800;
   outline: none;
 }
 
@@ -2002,14 +2001,14 @@ input, select, textarea {
 .search-tags span {
   font-size: 0.75rem;
   color: var(--color-gray);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .search-tag-pill {
   font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.3rem 0.75rem;
-  background: var(--color-lighter-gray);
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  background: var(--color-bg-light);
   border-radius: var(--radius-pill);
   cursor: pointer;
 }
@@ -2040,9 +2039,9 @@ input, select, textarea {
   align-items: center;
   padding: 0.75rem;
   border-radius: var(--radius-md);
-  background: var(--color-lighter-gray);
+  background: var(--color-bg-light);
   cursor: pointer;
-  transition: background-color var(--transition-fast);
+  transition: background-color var(--ease-fast);
 }
 
 .search-result-card:hover {
@@ -2071,7 +2070,7 @@ input, select, textarea {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  transition: all var(--transition-smooth);
+  transition: all var(--ease-smooth);
 }
 
 .modal-backdrop.active {
@@ -2087,9 +2086,9 @@ input, select, textarea {
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: var(--shadow-lg);
-  transform: scale(0.95);
-  transition: transform var(--transition-smooth);
+  box-shadow: var(--shadow-dropdown);
+  transform: scale(0.96);
+  transition: transform var(--ease-smooth);
 }
 
 .modal-backdrop.active .modal-dialog {
@@ -2103,11 +2102,12 @@ input, select, textarea {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--color-lighter-gray);
+  background: var(--color-bg-light);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
+  font-size: 1.4rem;
 }
 
 .modal-grid {
@@ -2123,7 +2123,7 @@ input, select, textarea {
 
 .modal-gallery {
   padding: 2rem;
-  background-color: var(--color-lighter-gray);
+  background-color: var(--color-bg-light);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -2170,7 +2170,7 @@ input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   Checkout Simulation Modal
+   Checkout Simulation Dialog
    -------------------------------------------------------------------------- */
 .checkout-modal-dialog {
   max-width: 650px;
@@ -2191,7 +2191,7 @@ input, select, textarea {
 
 .checkout-group label {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -2205,7 +2205,7 @@ input, select, textarea {
 .checkout-input {
   width: 100%;
   padding: 0.8rem 1rem;
-  border: 1px solid var(--color-light-gray);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
 }
 
@@ -2216,7 +2216,7 @@ input, select, textarea {
 }
 
 .payment-option-label {
-  border: 1px solid var(--color-light-gray);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 0.85rem;
   display: flex;
@@ -2224,7 +2224,7 @@ input, select, textarea {
   gap: 0.6rem;
   cursor: pointer;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .payment-option-label.active {
@@ -2232,7 +2232,7 @@ input, select, textarea {
   background-color: #f0f6ff;
 }
 
-/* Toast Notifications */
+/* Toast System */
 .toast-container {
   position: fixed;
   bottom: 2rem;
@@ -2250,8 +2250,8 @@ input, select, textarea {
   padding: 0.9rem 1.4rem;
   border-radius: var(--radius-pill);
   font-size: 0.85rem;
-  font-weight: 600;
-  box-shadow: var(--shadow-lg);
+  font-weight: 700;
+  box-shadow: var(--shadow-dropdown);
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -2260,7 +2260,7 @@ input, select, textarea {
 }
 
 .toast.toast-success {
-  background-color: #1b5e20;
+  background-color: var(--color-green);
 }
 
 @keyframes slideInToast {
@@ -2268,7 +2268,7 @@ input, select, textarea {
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Mobile Drawer */
+/* Mobile Nav Drawer */
 .mobile-nav-drawer {
   position: fixed;
   top: 0;
@@ -2280,7 +2280,7 @@ input, select, textarea {
   z-index: 1001;
   padding: 2rem;
   transform: translateX(-100%);
-  transition: transform var(--transition-smooth);
+  transition: transform var(--ease-smooth);
   display: flex;
   flex-direction: column;
   gap: 2rem;
