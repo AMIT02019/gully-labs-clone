@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop All | Gully Labs Demo</title>
-  <meta name="description" content="Browse all sneakers and apparel in the demo catalogue.">
+  <title>Shop All Footwear & Apparel | Gully Labs</title>
+  <meta name="description" content="Browse hand-lasted Indian sneakers, architectural mules, and heavyweight apparel crafted with pride.">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <!-- 1. Top Announcement Marquee Ticker -->
   <div class="top-bar">
     <div class="marquee-container">
@@ -40,13 +43,24 @@
     <a href="shop.html" class="scd-btn">SHOP NOW</a>
   </div>
 
-  <header class="site-header">
+  <!-- 3. Site Header Navigation -->
+  <header class="site-header" id="mainHeader">
     <div class="container header-inner">
-      <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <!-- Mobile Navigation Hamburger -->
+      <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Navigation Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
       </button>
-      <a href="index.html" class="site-logo"><img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs demo logo"></a>
-            <!-- Desktop Navigation Menu with Authentic Gully Labs Mega Menus -->
+
+      <!-- Gully Labs Authentic Logo -->
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs" class="logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu with Authentic Gully Labs Mega Menus -->
       <nav class="desktop-nav">
         <!-- 1. Men Mega Menu -->
         <div class="nav-item has-mega" data-mega="mega-men">
@@ -235,13 +249,35 @@
         <a href="index.html#hidden-gems" class="nav-link">The Archive</a>
         <a href="help.html#contact" class="nav-link">Find a Store</a>
       </nav>
+
+      <!-- Header Right Utilities -->
       <div class="header-actions">
+        <!-- Currency Selector -->
+        <div class="currency-selector-wrapper">
+          <select id="currencySelector" class="currency-select" aria-label="Select Currency">
+            <option value="INR" selected>INR ₹</option>
+            <option value="USD">USD $</option>
+            <option value="EUR">EUR €</option>
+            <option value="GBP">GBP £</option>
+            <option value="AED">AED</option>
+          </select>
+        </div>
+
+        <!-- Search Icon Trigger -->
         <button type="button" class="action-btn" id="searchTrigger" aria-label="Search Catalog">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
         </button>
-        <a href="help.html#contact" class="action-btn" aria-label="Account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"></path></svg></a>
-        <button type="button" class="action-btn" id="cartTrigger" aria-label="Shopping Cart">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+
+        <!-- Cart Bag Trigger -->
+        <button type="button" class="action-btn cart-btn" id="cartTrigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
           <span class="cart-count-badge">0</span>
         </button>
       </div>
@@ -249,120 +285,144 @@
   </header>
 
   <main>
-    <section class="page-hero">
+    <!-- Breadcrumb Bar -->
+    <div class="container pd-breadcrumb-bar">
+      <a href="index.html">Home</a>
+      <span class="pd-crumb-sep">/</span>
+      <a href="shop.html">Shop</a>
+      <span class="pd-crumb-sep">/</span>
+      <span class="pd-crumb-active" id="shopCrumbActive">Catalogue</span>
+    </div>
+
+    <!-- Shop Page Header -->
+    <div class="container shop-header-box">
+      <span class="section-tag">ARCHIVAL COLLECTION</span>
+      <h1 class="shop-page-title" id="shopPageTitle">All Products & Silhouettes</h1>
+      <p class="shop-page-desc" id="shopPageDesc">
+        Explore the complete collection of hand-lasted Indian sneakers, architectural slides, and heavy-gauge apparel.
+      </p>
+    </div>
+
+    <!-- Shop Filter & Sorting Bar -->
+    <section class="shop-page-section">
       <div class="container">
-        <h1>Shop All</h1>
-        <p>Every product in the demo catalogue, filterable by category, collection, price and rating.</p>
-      </div>
-    </section>
-    <section class="page-body">
-      <div class="container">
-        <div class="shop-toolbar" role="search">
-          <input type="search" id="shopSearch" placeholder="Search products, collections or materials..." aria-label="Search products">
-          <label>Category
-            <select id="shopCategory" aria-label="Filter by category">
-              <option value="all">All</option>
-              <option value="sneakers">Sneakers</option>
-              <option value="apparel">Apparel</option>
-            </select>
-          </label>
-          <label>Collection
-            <select id="shopCollection" aria-label="Filter by collection">
-              <option value="all">All collections</option>
-            </select>
-          </label>
-          <label>Sort
-            <select id="shopSort" aria-label="Sort products">
+        <div class="shop-filter-toolbar">
+          <!-- Category & Gender Pills -->
+          <div class="shop-pills-row">
+            <button type="button" class="shop-filter-pill shop-cat-pill active" data-category="all">All</button>
+            <button type="button" class="shop-filter-pill shop-cat-pill" data-category="sneakers">Sneakers</button>
+            <button type="button" class="shop-filter-pill shop-cat-pill" data-category="slides">Slides & Mules</button>
+            <button type="button" class="shop-filter-pill shop-cat-pill" data-category="apparel">Apparel</button>
+
+            <span style="color:#d4d4d8; margin:0 0.25rem;">|</span>
+
+            <button type="button" class="shop-filter-pill shop-gender-pill active" data-gender="all">All Genders</button>
+            <button type="button" class="shop-filter-pill shop-gender-pill" data-gender="men">Men</button>
+            <button type="button" class="shop-filter-pill shop-gender-pill" data-gender="women">Women</button>
+          </div>
+
+          <!-- Sort and Counts -->
+          <div class="shop-sort-controls">
+            <span class="shop-count-label" id="shopProductCount">18 Products</span>
+            <select id="shopSortSelect" class="shop-sort-select" aria-label="Sort Catalog">
               <option value="featured">Featured</option>
               <option value="price-asc">Price: Low to High</option>
               <option value="price-desc">Price: High to Low</option>
-              <option value="rating">Rating</option>
+              <option value="rating">Customer Rating</option>
             </select>
-          </label>
+          </div>
         </div>
-        <p class="shop-count" id="shopCount">Showing 18 of 18 products</p>
-        <div class="products-grid" id="shopGrid"></div>
-        <div class="site-empty" id="shopEmpty" hidden>
-          <h2>No products match those filters</h2>
-          <p>Try a different search term, or clear the filters to see the full catalogue.</p>
-          <button type="button" class="btn btn-primary" id="shopClearFilters">Clear filters</button>
+
+        <!-- Active Filter Chips Row -->
+        <div class="shop-active-filters-bar" id="shopActiveFiltersBar" style="display:none;">
+          <!-- Dynamically populated by js/shop.js -->
         </div>
-        <p class="demo-note">Demo study &mdash; not affiliated with Gully Labs, no real orders or payments.</p>
+
+        <!-- Products Grid -->
+        <div class="product-grid" id="shopGrid">
+          <!-- Dynamically populated by js/shop.js via createProductCardHTML -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="shop-empty-box" id="shopEmptyState" style="display:none;">
+          <h3>No Silhouettes Found</h3>
+          <p>We couldn't find any products matching those filters in our studio catalogue.</p>
+          <a href="shop.html" class="btn btn-primary">Clear All Filters</a>
+        </div>
       </div>
     </section>
-
   </main>
-<footer class="site-footer r-footer">
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
     <div class="container">
-      <div class="r-footer-grid">
-        <div class="footer-col">
-          <h5>Shop</h5>
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs" class="footer-logo">
+          <p class="footer-about">
+            Gully Labs is an independent Indian design studio creating hand-lasted sneakers, heavy-gauge apparel, and archival accessories rooted in subcontinental identity and craftsmanship.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Shop Silhouettes</h4>
           <ul class="footer-links">
-            <li><a href="shop.html">Bestsellers</a></li>
-            <li><a href="shop.html">Shop All</a></li>
-            <li><a href="shop.html?sale=1">Sale</a></li>
-            <li><a href="shop.html?collection=New%20Arrivals">New Arrivals</a></li>
-            <li><a href="collections.html">Collections</a></li>
+            <li><a href="index.html#bestsellers">Gully No. 001 - Baaz</a></li>
+            <li><a href="index.html#bestsellers">Gully No. 002 - Turf</a></li>
+            <li><a href="index.html#bestsellers">Gully No. 004 - Saaya</a></li>
+            <li><a href="index.html#bestsellers">Gully No. 005 - Maska</a></li>
+            <li><a href="shop.html">Browse All Footwear</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h5>Quick Links</h5>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">The Studio</h4>
           <ul class="footer-links">
-            <li><a href="story.html">Our Story</a></li>
-            <li><a href="help.html">Help</a></li>
-            <li><a href="help.html#size-guide">Size Guide</a></li>
-            <li><a href="help.html#track">Track Your Order</a></li>
-            <li><a href="help.html#returns">Returns &amp; Exchanges</a></li>
+            <li><a href="index.html#story">Our Story & Philosophy</a></li>
+            <li><a href="index.html#story">Anatomical Wooden Lasts</a></li>
+            <li><a href="index.html#story">Full-Grain Leather Sourcing</a></li>
+            <li><a href="help.html#contact">Find a Retail Store</a></li>
+            <li><a href="help.html">Customer Care & FAQ</a></li>
           </ul>
         </div>
-        <div class="r-footer-brand">
-          <p class="r-footer-brandname">Gully Labs Demo</p>
-          <p class="footer-tagline">Hand-lasted sneakers and easy layers, made in small runs. This is a demo store.</p>
-          <form class="r-newsletter-form" id="newsletterForm">
-            <label class="r-sr-only" for="footerEmail">Email address</label>
-            <input type="email" id="footerEmail" placeholder="Email for demo updates" required>
-            <button type="submit" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
-          </form>
-          <p class="r-newsletter-note" id="footerNewsletterMsg">Demo only &mdash; no email is sent or stored.</p>
-          <p class="r-social"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a> <a href="https://twitter.com" target="_blank" rel="noopener">X</a></p>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="help.html#shipping">Free Express Shipping</a></li>
+            <li><a href="help.html#returns">30-Day Doorstep Returns</a></li>
+            <li><a href="help.html#size-guide">Anatomical Size Chart</a></li>
+            <li><a href="help.html#track">Track Live Dispatch</a></li>
+            <li><a href="help.html#contact">support@gullylabs.com</a></li>
+          </ul>
         </div>
       </div>
-      <div class="r-footer-bottom">
-        <p><a href="help.html#shipping">Privacy</a> &middot; <a href="help.html#shipping">Terms</a> &middot; <a href="help.html#shipping">Shipping</a> &middot; <a href="help.html#returns">Returns</a></p>
-        <p class="r-payments">UPI &middot; RuPay &middot; Visa &middot; Mastercard &middot; Net Banking &middot; Cash on Delivery</p>
-        <p class="demo-note">Demo study &mdash; not affiliated with Gully Labs, no real orders or payments.</p>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 Gully Labs. Hand lasted in India. Crafted with pride.
+        </p>
+        <div class="footer-payment-methods">
+          <span class="pay-pill">UPI</span>
+          <span class="pay-pill">RuPay</span>
+          <span class="pay-pill">Visa</span>
+          <span class="pay-pill">Mastercard</span>
+          <span class="pay-pill">Net Banking</span>
+          <span class="pay-pill">Cash on Delivery</span>
+        </div>
       </div>
     </div>
   </footer>
 
-<div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
-    <div class="drawer-header">
-      <h3 class="drawer-title">Your Cart</h3>
-      <button type="button" class="drawer-close-btn" id="cartDrawerClose" aria-label="Close Cart">&times;</button>
-    </div>
-    <div class="shipping-meter-box">
-      <div class="shipping-meter-label" id="shippingMeterText">Add &#8377;5,000 for Free Express Shipping!</div>
-      <div class="meter-track"><div class="meter-bar" id="shippingMeterBar" style="width: 0%;"></div></div>
-    </div>
-    <div class="drawer-items" id="cartDrawerItems"></div>
-    <div class="drawer-footer">
-      <div class="subtotal-row"><span>Subtotal:</span><span id="cartSubtotal">&#8377;0</span></div>
-      <p class="drawer-note">Demo checkout only. No payment is taken and no card details are ever asked for.</p>
-      <button type="button" class="btn btn-primary btn-full" id="demoCheckoutBtn">Demo checkout</button>
-      <div id="demoCheckoutForm" hidden>
-        <form id="demoCheckoutFields" class="demo-form">
-          <label for="demoName">Name (optional)</label>
-          <input type="text" id="demoName" name="name" autocomplete="name">
-          <label for="demoAddress">Delivery address (optional)</label>
-          <textarea id="demoAddress" name="address" rows="3" autocomplete="street-address"></textarea>
-          <button type="submit" class="btn btn-primary btn-full">Confirm demo order</button>
-        </form>
-      </div>
-      <p id="demoCheckoutMsg" class="demo-result" hidden></p>
-    </div>
-  </div>
-
-    <!-- Search Drawer -->
+  <!-- Search Drawer -->
   <div class="search-drawer" id="searchDrawer" role="dialog" aria-modal="true" aria-label="Search Gully Labs">
     <div class="search-drawer-inner">
       <div class="search-input-wrapper">
@@ -379,25 +439,73 @@
     </div>
   </div>
 
-  <div class="mobile-nav-drawer" id="mobileNavDrawer">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-      <span style="font-weight:800; text-transform:uppercase;">Menu</span>
-      <button type="button" class="drawer-close-btn" id="mobileNavClose" aria-label="Close Menu">&times;</button>
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Gully Cart</h3>
+      <button type="button" class="drawer-close-btn" id="cartDrawerClose" aria-label="Close Cart">&times;</button>
     </div>
-    <ul class="mobile-nav-links">
-      <li><a href="shop.html">Bestsellers</a></li>
-      <li><a href="shop.html">Shop All</a></li>
-      <li><a href="shop.html?sale=1">Sale</a></li>
-      <li><a href="story.html">Story</a></li>
-      <li><a href="collections.html">Collections</a></li>
-      <li><a href="help.html">Help</a></li>
-      <li><a href="help.html#size-guide">Size Guide</a></li>
+
+    <!-- Free Shipping Progress Meter -->
+    <div class="shipping-meter-box">
+      <div class="shipping-meter-label" id="shippingMeterText">
+        Add ₹5,000 for Free Express Shipping Across India!
+      </div>
+      <div class="meter-track">
+        <div class="meter-bar" id="shippingMeterBar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Live Cart Items Container -->
+    <div class="drawer-items" id="cartDrawerItems">
+      <!-- Populated via renderCart() in js/app.js -->
+    </div>
+
+    <!-- Drawer Footer / Subtotal & Checkout -->
+    <div class="drawer-footer">
+      <div class="promo-box">
+        <input type="text" id="promoInput" placeholder="Promo code (e.g. GULLY10)" class="promo-input">
+        <button type="button" id="applyPromoBtn" class="promo-btn">Apply</button>
+      </div>
+
+      <div class="subtotal-row">
+        <span>Estimated Subtotal:</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <p class="drawer-tax-note">Taxes and express shipping calculated at final checkout step.</p>
+
+      <button type="button" class="checkout-btn" id="checkoutBtn">
+        Proceed to Secure Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
+      <span style="font-weight:800; font-size:1.1rem; text-transform:uppercase; letter-spacing:0.05em;">Menu</span>
+      <button type="button" id="mobileNavClose" style="font-size:1.75rem; line-height:1; background:none; border:none; cursor:pointer;">&times;</button>
+    </div>
+    <ul style="list-style:none; display:flex; flex-direction:column; gap:1.25rem;">
+      <li><a href="index.html#bestsellers" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Men</a></li>
+      <li><a href="index.html#bestsellers" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Women</a></li>
+      <li><a href="index.html#bestsellers" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Bestsellers</a></li>
+      <li><a href="index.html#story" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Story</a></li>
+      <li><a href="index.html#hidden-gems" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">The Archive</a></li>
+      <li><a href="help.html#contact" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Find a Store</a></li>
+      <li><a href="shop.html" onclick="closeAllDrawers()" style="font-size:1.1rem; font-weight:700; color:#111;">Shop All</a></li>
     </ul>
   </div>
 
+  <!-- Global Backdrop -->
   <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
+  <!-- Global Toast Notification -->
+  <div class="toast-msg" id="toastMsg" role="alert"></div>
+
+  <!-- Application Logic -->
   <script src="data/products.js"></script>
-  <script src="js/site.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/shop.js"></script>
 </body>
 </html>
