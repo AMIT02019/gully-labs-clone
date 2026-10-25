@@ -982,9 +982,18 @@ function showToast(message, type = 'info') {
    ========================================================================== */
 function initMegaMenu() {
   const megaItems = document.querySelectorAll('.nav-item.has-mega');
+  if (!megaItems.length) return;
+
+  function closeAllMegaMenus() {
+    megaItems.forEach(item => {
+      item.classList.remove('is-active');
+    });
+  }
+
   megaItems.forEach(item => {
     let timeoutId = null;
 
+    // Open on hover with debounce
     item.addEventListener('mouseenter', () => {
       clearTimeout(timeoutId);
       megaItems.forEach(other => {
@@ -993,35 +1002,43 @@ function initMegaMenu() {
       item.classList.add('is-active');
     });
 
+    // Close on mouse leave promptly
     item.addEventListener('mouseleave', () => {
+      clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
         item.classList.remove('is-active');
-      }, 180);
+      }, 100);
     });
 
-    const trigger = item.querySelector('.nav-link');
-    if (trigger) {
-      trigger.addEventListener('click', (e) => {
-        if (window.innerWidth >= 900) {
-          if (!item.classList.contains('is-active')) {
-            e.preventDefault();
-            megaItems.forEach(other => other.classList.remove('is-active'));
-            item.classList.add('is-active');
-          }
-        }
+    // When clicking any link inside the mega menu (e.g. Slides, Sneakers, etc.), close immediately
+    const linksInside = item.querySelectorAll('.mega-menu a');
+    linksInside.forEach(link => {
+      link.addEventListener('click', () => {
+        closeAllMegaMenus();
       });
-    }
+    });
   });
 
+  // When clicking outside of navigation, close all mega menus
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-item.has-mega')) {
-      megaItems.forEach(item => item.classList.remove('is-active'));
+      closeAllMegaMenus();
     }
   });
 
+  // When user scrolls the page, immediately dismiss any open mega menus
+  let lastScrollPos = window.scrollY;
+  window.addEventListener('scroll', () => {
+    if (Math.abs(window.scrollY - lastScrollPos) > 15) {
+      closeAllMegaMenus();
+      lastScrollPos = window.scrollY;
+    }
+  }, { passive: true });
+
+  // Escape key closes mega menus
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      megaItems.forEach(item => item.classList.remove('is-active'));
+      closeAllMegaMenus();
     }
   });
 }

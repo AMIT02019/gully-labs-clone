@@ -4024,3 +4024,175 @@ input, select, textarea {
 .shop-color-pill.active .color-dot {
   box-shadow: 0 0 0 1.5px #ffffff;
 }
+
+/* ==========================================================================
+   CHECKOUT POLISH: BALANCED CONTAINER & LUXURY SUMMARY
+   ========================================================================== */
+.checkout-header-inner {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.checkout-layout {
+  display: grid !important;
+  grid-template-columns: 1.25fr 0.75fr !important;
+  min-height: calc(100vh - 80px) !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+@media (max-width: 992px) {
+  .checkout-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.checkout-form-col {
+  padding: 2.5rem 3rem 4rem 1.5rem !important;
+  background: #ffffff !important;
+}
+
+.checkout-summary-col {
+  padding: 2.5rem 1.5rem 4rem 2.5rem !important;
+  background: #fafafa !important;
+  border-left: 1px solid #ebebeb !important;
+}
+
+@media (max-width: 992px) {
+  .checkout-summary-col {
+    border-left: none !important;
+    border-top: 1px solid #ebebeb !important;
+    padding: 2rem 1.5rem !important;
+  }
+}
+
+/* Mini Item Styling */
+.checkout-mini-item {
+  display: flex !important;
+  gap: 1.15rem !important;
+  align-items: center !important;
+  padding-bottom: 1rem !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.checkout-mini-img-wrap {
+  position: relative !important;
+  width: 68px !important;
+  height: 68px !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  border: 1px solid #e4e4e7 !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4px !important;
+}
+
+.checkout-mini-img-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.checkout-mini-qty {
+  position: absolute !important;
+  top: -8px !important;
+  right: -8px !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+  z-index: 5 !important;
+}
+
+.checkout-mini-title {
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  margin: 0 0 0.25rem !important;
+  line-height: 1.3 !important;
+}
+
+.checkout-mini-size {
+  display: inline-block !important;
+  font-size: 0.75rem !important;
+  color: #71717a !important;
+  background: #f4f4f5 !important;
+  padding: 0.15rem 0.5rem !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+}
+
+.checkout-mini-price {
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  color: #111111 !important;
+  margin-left: auto !important;
+}
+
+/* Explicit Global Promo Box Styling */
+.promo-box,
+.checkout-summary-col .promo-box {
+  display: flex !important;
+  gap: 0.5rem !important;
+  margin: 1.25rem 0 !important;
+  width: 100% !important;
+}
+
+.promo-input,
+#checkoutPromoInput,
+#promoInput {
+  flex: 1 !important;
+  padding: 0.75rem 0.95rem !important;
+  border: 1.5px solid #d4d4d8 !important;
+  border-radius: 6px !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  font-family: inherit !important;
+  outline: none !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.promo-input:focus,
+#checkoutPromoInput:focus,
+#promoInput:focus {
+  border-color: #111111 !important;
+  box-shadow: 0 0 0 1px #111111 !important;
+}
+
+.promo-btn,
+#checkoutApplyPromoBtn,
+#applyPromoBtn {
+  padding: 0.75rem 1.25rem !important;
+  background-color: #111111 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.promo-btn:hover,
+#checkoutApplyPromoBtn:hover,
+#applyPromoBtn:hover {
+  background-color: #27272a !important;
+}

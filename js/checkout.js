@@ -118,6 +118,17 @@ function renderCheckoutSummary() {
 
   if (grandTotalEl) grandTotalEl.textContent = formatPrice(grandTotal);
   if (submitTotalEl) submitTotalEl.textContent = formatPrice(grandTotal);
+
+  // Dynamic GST calculation (18% included in price for Indian footwear)
+  const gstAmount = Math.round(grandTotal - (grandTotal / 1.18));
+  const taxNoteEl = document.getElementById('checkoutTaxNote');
+  if (taxNoteEl) {
+    taxNoteEl.textContent = `Including ${formatPrice(gstAmount)} in taxes (18% GST)`;
+  }
+  const gstBreakdownEl = document.getElementById('checkoutGstBreakdown');
+  if (gstBreakdownEl) {
+    gstBreakdownEl.textContent = `${formatPrice(gstAmount)} (18% GST Included)`;
+  }
 }
 
 /* ==========================================================================
