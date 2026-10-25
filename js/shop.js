@@ -10,6 +10,7 @@
   let currentCategory = 'all';
   let currentGender = 'all';
   let currentSort = 'featured';
+  let currentColor = 'all';
   let searchQuery = '';
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -32,6 +33,8 @@
     if (genderParam) currentGender = genderParam.toLowerCase();
     if (sortParam) currentSort = sortParam;
     if (qParam) searchQuery = qParam.trim();
+    const colorParam = params.get('color');
+    if (colorParam) currentColor = colorParam.toLowerCase();
 
     setupFilterControls();
     updatePageHeader();
@@ -118,6 +121,21 @@
       });
     });
 
+    // Colour pills
+    const colorPills = document.querySelectorAll('.shop-color-pill');
+    colorPills.forEach(pill => {
+      const c = pill.getAttribute('data-color');
+      pill.classList.toggle('active', c === currentColor);
+
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentColor = c;
+        colorPills.forEach(p => p.classList.toggle('active', p.getAttribute('data-color') === c));
+        updateURL();
+        renderFilteredProducts();
+      });
+    });
+
     // Sort select
     const sortSelect = document.getElementById('shopSortSelect');
     if (sortSelect) {
@@ -135,6 +153,7 @@
     if (currentCategory !== 'all') params.set('category', currentCategory);
     if (currentGender !== 'all') params.set('gender', currentGender);
     if (currentSort !== 'featured') params.set('sort', currentSort);
+    if (currentColor !== 'all') params.set('color', currentColor);
     if (searchQuery) params.set('q', searchQuery);
 
     const newURL = `${window.location.pathname}?${params.toString()}`;
@@ -169,6 +188,11 @@
       items = items.filter(p => p.gender === 'Men' || p.gender === 'Unisex');
     } else if (currentGender === 'women') {
       items = items.filter(p => p.gender === 'Women' || p.gender === 'Unisex');
+    }
+
+    // 2b. Filter by colour
+    if (currentColor !== 'all') {
+      items = items.filter(p => (p.colorFamily || '').toLowerCase() === currentColor);
     }
 
     // 3. Search query
@@ -221,6 +245,9 @@
     }
     if (currentGender !== 'all') {
       chips.push({ label: `Gender: ${capitalize(currentGender)}`, type: 'gender' });
+    }
+    if (currentColor !== 'all') {
+      chips.push({ label: `Colour: ${capitalize(currentColor)}`, type: 'color' });
     }
     if (searchQuery) {
       chips.push({ label: `Search: "${searchQuery}"`, type: 'query' });

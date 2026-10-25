@@ -19,6 +19,106 @@
     initAccordions();
   });
 
+  
+  // State for See All toggle persistence across swatch switches
+  let colourwaysExpanded = false;
+
+  function getColorwaysForProduct(product) {
+    if (!product || typeof GULLY_PRODUCTS === 'undefined') return [];
+
+    const baazIds = [
+      'prod-003', // Indrani Edition (Light Blue)
+      'prod-001', // Faris Black
+      'prod-004', // Leila Navy
+      'prod-006', // Noor Yellow
+      'prod-002', // Aandhi Kobicha
+      'prod-005', // Buransh Red
+      'prod-007', // Filter Brown
+      'prod-008', // Bitter Black
+      'prod-009', // Rekhe Brown
+      'prod-010', // Kharif Green
+      'prod-011', // Dvaita Calico White
+      'prod-013'  // Naadu Terracotta
+    ];
+
+    if (baazIds.includes(product.id) || product.category === 'sneakers') {
+      return baazIds.map(id => GULLY_PRODUCTS.find(p => p.id === id)).filter(Boolean);
+    }
+
+    if (product.category === 'slides') {
+      return GULLY_PRODUCTS.filter(p => p.category === 'slides');
+    }
+
+    if (product.category === 'apparel') {
+      return GULLY_PRODUCTS.filter(p => p.category === 'apparel');
+    }
+
+    return [product];
+  }
+
+  function renderColourwaysHTML(product) {
+    const colorways = getColorwaysForProduct(product);
+    if (!colorways || colorways.length <= 1) {
+      return '';
+    }
+
+    // Extract clean colourway title (e.g. "Baaz Faris Black" or "Indrani Edition")
+    const activeColorName = product.title.split(' - ').pop() || product.colors[0];
+
+    // Build the ordered list ensuring the current product is visible in the initial 4 slots
+    let orderedList = [...colorways];
+    const currentIndex = orderedList.findIndex(p => p.id === product.id);
+    if (currentIndex >= 4) {
+      const activeItem = orderedList.splice(currentIndex, 1)[0];
+      orderedList.splice(3, 0, activeItem);
+    }
+
+    const primaryItems = orderedList.slice(0, 4);
+    const extraItems = orderedList.slice(4);
+    const hasSeeAll = extraItems.length > 0;
+
+    const renderCard = (p, isExtra = false) => {
+      const isSelected = p.id === product.id;
+      const colorName = p.title.split(' - ').pop() || p.colors[0];
+      return `
+        <a href="product.html?id=${p.id}" 
+           class="pd-colour-card ${isSelected ? 'active selected' : ''} ${isExtra ? 'is-extra' : ''}" 
+           data-product-id="${p.id}" 
+           data-color-name="${colorName}" 
+           title="${p.title}">
+          <img src="${p.primaryImage}" alt="${p.title}" loading="lazy">
+        </a>
+      `;
+    };
+
+    const primaryCardsHTML = primaryItems.map(p => renderCard(p, false)).join('');
+    const extraCardsHTML = extraItems.map(p => renderCard(p, true)).join('');
+
+    const seeAllBtnHTML = hasSeeAll ? `
+      <button type="button" class="pd-colour-see-all-btn ${colourwaysExpanded ? 'expanded' : ''}" id="pdColourSeeAllBtn" aria-expanded="${colourwaysExpanded ? 'true' : 'false'}" title="Toggle all available colourways">
+        <span class="see-all-text">${colourwaysExpanded ? 'See Less' : 'See All'}</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    ` : '';
+
+    return `
+      <!-- Authentic Gully Labs Colours Row (with visual thumbnails & See All toggle) -->
+      <div class="pd-colours-block">
+        <div class="pd-colours-header">
+          <span class="pd-colours-label">Colours:</span>
+          <span id="pdSelectedColorLabel" class="pd-selected-colour-name">${activeColorName}</span>
+        </div>
+        <div class="pd-colours-track ${colourwaysExpanded ? 'expanded' : ''}" id="pdColoursTrack">
+          ${primaryCardsHTML}
+          ${seeAllBtnHTML}
+          ${extraCardsHTML}
+        </div>
+      </div>
+    `;
+  }
+
   function initProductPage() {
     if (typeof GULLY_PRODUCTS === 'undefined' || !Array.isArray(GULLY_PRODUCTS) || GULLY_PRODUCTS.length === 0) {
       console.warn('GULLY_PRODUCTS not loaded');
@@ -146,17 +246,8 @@
           <span>High Demand: Only 6 pairs left in this handcrafted run. Dispatches within 24 hours.</span>
         </div>
 
-        <!-- Color Selection -->
-        <div class="pd-colors-section">
-          <div class="pd-section-label">Color: <span id="pdSelectedColorLabel" style="font-weight:600; text-transform:none;">${selectedColor}</span></div>
-          <div class="pd-color-chips-row" id="pdColorChips">
-            ${colors.map((c, idx) => `
-              <button type="button" class="pd-color-chip ${idx === 0 ? 'selected' : ''}" data-color="${c}">
-                ${c}
-              </button>
-            `).join('')}
-          </div>
-        </div>
+        <!-- Color Selection (Gully Labs Native Colourways) -->
+        ${renderColourwaysHTML(product)}
 
         <!-- Size Selection -->
         <div class="pd-sizes-section">
@@ -332,17 +423,54 @@
   }
 
   function attachColorListeners() {
-    const colorChips = document.querySelectorAll('.pd-color-chip');
-    const colorLabel = document.getElementById('pdSelectedColorLabel');
+    // 1. Colorway cards click listener
+    const colourCards = document.querySelectorAll('.pd-colour-card');
+    colourCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return; // Allow normal opening in background tab
+        e.preventDefault();
 
-    colorChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        colorChips.forEach(c => c.classList.remove('selected'));
-        chip.classList.add('selected');
-        selectedColor = chip.getAttribute('data-color');
-        if (colorLabel) colorLabel.textContent = selectedColor;
+        const targetId = card.getAttribute('data-product-id');
+        const targetProduct = GULLY_PRODUCTS.find(p => p.id === targetId);
+        if (!targetProduct) return;
+
+        // Switch active card immediately
+        colourCards.forEach(c => c.classList.remove('active', 'selected'));
+        card.classList.add('active', 'selected');
+
+        // Update URL
+        try {
+          window.history.pushState({ id: targetId }, '', `product.html?id=${targetId}`);
+        } catch (err) {}
+
+        // Re-render product & related
+        currentProduct = targetProduct;
+        renderProduct(targetProduct);
+        renderRelatedProducts(targetProduct);
+
+        if (typeof showToast === 'function') {
+          showToast(`Selected: ${targetProduct.title}`, 'info');
+        }
       });
     });
+
+    // 2. See All toggle button listener
+    const seeAllBtn = document.getElementById('pdColourSeeAllBtn');
+    if (seeAllBtn) {
+      seeAllBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const track = document.getElementById('pdColoursTrack');
+        if (!track) return;
+        colourwaysExpanded = !colourwaysExpanded;
+        track.classList.toggle('expanded', colourwaysExpanded);
+        seeAllBtn.classList.toggle('expanded', colourwaysExpanded);
+        seeAllBtn.setAttribute('aria-expanded', colourwaysExpanded ? 'true' : 'false');
+        const textSpan = seeAllBtn.querySelector('.see-all-text');
+        if (textSpan) {
+          textSpan.textContent = colourwaysExpanded ? 'See Less' : 'See All';
+        }
+      });
+    }
   }
 
   function attachQuantityListeners() {
@@ -480,3 +608,17 @@
   }
 
 })();
+
+  // Handle browser back/forward navigation between colorways
+  window.addEventListener('popstate', (e) => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (id && typeof GULLY_PRODUCTS !== 'undefined') {
+      const p = GULLY_PRODUCTS.find(item => item.id === id);
+      if (p) {
+        currentProduct = p;
+        renderProduct(p);
+        renderRelatedProducts(p);
+      }
+    }
+  });

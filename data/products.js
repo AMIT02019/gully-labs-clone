@@ -39,7 +39,8 @@ const GULLY_PRODUCTS = [
       "bestsellers",
       "gully-001",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "black"
   },
   {
     "id": "prod-002",
@@ -80,7 +81,8 @@ const GULLY_PRODUCTS = [
       "bestsellers",
       "collaborations",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "brown"
   },
   {
     "id": "prod-003",
@@ -121,7 +123,8 @@ const GULLY_PRODUCTS = [
       "bestsellers",
       "new-arrivals",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "blue"
   },
   {
     "id": "prod-004",
@@ -161,7 +164,8 @@ const GULLY_PRODUCTS = [
       "bestsellers",
       "gully-001",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "blue"
   },
   {
     "id": "prod-005",
@@ -199,7 +203,8 @@ const GULLY_PRODUCTS = [
       "bestsellers",
       "collaborations",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "red"
   },
   {
     "id": "prod-006",
@@ -236,7 +241,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "bestsellers",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "yellow"
   },
   {
     "id": "prod-007",
@@ -273,7 +279,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "new-arrivals",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "brown"
   },
   {
     "id": "prod-008",
@@ -310,7 +317,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "new-arrivals",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "black"
   },
   {
     "id": "prod-009",
@@ -348,7 +356,8 @@ const GULLY_PRODUCTS = [
       "new-arrivals",
       "hidden-gems",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "yellow"
   },
   {
     "id": "prod-010",
@@ -386,7 +395,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "new-arrivals",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "green"
   },
   {
     "id": "prod-011",
@@ -424,7 +434,8 @@ const GULLY_PRODUCTS = [
       "hidden-gems",
       "sneakers",
       "gully-001"
-    ]
+    ],
+    "colorFamily": "white"
   },
   {
     "id": "prod-012",
@@ -462,7 +473,8 @@ const GULLY_PRODUCTS = [
       "hidden-gems",
       "gully-002",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "green"
   },
   {
     "id": "prod-013",
@@ -500,7 +512,8 @@ const GULLY_PRODUCTS = [
       "hidden-gems",
       "sneakers",
       "gully-001"
-    ]
+    ],
+    "colorFamily": "red"
   },
   {
     "id": "prod-014",
@@ -538,7 +551,8 @@ const GULLY_PRODUCTS = [
       "hidden-gems",
       "gully-004",
       "sneakers"
-    ]
+    ],
+    "colorFamily": "blue"
   },
   {
     "id": "prod-015",
@@ -575,7 +589,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "apparel",
       "bestsellers"
-    ]
+    ],
+    "colorFamily": "green"
   },
   {
     "id": "prod-016",
@@ -612,7 +627,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "apparel",
       "new-arrivals"
-    ]
+    ],
+    "colorFamily": "blue"
   },
   {
     "id": "prod-017",
@@ -648,7 +664,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "apparel",
       "bestsellers"
-    ]
+    ],
+    "colorFamily": "green"
   },
   {
     "id": "prod-018",
@@ -684,7 +701,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "apparel",
       "collaborations"
-    ]
+    ],
+    "colorFamily": "white"
   },
   {
     "id": "prod-019",
@@ -722,7 +740,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "slides",
       "bestsellers"
-    ]
+    ],
+    "colorFamily": "brown"
   },
   {
     "id": "prod-020",
@@ -758,7 +777,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "slides",
       "bestsellers"
-    ]
+    ],
+    "colorFamily": "brown"
   },
   {
     "id": "prod-021",
@@ -791,7 +811,8 @@ const GULLY_PRODUCTS = [
     "tags": [
       "accessories",
       "bestsellers"
-    ]
+    ],
+    "colorFamily": "white"
   },
   {
     "id": "prod-022",
@@ -825,6 +846,7 @@ const GULLY_PRODUCTS = [
     "tags": [
       "accessories",
       "bestsellers"
-    ]
+    ],
+    "colorFamily": "brown"
   }
 ];
