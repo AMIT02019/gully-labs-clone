@@ -478,11 +478,15 @@
     </div>
   </div>
 
-  <!-- Slide-out Cart Drawer -->
+    <!-- Slide-out Cart Drawer -->
   <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
-    <div class="drawer-header">
-      <h3 class="drawer-title">Your Gully Cart</h3>
-      <button type="button" class="drawer-close-btn" id="cartDrawerClose" aria-label="Close Cart">&times;</button>
+    <!-- Drawer Header -->
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title-row">
+        <h3 class="cart-drawer-title">Your Bag</h3>
+        <span class="cart-drawer-count">(<span class="cart-count-badge">0</span>)</span>
+      </div>
+      <button type="button" class="cart-drawer-close" id="cartDrawerClose" aria-label="Close Cart">&times;</button>
     </div>
 
     <!-- Free Shipping Progress Meter -->
@@ -493,6 +497,37 @@
       <div class="meter-track">
         <div class="meter-bar" id="shippingMeterBar" style="width: 0%;"></div>
       </div>
+    </div>
+
+    <!-- Scrollable Items Body -->
+    <div class="cart-drawer-body" id="cartDrawerItems">
+      <!-- Populated via renderCart() in js/app.js -->
+    </div>
+
+    <!-- Drawer Footer / Pinned to Bottom -->
+    <div class="cart-drawer-footer">
+      <!-- Promo Box -->
+      <div class="promo-box">
+        <input type="text" id="promoInput" placeholder="Promo code (e.g. GULLY10)" class="promo-input">
+        <button type="button" id="applyPromoBtn" class="promo-btn">Apply</button>
+      </div>
+
+      <!-- Subtotal Row -->
+      <div class="subtotal-row">
+        <span>Estimated Subtotal:</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <p class="drawer-tax-note">MRP inclusive of all taxes • Free doorstep exchanges across India.</p>
+
+      <!-- Checkout Button -->
+      <a href="checkout.html" class="checkout-btn" id="checkoutBtn">
+        Proceed to Secure Checkout &rarr;
+      </a>
+      <a href="cart.html" class="view-bag-link">
+        View Full Shopping Bag &rarr;
+      </a>
+    </div>
+  </div>
     </div>
 
     <!-- Live Cart Items Container -->
