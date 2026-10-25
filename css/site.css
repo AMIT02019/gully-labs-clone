@@ -10,14 +10,14 @@
 .header-inner { max-width:1400px; }
 .site-logo img { height:44px; }
 .desktop-nav { display:flex; gap:38px; align-items:center; flex-wrap:nowrap; }
-.desktop-nav .nav-link { font-size:15px; font-weight:600; text-transform:none; letter-spacing:0; white-space:nowrap; color:#111; }
+.desktop-nav .nav-link { font-size:clamp(0.75rem, 0.748rem + 0.3174vw, 0.875rem); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; white-space:nowrap; color:#111; }
 .header-actions { display:flex; gap:16px; align-items:center; }
 .header-actions .action-btn { width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center; color:#111; text-decoration:none; }
 .cart-count-badge { background:#111; color:#fff; }
 
 /* Headings: Title Case, airy, no blue eyebrows */
-.section-tag { color:#666; font-size:12px; font-weight:600; letter-spacing:.02em; text-transform:none; }
-h1, h2, .section-title, .hero-title, .story-title { text-transform:none !important; letter-spacing:-0.01em; }
+.section-tag { color:#666; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+h1, h2, .section-title, .hero-title, .story-title { text-transform:uppercase !important; letter-spacing:0.0em !important; font-family:Helvetica, 'Helvetica Neue', Arial, sans-serif !important; font-weight:700 !important; }
 .btn-primary { background:#0a0a0a !important; border-color:#0a0a0a !important; color:#fff !important; border-radius:999px !important; }
 .btn-gold { display:inline-block; background:#c8963e; color:#0a0a0a; font-weight:700; font-size:15px; padding:14px 28px; border-radius:0; text-decoration:none; }
 .btn-gold:hover { background:#b3852f; }

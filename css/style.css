@@ -4,9 +4,41 @@
    ========================================================================== */
 
 :root {
-  /* Typography */
-  --font-sans: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  /* Typography - Official Gully Labs Neo-Grotesque System */
+  --font-heading-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-body-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-navigation-family: var(--font-body-family);
+  --font-button-family: var(--font-body-family);
+  --font-product-family: var(--font-body-family);
+
+  --font-sans: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-body: Helvetica, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --font-heading-style: normal;
+  --font-heading-weight: 700;
+  --font-heading-line-height: 1.1;
+  --font-heading-letter-spacing: 0.0em;
+
+  --font-body-style: normal;
+  --font-body-weight: 400;
+  --font-body-line-height: 1.45;
+  --font-body-letter-spacing: 0.0em;
+
+  --font-navigation-size: clamp(0.75rem, 0.748rem + 0.3174vw, 0.875rem);
+  --font-navigation-weight: 600;
+  --font-navigation-text-transform: uppercase;
+  --font-navigation-letter-spacing: 0.04em;
+
+  --font-button-size: clamp(0.75rem, 0.8115rem + 0.1587vw, 0.875rem);
+  --font-button-weight: 700;
+  --font-button-text-transform: uppercase;
+  --font-button-letter-spacing: 0.05em;
+
+  --font-product-size: clamp(0.875rem, 0.873rem + 0.3175vw, 1.05rem);
+  --font-product-weight: 600;
+  --font-product-letter-spacing: 0.0em;
 
   /* Colors */
   --color-black: #0f0f10;
@@ -49,12 +81,24 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-weight);
   color: var(--color-black);
   background-color: var(--color-white);
-  line-height: 1.5;
+  line-height: var(--font-body-line-height);
+  letter-spacing: var(--font-body-letter-spacing);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  line-height: var(--font-heading-line-height);
+  letter-spacing: var(--font-heading-letter-spacing);
+  color: var(--color-black);
 }
 
 body.drawer-open {
@@ -246,10 +290,11 @@ input, select, textarea {
 }
 
 .desktop-nav .nav-link {
-  font-size: 0.92rem;
-  font-weight: 600;
-  text-transform: none;
-  letter-spacing: 0;
+  font-family: var(--font-navigation-family);
+  font-size: var(--font-navigation-size);
+  font-weight: var(--font-navigation-weight);
+  text-transform: var(--font-navigation-text-transform);
+  letter-spacing: var(--font-navigation-letter-spacing);
   color: #111111;
   position: relative;
   padding: 0.5rem 0;
@@ -407,11 +452,12 @@ input, select, textarea {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  font-weight: 900;
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.85rem, 3.5vw, 3rem);
+  font-weight: 700;
   line-height: 1.05;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.0em;
   margin-bottom: 1rem;
 }
 
@@ -433,10 +479,11 @@ input, select, textarea {
   align-items: center;
   justify-content: center;
   padding: 0.85rem 1.75rem;
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: var(--font-button-family);
+  font-size: var(--font-button-size);
+  font-weight: var(--font-button-weight);
+  text-transform: var(--font-button-text-transform);
+  letter-spacing: var(--font-button-letter-spacing);
   border-radius: var(--radius-sm);
   transition: all var(--ease);
 }
@@ -506,10 +553,11 @@ input, select, textarea {
 }
 
 .section-title {
-  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
-  font-weight: 900;
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.4rem, 2.2vw, 2.15rem);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.0em;
   line-height: 1.1;
   color: var(--color-black);
 }
@@ -641,9 +689,10 @@ input, select, textarea {
   left: 10px;
   background-color: var(--color-blue);
   color: #ffffff;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-family: var(--font-body-family);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-pill);
@@ -703,18 +752,21 @@ input, select, textarea {
 }
 
 .card-subcat {
-  font-size: 0.7rem;
-  font-weight: 800;
+  font-family: var(--font-body-family);
+  font-size: 0.6875rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: var(--color-muted);
 }
 
 .card-title {
-  font-size: 0.95rem;
-  font-weight: 800;
-  line-height: 1.25;
+  font-family: var(--font-product-family);
+  font-size: var(--font-product-size);
+  font-weight: var(--font-product-weight);
+  line-height: 1.3;
   color: var(--color-black);
+  letter-spacing: 0.0em;
 }
 
 .card-price-row {
@@ -725,9 +777,12 @@ input, select, textarea {
 }
 
 .card-price {
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-family: var(--font-body-family);
+  font-size: var(--font-product-size);
+  font-weight: 700;
   color: var(--color-black);
+  letter-spacing: 0.0em;
+  font-variant-numeric: tabular-nums;
 }
 
 .card-price-orig {
@@ -1993,12 +2048,14 @@ input, select, textarea {
 }
 
 .pd-product-title {
-  font-size: 2.1rem;
-  font-weight: 800;
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.0em;
   color: #111111;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .pd-rating-bar {
@@ -2040,9 +2097,12 @@ input, select, textarea {
 }
 
 .pd-price-now {
-  font-size: 1.9rem;
-  font-weight: 800;
+  font-family: var(--font-body-family);
+  font-size: 1.75rem;
+  font-weight: 700;
   color: #111111;
+  letter-spacing: 0.0em;
+  font-variant-numeric: tabular-nums;
 }
 
 .pd-price-was {
@@ -2997,9 +3057,11 @@ input, select, textarea {
 }
 
 .shop-page-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.0em;
+  text-transform: uppercase;
   color: #111111;
   margin: 0.4rem 0 0.5rem;
 }
@@ -3588,8 +3650,11 @@ input, select, textarea {
 }
 
 .checkout-section-title {
+  font-family: var(--font-heading-family);
   font-size: 1.15rem;
-  font-weight: 800;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.0em;
   color: #111111;
   margin: 0 0 1rem;
 }
