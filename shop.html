@@ -282,27 +282,28 @@
   </header>
 
   <main>
-    <!-- Breadcrumb Bar -->
-    <div class="container pd-breadcrumb-bar">
-      <a href="index.html">Home</a>
-      <span class="pd-crumb-sep">/</span>
-      <a href="shop.html">Shop</a>
-      <span class="pd-crumb-sep">/</span>
-      <span class="pd-crumb-active" id="shopCrumbActive">Catalogue</span>
-    </div>
-
-    <!-- Shop Page Header -->
-    <div class="container shop-header-box">
-      <span class="section-tag">ARCHIVAL COLLECTION</span>
-      <h1 class="shop-page-title" id="shopPageTitle">All Products & Silhouettes</h1>
-      <p class="shop-page-desc" id="shopPageDesc">
-        Explore the complete collection of hand-lasted Indian sneakers, architectural slides, and heavy-gauge apparel.
-      </p>
-    </div>
-
-    <!-- Shop Filter & Sorting Bar -->
+    <!-- Shop Page Section -->
     <section class="shop-page-section">
       <div class="container">
+        <!-- Breadcrumb Bar -->
+        <nav class="shop-breadcrumb-bar" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="pd-crumb-sep">/</span>
+          <a href="shop.html">Shop</a>
+          <span class="pd-crumb-sep">/</span>
+          <span class="pd-crumb-active" id="shopCrumbActive">Catalogue</span>
+        </nav>
+
+        <!-- Shop Page Header -->
+        <div class="shop-header-box">
+          <span class="shop-eyebrow">Archival Collection</span>
+          <h1 class="shop-page-title" id="shopPageTitle">All Products & Silhouettes</h1>
+          <p class="shop-page-desc" id="shopPageDesc">
+            Explore the complete collection of hand-lasted Indian sneakers, architectural slides, and heavy-gauge apparel.
+          </p>
+        </div>
+
+        <!-- Shop Filter & Sorting Bar -->
         <div class="shop-filter-toolbar">
           <!-- Category & Gender Pills -->
           <div class="shop-pills-row">
@@ -311,7 +312,7 @@
             <button type="button" class="shop-filter-pill shop-cat-pill" data-category="slides">Slides & Mules</button>
             <button type="button" class="shop-filter-pill shop-cat-pill" data-category="apparel">Apparel</button>
 
-            <span style="color:#d4d4d8; margin:0 0.25rem;">|</span>
+            <span class="shop-pill-divider" aria-hidden="true">|</span>
 
             <button type="button" class="shop-filter-pill shop-gender-pill active" data-gender="all">All Genders</button>
             <button type="button" class="shop-filter-pill shop-gender-pill" data-gender="men">Men</button>
@@ -327,7 +328,8 @@
               <option value="price-desc">Price: High to Low</option>
               <option value="rating">Customer Rating</option>
             </select>
-          </div>        </div>
+          </div>
+        </div>
 
         <!-- Colour Filter Bar -->
         <div class="shop-color-filter-row">

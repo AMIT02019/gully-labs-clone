@@ -275,9 +275,11 @@
         const type = btn.getAttribute('data-type');
         if (type === 'cat') currentCategory = 'all';
         if (type === 'gender') currentGender = 'all';
+        if (type === 'color') currentColor = 'all';
         if (type === 'query') searchQuery = '';
         updateCategoryPills();
         updateGenderPills();
+        updateColorPills();
         updateURL();
         updatePageHeader();
         renderFilteredProducts();
@@ -289,9 +291,11 @@
       clearAllBtn.addEventListener('click', () => {
         currentCategory = 'all';
         currentGender = 'all';
+        currentColor = 'all';
         searchQuery = '';
         updateCategoryPills();
         updateGenderPills();
+        updateColorPills();
         updateURL();
         updatePageHeader();
         renderFilteredProducts();
@@ -308,6 +312,12 @@
   function updateGenderPills() {
     document.querySelectorAll('.shop-gender-pill').forEach(pill => {
       pill.classList.toggle('active', pill.getAttribute('data-gender') === currentGender);
+    });
+  }
+
+  function updateColorPills() {
+    document.querySelectorAll('.shop-color-pill').forEach(pill => {
+      pill.classList.toggle('active', pill.getAttribute('data-color') === currentColor);
     });
   }
 

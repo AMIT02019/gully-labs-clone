@@ -642,28 +642,21 @@ input, select, textarea {
 .product-grid, .products-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1.25rem 1rem;
   align-items: stretch;
 }
 
 @media (min-width: 640px) {
   .product-grid, .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (min-width: 900px) {
-  .product-grid, .products-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.75rem;
+    gap: 1.5rem 1.25rem;
   }
 }
 
-@media (min-width: 1160px) {
+@media (min-width: 1040px) {
   .product-grid, .products-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2.25rem 1.85rem;
+    gap: 2rem 1.5rem;
   }
 }
 
@@ -3146,74 +3139,117 @@ input, select, textarea {
    ========================================================================== */
 
 .shop-page-section {
-  padding: 0 0 5rem;
+  padding: 0.5rem 0 5rem;
 }
 
+/* Unified Breadcrumb */
+.shop-breadcrumb-bar {
+  padding: 1rem 0 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shop-breadcrumb-bar a {
+  color: #71717a;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.shop-breadcrumb-bar a:hover {
+  color: #111111;
+}
+
+.shop-breadcrumb-bar .pd-crumb-sep {
+  color: #d4d4d8;
+  font-size: 0.75rem;
+}
+
+.shop-breadcrumb-bar .pd-crumb-active {
+  color: #111111;
+  font-weight: 700;
+}
+
+/* Clean Editorial Header Box */
 .shop-header-box {
-  padding: 2.25rem 0 1.5rem;
+  padding: 0.75rem 0 1.75rem;
   border-bottom: 1px solid #ebebeb;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
-.shop-header-box .section-tag {
+.shop-eyebrow {
   display: inline-block;
-  background: #111111;
-  color: #ffffff;
-  padding: 0.25rem 0.65rem;
-  border-radius: 4px;
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: #71717a;
+  margin-bottom: 0.35rem;
 }
 
 .shop-page-title {
   font-family: var(--font-heading-family);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-size: clamp(1.75rem, 2.75vw, 2.35rem);
   font-weight: 700;
-  letter-spacing: 0.0em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: #111111;
-  margin: 0.4rem 0 0.5rem;
+  margin: 0.25rem 0 0.5rem;
+  line-height: 1.15;
 }
 
 .shop-page-desc {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: #6b7280;
   max-width: 680px;
-  line-height: 1.5;
+  line-height: 1.55;
+  margin: 0;
 }
 
+/* Primary Filter Toolbar */
 .shop-filter-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.25rem;
-  margin-bottom: 1.75rem;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .shop-pills-row {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
   align-items: center;
 }
 
+.shop-pill-divider {
+  color: #d4d4d8;
+  margin: 0 0.25rem;
+  font-weight: 300;
+  user-select: none;
+}
+
 .shop-filter-pill {
-  padding: 0.45rem 1rem;
-  border-radius: 20px;
-  border: 1.5px solid #e4e4e7;
+  padding: 0.42rem 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid #e4e4e7;
   background: #ffffff;
   font-size: 0.82rem;
-  font-weight: 700;
-  color: #3f3f46;
+  font-weight: 600;
+  color: #27272a;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  line-height: 1.3;
 }
 
 .shop-filter-pill:hover {
@@ -3230,21 +3266,22 @@ input, select, textarea {
 .shop-sort-controls {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .shop-count-label {
   font-size: 0.82rem;
   font-weight: 600;
   color: #71717a;
+  white-space: nowrap;
 }
 
 .shop-sort-select {
-  padding: 0.45rem 0.85rem;
+  padding: 0.42rem 0.85rem;
   border-radius: 6px;
-  border: 1.5px solid #d4d4d8;
+  border: 1px solid #d4d4d8;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #111111;
   background: #ffffff;
   cursor: pointer;
@@ -3256,56 +3293,129 @@ input, select, textarea {
   border-color: #111111;
 }
 
+/* Secondary Colour Filter Strip */
+.shop-color-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.4rem 0 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.shop-color-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #71717a;
+  flex-shrink: 0;
+}
+
+.shop-color-pills-track {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.shop-color-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid #e4e4e7;
+  background: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.3;
+}
+
+.shop-color-pill:hover {
+  border-color: #111111;
+  color: #111111;
+}
+
+.shop-color-pill.active {
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}
+
+.shop-color-pill .color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.shop-color-pill.active .color-dot {
+  box-shadow: 0 0 0 1.5px #ffffff;
+}
+
+/* Active Filter Chips Strip (Clean Minimalist Luxury) */
 .shop-active-filters-bar {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin-bottom: 1.75rem;
-  padding: 0.6rem 0.85rem;
-  background: #fafafa;
-  border-radius: 6px;
-  border: 1px solid #f0f0f0;
+  margin: 0.25rem 0 1.5rem;
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 
 .shop-active-filter-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: #ffffff;
-  border: 1.5px solid #e4e4e7;
-  padding: 0.25rem 0.65rem;
-  border-radius: 20px;
-  font-size: 0.78rem;
-  font-weight: 700;
+  gap: 0.45rem;
+  background: #f4f4f5;
+  border: 1px solid #e4e4e7;
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
   color: #18181b;
 }
 
 .shop-active-filter-chip button {
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1;
   cursor: pointer;
   color: #71717a;
   padding: 0;
   display: flex;
   align-items: center;
+  transition: color 0.15s ease;
 }
 
 .shop-active-filter-chip button:hover {
-  color: #dc2626;
+  color: #111111;
 }
 
 .shop-clear-all-btn {
   background: none;
   border: none;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #71717a;
   text-decoration: underline;
+  text-underline-offset: 2px;
   cursor: pointer;
-  margin-left: 0.5rem;
+  margin-left: 0.35rem;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.15s ease;
+}
+
+.shop-clear-all-btn:hover {
+  color: #111111;
 }
 
 /* Empty State */
@@ -4154,71 +4264,7 @@ input, select, textarea {
   }
 }
 
-/* ==========================================================================
-   SHOP PAGE: COLOUR FILTER BAR
-   ========================================================================== */
-.shop-color-filter-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  padding: 0.85rem 0 0.25rem;
-  margin-top: 0.85rem;
-  border-top: 1px dashed #e4e4e7;
-}
-
-.shop-color-label {
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #71717a;
-}
-
-.shop-color-pills-track {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  flex-wrap: wrap;
-}
-
-.shop-color-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: 20px;
-  border: 1.5px solid #e4e4e7;
-  background: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #3f3f46;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.shop-color-pill:hover {
-  border-color: #111111;
-  color: #111111;
-}
-
-.shop-color-pill.active {
-  background: #111111;
-  border-color: #111111;
-  color: #ffffff;
-}
-
-.shop-color-pill .color-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-.shop-color-pill.active .color-dot {
-  box-shadow: 0 0 0 1.5px #ffffff;
-}
+/* Colour filter styles consolidated in SHOP / CATALOGUE PAGE section */
 
 /* ==========================================================================
    CHECKOUT POLISH: BALANCED CONTAINER & LUXURY SUMMARY
