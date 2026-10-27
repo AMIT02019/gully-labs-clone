@@ -7,7 +7,7 @@
 /* Announcement + header */
 .r-announce { background:#0f52dc; color:#fff; text-align:center; font-size:13px; font-weight:600; letter-spacing:.01em; padding:10px 16px; }
 .site-header { border-bottom:1px solid #e5e5e5; }
-.header-inner { max-width:var(--container-max, 1480px); }
+.header-inner { max-width:var(--container-max, 2000px); }
 .site-logo img { height:44px; }
 .desktop-nav { display:flex; gap:38px; align-items:center; flex-wrap:nowrap; }
 .desktop-nav .nav-link { font-size:clamp(0.75rem, 0.748rem + 0.3174vw, 0.875rem); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; white-space:nowrap; color:#111; }
