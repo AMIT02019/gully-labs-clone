@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneaker Wall — Gully Labs Demo</title>
+<meta name="description" content="Demo sneaker collection wall and single-product carousel. Demo only, no real orders or payments.">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:#fff}
+  a{color:inherit}
+  .demo-bar{background:#111;color:#fff;text-align:center;padding:10px 16px;font-size:13px}
+  header{border-bottom:1px solid #e5e5e5}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+  .head{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:16px}
+  .logo{font-weight:800;letter-spacing:.04em;text-decoration:none;font-size:20px}
+  nav{display:flex;gap:22px;font-size:14px}
+  nav a{text-decoration:none}
+  .page-head{padding:36px 0 8px}
+  .page-head h1{margin:0 0 8px;font-size:38px;letter-spacing:-.01em}
+  .page-head p{margin:0;color:#555;max-width:720px;line-height:1.6}
+  .wall{background:#e6e6e6;padding:28px;border-radius:18px;margin:24px 0}
+  .wall-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .tile{background:#f2f2f2;border:2px solid transparent;border-radius:14px;padding:12px;cursor:pointer;text-align:left;font:inherit;width:100%}
+  .tile img{width:100%;aspect-ratio:1/1;object-fit:contain;display:block;background:#fff;border-radius:10px}
+  .tile .code{display:block;margin-top:10px;font-size:11px;letter-spacing:.12em;color:#666;font-weight:700}
+  .tile .name{display:block;margin-top:4px;font-size:14px;line-height:1.35;min-height:38px}
+  .tile .price{display:block;margin-top:6px;font-weight:800}
+  .tile:hover{transform:translateY(-2px)}
+  .tile.active{border-color:#ff6a1a;box-shadow:0 10px 30px rgba(255,106,26,.35)}
+  .carousel{background:#e6e6e6;border-radius:18px;padding:28px;margin:0 0 36px;overflow:hidden}
+  .stage{position:relative;background:#f2f2f2;border-radius:14px;overflow:hidden}
+  .track{display:flex;transition:transform .45s ease}
+  .slide{min-width:100%;display:flex;align-items:center;justify-content:center;padding:10px}
+  .slide img{width:100%;max-height:520px;object-fit:contain;display:block}
+  .glow{height:10px;margin:0 12% 6px;background:linear-gradient(90deg,transparent,#ff6a1a,transparent);filter:blur(2px);border-radius:99px}
+  .arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid #ddd;background:#fff;font-size:26px;cursor:pointer;z-index:2}
+  .arrow.prev{left:14px}.arrow.next{right:14px}
+  .info{text-align:center;padding:18px 10px 4px}
+  .info .code{font-size:12px;letter-spacing:.14em;color:#666;font-weight:700}
+  .info h2{margin:8px 0 6px;font-size:28px}
+  .info .meta{color:#555;margin:0 0 14px}
+  .info .price{font-size:22px;font-weight:800;margin:0 0 16px}
+  .sizes{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+  .size{border:1px solid #bbb;background:#fff;border-radius:99px;padding:9px 14px;cursor:pointer;font:inherit}
+  .size.selected{background:#111;color:#fff;border-color:#111}
+  .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{border:0;border-radius:99px;padding:13px 26px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+  .btn-dark{background:#111;color:#fff}
+  .btn-light{background:#fff;border:1px solid #bbb}
+  .dots{display:flex;gap:8px;justify-content:center;margin-top:18px}
+  .dot{width:10px;height:10px;border-radius:50%;border:0;background:#bbb;cursor:pointer;padding:0}
+  .dot.active{background:#ff6a1a;width:26px;border-radius:99px}
+  .note{text-align:center;color:#555;font-size:13px;margin-top:12px}
+  footer{border-top:1px solid #e5e5e5;padding:24px 0;color:#555;font-size:13px;text-align:center}
+  @media(max-width:900px){.wall-grid{grid-template-columns:repeat(3,1fr)}.page-head h1{font-size:30px}.slide img{max-height:420px}}
+  @media(max-width:560px){.wall-grid{grid-template-columns:repeat(2,1fr)}nav{display:none}.page-head h1{font-size:26px}.wall,.carousel{padding:16px}.slide img{max-height:320px}.info h2{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo study &mdash; not affiliated with Gully Labs, no real orders or payments</div>
+<header><div class="wrap head">
+  <a class="logo" href="index.html">GULLY LABS &middot; DEMO</a>
+  <nav><a href="shop.html">Shop All</a><a href="sneaker-wall.html">Sneaker Wall</a><a href="story.html">Story</a><a href="help.html">Help</a></nav>
+</div></header>
+<main class="wrap">
+  <div class="page-head">
+    <h1>The Sneaker Wall</h1>
+    <p>Ten demo sneakers on one grey wall, in the layout of the reference reel. Tap any pair to view it large below &mdash; the wall and the carousel stay in sync.</p>
+  </div>
+
+  <section class="wall" aria-label="Sneaker collection wall">
+    <div class="wall-grid" id="wallGrid"></div>
+  </section>
+
+  <section class="carousel" aria-label="Single product carousel">
+    <div class="stage" id="stage">
+      <button class="arrow prev" id="prevBtn" aria-label="Previous product">&#8249;</button>
+      <div class="track" id="track"></div>
+      <button class="arrow next" id="nextBtn" aria-label="Next product">&#8250;</button>
+    </div>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="info">
+      <div class="code" id="pCode"></div>
+      <h2 id="pTitle"></h2>
+      <p class="meta" id="pMeta"></p>
+      <p class="price" id="pPrice"></p>
+      <div class="sizes" id="sizes" role="group" aria-label="Choose a size"></div>
+      <div class="actions">
+        <button class="btn btn-dark" id="addBtn" type="button">Add to Bag (Demo)</button>
+        <a class="btn btn-light" id="viewBtn" href="#">View Product</a>
+      </div>
+      <p class="note" id="cartNote">Demo cart only &mdash; nothing is charged or ordered.</p>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
+</main>
+<footer>Demo storefront &mdash; 10 demo sneakers, prices in &#8377;, no real checkout.</footer>
+<script>
+var PRODUCTS = [
+  {id:"prod-001",code:"BAAZ 01",title:"Gully Number 001 - Baaz Faris Black",color:"Black / White",price:4290,img:"assets/images/img_001_d54b9d76.jpeg"},
+  {id:"prod-002",code:"AANDHI 02",title:"Gully Number 001 X Raga - Aandhi Kobicha",color:"Kobicha Earth",price:5990,img:"assets/images/img_002_5983bf7c.jpeg"},
+  {id:"prod-003",code:"INDRANI 03",title:"Gully Number 001 - Baaz Indrani Edition",color:"Indrani",price:5990,img:"assets/images/img_003_5cfa92d1.jpeg"},
+  {id:"prod-004",code:"LEILA 04",title:"Gully Number 001 - Baaz Leila Navy",color:"Navy Blue",price:4290,img:"assets/images/img_006_8fd2d838.jpeg"},
+  {id:"prod-005",code:"BURANSH 05",title:"Gully Number 001 X Aryan Katoch - Buransh Red",color:"Buransh Red",price:5990,img:"assets/images/img_007_97e07d5b.jpeg"},
+  {id:"prod-006",code:"NOOR 06",title:"Gully Number 001 - Baaz Noor Yellow",color:"Noor Yellow",price:4290,img:"assets/images/img_005_de05f1f9.jpeg"},
+  {id:"prod-007",code:"FILTER 07",title:"Gully Number 001 - Baaz Filter Brown",color:"Filter Brown",price:4490,img:"assets/images/img_082_ddab48c9.jpeg"},
+  {id:"prod-008",code:"BITTER 08",title:"Gully Number 001 - Baaz Bitter Black",color:"Bitter Black",price:4490,img:"assets/images/img_083_7078dc96.jpeg"},
+  {id:"prod-009",code:"REKHE 09",title:"Gully Number 001 - Rekhe Brown",color:"Rekhe Brown",price:8990,img:"assets/images/img_084_a9b39775.jpeg"},
+  {id:"prod-010",code:"KHARIF 10",title:"Gully Number 001 - Kharif Green",color:"Kharif Green",price:6990,img:"assets/images/img_085_d00da94f.jpeg"}
+];
+var SIZES = ["UK 6","UK 7","UK 8","UK 9","UK 10","UK 11"];
+var current = 0, selectedSize = "";
+var wall = document.getElementById("wallGrid");
+var track = document.getElementById("track");
+var dots = document.getElementById("dots");
+function inr(n){ return "\u20B9" + n.toLocaleString("en-IN"); }
+PRODUCTS.forEach(function(p, i){
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "tile"; b.setAttribute("data-i", i);
+  b.innerHTML = '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy"><span class="code">' + p.code + '</span><span class="name">' + p.title + '</span><span class="price">' + inr(p.price) + '</span>';
+  b.addEventListener("click", function(){ show(i, true); });
+  wall.appendChild(b);
+  var s = document.createElement("div");
+  s.className = "slide";
+  s.innerHTML = '<img src="' + p.img + '" alt="' + p.title + '">';
+  track.appendChild(s);
+  var d = document.createElement("button");
+  d.type = "button"; d.className = "dot"; d.setAttribute("aria-label", "Go to " + p.title);
+  d.addEventListener("click", function(){ show(i, false); });
+  dots.appendChild(d);
+});
+var sizeBox = document.getElementById("sizes");
+SIZES.forEach(function(s){
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "size"; b.textContent = s;
+  b.addEventListener("click", function(){
+    selectedSize = s;
+    Array.prototype.forEach.call(sizeBox.children, function(x){ x.classList.remove("selected"); });
+    b.classList.add("selected");
+    document.getElementById("cartNote").textContent = "Size selected: " + s + " — demo cart only, nothing is charged.";
+  });
+  sizeBox.appendChild(b);
+});
+function show(i, scroll){
+  current = (i + PRODUCTS.length) % PRODUCTS.length;
+  var p = PRODUCTS[current];
+  track.style.transform = "translateX(-" + (current * 100) + "%)";
+  Array.prototype.forEach.call(wall.children, function(x, j){ x.classList.toggle("active", j === current); });
+  Array.prototype.forEach.call(dots.children, function(x, j){ x.classList.toggle("active", j === current); });
+  document.getElementById("pCode").textContent = p.code;
+  document.getElementById("pTitle").textContent = p.title;
+  document.getElementById("pMeta").textContent = p.color + " · Unisex · Hand-lasted demo";
+  document.getElementById("pPrice").textContent = inr(p.price);
+  document.getElementById("viewBtn").href = "product.html?id=" + p.id;
+  if (scroll) { document.querySelector(".carousel").scrollIntoView({behavior:"smooth", block:"start"}); }
+}
+document.getElementById("prevBtn").addEventListener("click", function(){ show(current - 1, false); });
+document.getElementById("nextBtn").addEventListener("click", function(){ show(current + 1, false); });
+document.addEventListener("keydown", function(e){
+  if (e.key === "ArrowLeft") show(current - 1, false);
+  if (e.key === "ArrowRight") show(current + 1, false);
+});
+var tx = null;
+var stage = document.getElementById("stage");
+stage.addEventListener("touchstart", function(e){ tx = e.changedTouches[0].clientX; }, {passive:true});
+stage.addEventListener("touchend", function(e){
+  if (tx === null) return;
+  var dx = e.changedTouches[0].clientX - tx;
+  if (dx < -40) show(current + 1, false);
+  if (dx > 40) show(current - 1, false);
+  tx = null;
+}, {passive:true});
+document.getElementById("addBtn").addEventListener("click", function(){
+  if (!selectedSize) { document.getElementById("cartNote").textContent = "Please choose a size first."; return; }
+  var p = PRODUCTS[current];
+  try {
+    var cart = JSON.parse(window.localStorage.getItem("gully_demo_cart") || "[]");
+    if (!Array.isArray(cart)) cart = [];
+    var ex = null;
+    for (var i = 0; i < cart.length; i++) { if (cart[i].id === p.id && cart[i].size === selectedSize) ex = cart[i]; }
+    if (ex) { ex.qty = (ex.qty || 1) + 1; } else { cart.push({id: p.id, size: selectedSize, qty: 1}); }
+    window.localStorage.setItem("gully_demo_cart", JSON.stringify(cart));
+    document.getElementById("cartNote").textContent = "Added to demo bag: " + p.title + " (" + selectedSize + "). Nothing is charged.";
+  } catch (e) {
+    document.getElementById("cartNote").textContent = "Demo bag unavailable in this browser mode.";
+  }
+});
+show(0, false);
+</script>
+</body>
+</html>
