@@ -1,0 +1,810 @@
+/* ==========================================================================
+   SNEAKER SHOWCASE MODULE (WALL & CAROUSEL)
+   Visual language: Premium, minimal, mid-grey panels, black text,
+   clean sans-serif type, soft orange accent glow used sparingly.
+   Responsive at 1440px, 768px, and 390px with zero layout shift.
+   ========================================================================== */
+
+:root {
+  --sneaker-panel-bg: #eaeaea;        /* Mid-grey panel backdrop */
+  --sneaker-card-bg: #dfdfe2;         /* Cohesive studio grey tile */
+  --sneaker-card-border: rgba(0, 0, 0, 0.06);
+  --sneaker-accent-orange: #ff5500;   /* Signature neon/ember orange accent */
+  --sneaker-accent-glow: rgba(255, 85, 0, 0.45);
+  --sneaker-text-dark: #111111;
+  --sneaker-text-muted: #71717a;
+  --sneaker-radius: 12px;
+}
+
+/* ==========================================================================
+   WRAPPER CONTAINER & MID-GREY PANELS
+   ========================================================================== */
+
+.sneaker-showcase-wrapper {
+  width: 100%;
+  padding: 2.5rem 0 4rem;
+  background-color: transparent;
+}
+
+.sneaker-panel {
+  background-color: var(--sneaker-panel-bg);
+  border-radius: var(--sneaker-radius);
+  padding: clamp(2rem, 4vw, 4rem) clamp(1.25rem, 3.5vw, 3.5rem);
+  margin-bottom: 2.5rem;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+.sneaker-section-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sneaker-section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sneaker-accent-orange);
+  margin-bottom: 0.35rem;
+}
+
+.sneaker-section-title {
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--sneaker-text-dark);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.sneaker-section-desc {
+  font-size: 0.92rem;
+  color: var(--sneaker-text-muted);
+  max-width: 620px;
+  margin: 0.35rem 0 0;
+  line-height: 1.5;
+}
+
+.sneaker-count-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.06);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--sneaker-text-dark);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   SECTION 1 — SNEAKER COLLECTION WALL / SHOP GRID
+   Desktop: 5 per row, 2 rows (10 products)
+   Tablet: 3 per row
+   Mobile: 2 per row
+   ========================================================================== */
+
+.sneaker-wall-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(1rem, 1.8vw, 1.6rem);
+  width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .sneaker-wall-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .sneaker-wall-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+}
+
+/* Individual Sneaker Tile */
+.sneaker-wall-tile {
+  background-color: var(--sneaker-card-bg);
+  border: 1px solid var(--sneaker-card-border);
+  border-radius: 8px;
+  padding: 1.1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.28s ease,
+              background-color 0.28s ease;
+  user-select: none;
+  contain: layout paint;
+}
+
+/* Hover: subtle lift and soft orange accent glow under the shoe. No popups. */
+@media (hover: hover) {
+  .sneaker-wall-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px -10px rgba(255, 85, 0, 0.28), 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: rgba(255, 85, 0, 0.4);
+    background-color: #e5e5e8;
+  }
+  
+  .sneaker-wall-tile:hover .sneaker-tile-glow {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  .sneaker-wall-tile:hover .sneaker-tile-img {
+    transform: translateY(-2px);
+  }
+}
+
+/* Active Tile State (Synchronized with Section 2) */
+.sneaker-wall-tile.is-active {
+  border-color: var(--sneaker-text-dark);
+  box-shadow: 0 0 0 1.5px var(--sneaker-text-dark), 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+  background-color: #e3e3e7;
+}
+
+.sneaker-wall-tile.is-active::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--sneaker-accent-orange);
+  box-shadow: 0 0 6px 1px var(--sneaker-accent-orange);
+}
+
+/* Tile Image Stage (Stable aspect-ratio to prevent CLS jumping) */
+.sneaker-tile-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  overflow: visible;
+}
+
+.sneaker-tile-img {
+  width: 92%;
+  height: 100%;
+  max-height: 110px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Soft orange accent glow positioned directly under the shoe */
+.sneaker-tile-glow {
+  position: absolute;
+  bottom: 6px;
+  left: 15%;
+  right: 15%;
+  height: 12px;
+  background: radial-gradient(ellipse at center, rgba(255, 85, 0, 0.55) 0%, rgba(255, 85, 0, 0.15) 55%, transparent 75%);
+  border-radius: 50%;
+  filter: blur(5px);
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sneaker-wall-tile.is-active .sneaker-tile-glow {
+  opacity: 0.85;
+}
+
+/* Tile Meta Details (Only code, name, price) */
+.sneaker-tile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: auto;
+}
+
+.sneaker-tile-code {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sneaker-text-muted);
+  line-height: 1.2;
+}
+
+.sneaker-tile-name {
+  font-family: var(--font-heading-family);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--sneaker-text-dark);
+  margin: 0;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sneaker-tile-price {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sneaker-text-dark);
+  margin-top: 0.15rem;
+  line-height: 1.2;
+}
+
+
+/* ==========================================================================
+   SECTION 2 — SINGLE-PRODUCT CAROUSEL
+   One large product centred on mid-grey panel.
+   Glowing orange bar beneath featured shoe.
+   Manual navigation: arrows, mobile swipe, keyboard, thumbnails/dots.
+   Syncs with Section 1.
+   ========================================================================== */
+
+.sneaker-carousel-section {
+  position: relative;
+  outline: none;
+}
+
+.sneaker-carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Large Showcase Stage (Fills most of section width) */
+.sneaker-stage-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  min-height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0 2rem;
+  touch-action: pan-y pinch-zoom;
+}
+
+.sneaker-stage-slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.sneaker-stage-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+  user-select: none;
+}
+
+/* Large Centred Product Image */
+.sneaker-stage-img-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.sneaker-stage-img {
+  width: 90%;
+  max-height: 320px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.18));
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* GLOWING ORANGE BAR & AMBIENT PEDESTAL GLOW BENEATH FEATURED SHOE */
+.sneaker-stage-glow-pedestal {
+  position: relative;
+  width: min(560px, 86%);
+  margin: 0.5rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ambient Radial Glow */
+.sneaker-stage-ambient-glow {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  height: 52px;
+  background: radial-gradient(ellipse at center, rgba(255, 85, 0, 0.48) 0%, rgba(255, 85, 0, 0.18) 45%, transparent 72%);
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* High-intensity Glowing Orange Bar */
+.sneaker-stage-orange-bar {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 110, 0, 0.4) 15%, 
+    rgba(255, 85, 0, 0.9) 35%, 
+    #ff5500 50%, 
+    rgba(255, 85, 0, 0.9) 65%, 
+    rgba(255, 110, 0, 0.4) 85%, 
+    transparent 100%
+  );
+  border-radius: 9999px;
+  box-shadow: 0 0 16px 3px rgba(255, 85, 0, 0.7),
+              0 0 38px 8px rgba(255, 85, 0, 0.35);
+  position: relative;
+  z-index: 2;
+}
+
+/* Floor Light Reflection */
+.sneaker-stage-floor-reflection {
+  width: 70%;
+  height: 10px;
+  margin-top: 2px;
+  background: radial-gradient(ellipse at center, rgba(255, 85, 0, 0.28) 0%, transparent 70%);
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+/* Previous / Next Arrow Controls */
+.sneaker-arrow-btn {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--sneaker-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  outline: none;
+}
+
+.sneaker-arrow-btn:hover {
+  background: var(--sneaker-text-dark);
+  color: #ffffff;
+  border-color: var(--sneaker-text-dark);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.sneaker-arrow-btn:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.sneaker-arrow-prev {
+  left: 0.5rem;
+}
+
+.sneaker-arrow-next {
+  right: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .sneaker-arrow-prev {
+    left: -1rem;
+  }
+  .sneaker-arrow-next {
+    right: -1rem;
+  }
+}
+
+/* Thumbnails & Dots Track */
+.sneaker-nav-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0 2rem;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.sneaker-nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.18);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sneaker-nav-dot:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.sneaker-nav-dot.is-active {
+  background: var(--sneaker-accent-orange);
+  width: 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px 1px var(--sneaker-accent-orange);
+}
+
+/* Miniature Thumbnail Pills (Alternative high-luxury switcher) */
+.sneaker-thumbs-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 0.5rem 0.25rem 1rem;
+  scrollbar-width: thin;
+}
+
+.sneaker-thumb-item {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 42px;
+  border-radius: 6px;
+  background: var(--sneaker-card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 2px;
+}
+
+.sneaker-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sneaker-thumb-item.is-active {
+  border-color: var(--sneaker-accent-orange);
+  box-shadow: 0 0 0 1.5px var(--sneaker-accent-orange);
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   CAROUSEL PRODUCT DETAILS & CONTROLS
+   Under/beside image: code, name, colour, price, size selector, add to cart
+   ========================================================================== */
+
+.sneaker-details-card {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: var(--sneaker-radius);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sneaker-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-bottom: 1px solid #f0f0f2;
+  padding-bottom: 1.25rem;
+}
+
+.sneaker-details-code {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sneaker-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.sneaker-details-name {
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--sneaker-text-dark);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sneaker-details-colour {
+  font-size: 0.88rem;
+  color: var(--sneaker-text-muted);
+  margin-top: 0.35rem;
+}
+
+.sneaker-details-price {
+  font-family: var(--font-heading-family);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 700;
+  color: var(--sneaker-text-dark);
+  white-space: nowrap;
+}
+
+/* Size Selector Section */
+.sneaker-size-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sneaker-size-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sneaker-text-dark);
+}
+
+.sneaker-size-guide-btn {
+  background: none;
+  border: none;
+  font-size: 0.78rem;
+  color: var(--sneaker-text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sneaker-size-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sneaker-size-pill {
+  padding: 0.55rem 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #e4e4e7;
+  background: #ffffff;
+  color: var(--sneaker-text-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+  min-width: 60px;
+  text-align: center;
+  outline: none;
+}
+
+.sneaker-size-pill:hover {
+  border-color: var(--sneaker-text-dark);
+  background: #f8f8f9;
+}
+
+.sneaker-size-pill.is-selected {
+  background: var(--sneaker-text-dark);
+  color: #ffffff;
+  border-color: var(--sneaker-text-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sneaker-size-pill.shake {
+  animation: sneakerShake 0.4s ease-in-out;
+}
+
+@keyframes sneakerShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+/* Actions Row & Add To Cart Button */
+.sneaker-actions-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.sneaker-add-cart-btn {
+  width: 100%;
+  padding: 1.05rem 1.75rem;
+  background-color: var(--sneaker-text-dark);
+  color: #ffffff;
+  border: 1.5px solid var(--sneaker-text-dark);
+  border-radius: 8px;
+  font-family: var(--font-button-family);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+.sneaker-add-cart-btn:hover {
+  background-color: #000000;
+  border-color: #000000;
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+.sneaker-add-cart-btn:active {
+  transform: translateY(0);
+}
+
+.sneaker-add-cart-btn.added-success {
+  background-color: #15803d;
+  border-color: #15803d;
+}
+
+.sneaker-guarantee-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--sneaker-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sneaker-guarantee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE TUNING (1440px, 768px, 390px)
+   ========================================================================== */
+
+/* Tablet (768px) */
+@media (max-width: 900px) {
+  .sneaker-panel {
+    padding: 2.25rem 1.5rem;
+  }
+  .sneaker-stage-viewport {
+    min-height: 320px;
+  }
+  .sneaker-stage-img {
+    max-height: 240px;
+  }
+  .sneaker-stage-glow-pedestal {
+    width: 90%;
+  }
+}
+
+/* Mobile (390px width & small smartphones) */
+@media (max-width: 480px) {
+  .sneaker-panel {
+    padding: 1.5rem 0.85rem;
+    border-radius: 8px;
+    margin-bottom: 1.75rem;
+  }
+  
+  .sneaker-section-header {
+    margin-bottom: 1.25rem;
+  }
+  
+  .sneaker-wall-grid {
+    gap: 0.65rem;
+  }
+
+  .sneaker-wall-tile {
+    padding: 0.85rem 0.65rem 0.75rem;
+  }
+
+  .sneaker-tile-code {
+    font-size: 0.62rem;
+  }
+
+  .sneaker-tile-name {
+    font-size: 0.78rem;
+  }
+
+  .sneaker-tile-price {
+    font-size: 0.78rem;
+  }
+
+  .sneaker-stage-viewport {
+    min-height: 240px;
+    padding: 0.75rem 0 1.25rem;
+  }
+
+  .sneaker-stage-img-wrapper {
+    aspect-ratio: 16 / 11;
+  }
+
+  .sneaker-stage-img {
+    max-height: 180px;
+    width: 95%;
+  }
+
+  .sneaker-stage-glow-pedestal {
+    width: 95%;
+    margin-top: 0.25rem;
+  }
+
+  .sneaker-arrow-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .sneaker-arrow-prev {
+    left: 0.25rem;
+  }
+
+  .sneaker-arrow-next {
+    right: 0.25rem;
+  }
+
+  .sneaker-details-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .sneaker-size-pill {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+    min-width: 50px;
+  }
+
+  .sneaker-guarantee-strip {
+    gap: 0.75rem;
+    font-size: 0.7rem;
+  }
+}

@@ -7,6 +7,7 @@
   <meta name="description" content="Hand-lasted Indian sneakers rooted in culture, storytelling, and bespoke craftsmanship. Engineered with full-grain leather, anatomical wooden lasts, and modern streetwear aesthetics.">
   <link rel="icon" type="image/png" href="assets/images/img_000_4ea6318a.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sneaker-showcase.css">
 </head>
 <body>
 
@@ -243,6 +244,7 @@
           </div>
         </div>
 
+        <a href="#sneaker-wall-section" class="nav-link">Sneaker Wall</a>
         <a href="#story" class="nav-link">Story</a>
         <a href="#hidden-gems" class="nav-link">The Archive</a>
         <a href="help.html#contact" class="nav-link">Find a Store</a>
@@ -325,6 +327,38 @@
         </div>
         <div class="product-grid" id="bestsellersGrid">
           <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED SNEAKER SHOWCASE MODULE (INSPIRED BY REFERENCE REEL)
+         SECTION 1: Sneaker Collection Wall / Shop Grid (10 Products)
+         SECTION 2: Single-Product Interactive Carousel with Glowing Orange Bar
+         ========================================================================== -->
+    <section class="sneaker-showcase-wrapper" id="sneaker-wall-section" aria-label="Sneaker Collection Wall and Spotlight Carousel">
+      <div class="container">
+        <!-- SECTION 1 — SNEAKER COLLECTION WALL / SHOP GRID -->
+        <div class="sneaker-panel">
+          <div class="sneaker-section-header">
+            <div>
+              <span class="sneaker-section-eyebrow">Archival Wall 01 // 10 Silhouettes</span>
+              <h2 class="sneaker-section-title">Sneaker Collection Wall</h2>
+              <p class="sneaker-section-desc">
+                Ten hand-lasted Indian silhouettes captured side-on at uniform studio elevation. Click any pair to inspect in the spotlight study below.
+              </p>
+            </div>
+            <span class="sneaker-count-pill">10 Silhouettes &bull; Hand-Lasted</span>
+          </div>
+
+          <div class="sneaker-wall-grid" id="sneakerWallGrid">
+            <!-- Populated dynamically via js/sneaker-showcase.js -->
+          </div>
+        </div>
+
+        <!-- SECTION 2 — SINGLE-PRODUCT CAROUSEL -->
+        <div class="sneaker-carousel-section" id="sneakerCarouselSection">
+          <!-- Populated dynamically via js/sneaker-showcase.js -->
         </div>
       </div>
     </section>
@@ -865,6 +899,7 @@
       <li><a href="#bestsellers" onclick="closeDrawers()" style="font-size:1.1rem; font-weight:700;">Men</a></li>
       <li><a href="#bestsellers" onclick="closeDrawers()" style="font-size:1.1rem; font-weight:700;">Women</a></li>
       <li><a href="#bestsellers" onclick="closeDrawers()" style="font-size:1.1rem; font-weight:700;">Bestsellers</a></li>
+      <li><a href="#sneaker-wall-section" onclick="closeDrawers()" style="font-size:1.1rem; font-weight:700; color:var(--color-blue);">Sneaker Wall</a></li>
       <li><a href="#story" onclick="closeDrawers()" style="font-size:1.1rem; font-weight:700;">Story</a></li>
       <li><a href="#hidden-gems" onclick="closeDrawers()" style="font-size:1.1rem; font-weight:700;">The Archive</a></li>
       <li><a href="help.html#contact" onclick="closeDrawers()" style="font-size:1.1rem; font-weight:700;">Find a Store</a></li>

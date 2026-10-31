@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneaker Wall &amp; Spotlight Carousel | Gully Labs</title>
+  <meta name="description" content="Explore the Gully Labs hand-lasted sneaker collection wall and interactive single-product study carousel.">
+  <link rel="icon" type="image/png" href="assets/images/img_000_4ea6318a.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sneaker-showcase.css">
+</head>
+<body>
+
+  <!-- 1. Top Announcement Marquee Ticker -->
+  <div class="top-bar">
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <span class="marquee-item">Welcome to our store</span>
+        <span class="marquee-item"><span class="highlight">✨ 200 Exclusive pairs with Sienna ✨</span></span>
+        <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
+        <span class="marquee-item">Hand Lasted Indian Sneakers</span>
+        <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
+        <span class="marquee-item">Crafted with Full-Grain Indian Leather</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span class="marquee-item">Welcome to our store</span>
+        <span class="marquee-item"><span class="highlight">✨ 200 Exclusive pairs with Sienna ✨</span></span>
+        <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
+        <span class="marquee-item">Hand Lasted Indian Sneakers</span>
+        <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
+        <span class="marquee-item">Crafted with Full-Grain Indian Leather</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Countdown Announcement Bar -->
+  <div class="scd-bar">
+    <span class="scd-label">ORDER NOW TO GET BEFORE RAKHI</span>
+    <span class="scd-timer">
+      <b id="cdDays">02</b><u>d</u> : <b id="cdHours">14</b><u>h</u> : <b id="cdMins">30</b><u>m</u> : <b id="cdSecs">21</b><u>s</u>
+    </span>
+    <a href="shop.html" class="scd-btn">SHOP NOW</a>
+  </div>
+
+  <!-- 3. Site Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs Official Logo">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="shop.html?gender=men" class="nav-link">Men</a>
+        <a href="shop.html?gender=women" class="nav-link">Women</a>
+        <a href="shop.html" class="nav-link">Bestsellers</a>
+        <a href="showcase.html" class="nav-link active" style="color:var(--sneaker-accent-orange); font-weight:700;">Sneaker Wall</a>
+        <a href="story.html" class="nav-link">Story</a>
+        <a href="shop.html" class="nav-link">The Archive</a>
+        <a href="help.html#contact" class="nav-link">Find a Store</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="header-action-btn search-trigger" id="searchTrigger" aria-label="Search Catalog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <button type="button" class="header-action-btn cart-trigger" id="cartTrigger" aria-label="Open Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge" id="cartCountBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Showcase Breadcrumbs -->
+    <div class="container pd-breadcrumb-bar" style="padding: 1.25rem 0 0.5rem;">
+      <a href="index.html">Home</a>
+      <span class="pd-crumb-sep">/</span>
+      <span class="pd-crumb-active">Sneaker Wall &amp; Spotlight Carousel</span>
+    </div>
+
+    <!-- SNEAKER SHOWCASE MODULE -->
+    <div class="sneaker-showcase-wrapper" id="sneaker-wall-section">
+      <div class="container">
+        <!-- SECTION 1 — SNEAKER COLLECTION WALL / SHOP GRID -->
+        <div class="sneaker-panel">
+          <div class="sneaker-section-header">
+            <div>
+              <span class="sneaker-section-eyebrow">Archival Wall 01 // 10 Silhouettes</span>
+              <h1 class="sneaker-section-title">Sneaker Collection Wall</h1>
+              <p class="sneaker-section-desc">
+                Ten hand-lasted Indian silhouettes captured side-on at uniform studio elevation on a mid-grey backdrop. Click any tile to switch the spotlight carousel and scroll it into view.
+              </p>
+            </div>
+            <span class="sneaker-count-pill">10 Silhouettes &bull; Hand-Lasted</span>
+          </div>
+
+          <div class="sneaker-wall-grid" id="sneakerWallGrid">
+            <!-- Dynamically populated via js/sneaker-showcase.js -->
+          </div>
+        </div>
+
+        <!-- SECTION 2 — SINGLE-PRODUCT CAROUSEL -->
+        <div class="sneaker-carousel-section" id="sneakerCarouselSection">
+          <!-- Dynamically populated via js/sneaker-showcase.js -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs" class="footer-logo">
+          <p class="footer-about">
+            Gully Labs is an independent Indian design studio creating hand-lasted sneakers, heavy-gauge apparel, and archival accessories rooted in subcontinental identity and craftsmanship.
+          </p>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shop.html?category=sneakers">Sneakers</a></li>
+            <li><a href="shop.html?category=slides">Slides &amp; Mules</a></li>
+            <li><a href="shop.html?category=apparel">Apparel</a></li>
+            <li><a href="showcase.html">Sneaker Wall</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="help.html#contact">Find a Store</a></li>
+            <li><a href="help.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 Gully Labs. Hand-lasted in India.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-over Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <h3>Your Bag</h3>
+        <span class="cart-count-pill" id="drawerCartCount">0 items</span>
+      </div>
+      <button type="button" class="drawer-close-btn" id="cartDrawerClose" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="free-shipping-meter">
+      <div class="meter-text" id="shippingMeterText">Add ₹5,000 for Free Express Shipping Across India!</div>
+      <div class="meter-track">
+        <div class="meter-bar" id="shippingMeterBar" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div class="cart-drawer-body" id="cartDrawerItems"></div>
+    <div class="cart-drawer-footer">
+      <div class="subtotal-row">
+        <span>Estimated Subtotal:</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <a href="checkout.html" class="checkout-btn" id="checkoutBtn">Proceed to Secure Checkout &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;">
+      <img src="assets/images/img_000_4ea6318a.png" alt="Gully Labs" style="height:32px;">
+      <button type="button" id="mobileNavClose" style="font-size:1.75rem; line-height:1;">&times;</button>
+    </div>
+    <ul style="list-style:none; display:flex; flex-direction:column; gap:1.25rem;">
+      <li><a href="shop.html?gender=men" onclick="closeDrawers()">Men</a></li>
+      <li><a href="shop.html?gender=women" onclick="closeDrawers()">Women</a></li>
+      <li><a href="shop.html" onclick="closeDrawers()">Bestsellers</a></li>
+      <li><a href="showcase.html" onclick="closeDrawers()" style="color:var(--sneaker-accent-orange); font-weight:700;">Sneaker Wall</a></li>
+      <li><a href="story.html" onclick="closeDrawers()">Story</a></li>
+      <li><a href="shop.html" onclick="closeDrawers()">Shop All</a></li>
+    </ul>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <div class="toast-msg" id="toastMsg">Added to your bag!</div>
+
+  <!-- Scripts -->
+  <script src="data/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/sneaker-showcase-data.js"></script>
+  <script src="js/sneaker-showcase.js"></script>
+</body>
+</html>
