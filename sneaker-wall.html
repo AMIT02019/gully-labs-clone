@@ -23,17 +23,22 @@
   .anim-bar .anim-status{color:#ccc;flex:1;min-width:220px}
   .anim-bar button{border:1px solid #fff;background:transparent;color:#fff;border-radius:99px;padding:9px 18px;cursor:pointer;font:inherit;font-weight:700}
   .anim-bar button:hover{background:#fff;color:#111}
-  .wall{background:#e6e6e6;padding:28px;border-radius:18px;margin:24px 0;overflow:hidden}
-  .wall-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;will-change:transform}
+  .wall{background:#fff;padding:10px 6px 0;border-radius:0;margin:24px 0;overflow:hidden;border-bottom:34px solid #e3e3e3}
+  .wall-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px 18px;will-change:transform}
   .wall-panning .wall-grid{animation:wallPan 9s ease-in-out forwards;transform-origin:50% 50%}
   @keyframes wallPan{0%{transform:scale(1) translate(0,0)}50%{transform:scale(1.04) translate(-1%,.5%)}100%{transform:scale(1.08) translate(-2%,-1%)}}
-  .tile{background:#f2f2f2;border:2px solid transparent;border-radius:14px;padding:12px;cursor:pointer;text-align:left;font:inherit;width:100%}
-  .tile img{width:100%;aspect-ratio:1/1;object-fit:contain;display:block;background:#fff;border-radius:10px}
-  .tile .code{display:block;margin-top:10px;font-size:11px;letter-spacing:.12em;color:#666;font-weight:700}
-  .tile .name{display:block;margin-top:4px;font-size:14px;line-height:1.35;min-height:38px}
-  .tile .price{display:block;margin-top:6px;font-weight:800}
-  .tile:hover{transform:translateY(-2px)}
-  .tile.active{border-color:#ff6a1a;box-shadow:0 10px 30px rgba(255,106,26,.35)}
+  .tile{background:transparent;border:0;padding:6px;cursor:pointer;text-align:center;font:inherit;width:100%;position:relative;transition:transform .35s ease}
+  .tile img{width:100%;aspect-ratio:1/1;object-fit:contain;display:block;background:#fff;border-radius:0;transition:transform .35s ease}
+  .tile .wall-shadow{display:block;width:72%;height:20px;margin:-6px auto 0;background:radial-gradient(ellipse at center,rgba(0,0,0,.28) 0%,rgba(0,0,0,.12) 45%,transparent 70%);border-radius:50%;transition:all .35s ease}
+  .tile .wall-label{display:block;margin-top:8px;font-size:12px;letter-spacing:.08em;color:#333;font-weight:700;opacity:0;transition:opacity .25s ease;min-height:16px}
+  .tile:nth-child(5n+2){margin-top:18px}
+  .tile:nth-child(5n+4){margin-top:12px}
+  .tile:nth-child(5n+3){margin-top:0}
+  @media(max-width:560px){.tile:nth-child(5n+2),.tile:nth-child(5n+4){margin-top:8px}}
+  .tile:hover img,.tile:focus-visible img{transform:scale(1.06)}
+  .tile:hover .wall-shadow,.tile:focus-visible .wall-shadow,.tile.active .wall-shadow{height:26px;width:82%;background:radial-gradient(ellipse at center,rgba(255,106,26,.65) 0%,rgba(255,106,26,.30) 45%,transparent 72%);filter:blur(1px)}
+  .tile:hover .wall-label,.tile:focus-visible .wall-label,.tile.active .wall-label{opacity:1}
+  .tile.active img{transform:scale(1.04)}
   .carousel{background:#e6e6e6;border-radius:18px;padding:28px;margin:0 0 36px;overflow:hidden}
   .stage{position:relative;background:#f2f2f2;border-radius:14px;overflow:hidden}
   .track{display:flex;transition:transform .9s cubic-bezier(.22,.61,.36,1)}
@@ -75,7 +80,7 @@
 <main class="wrap">
   <div class="page-head">
     <h1>The Sneaker Wall</h1>
-    <p>Ten demo sneakers on one grey wall, in the layout of the reference reel. Tap any pair to view it large below &mdash; the wall and the carousel stay in sync.</p>
+    <p>Ten demo sneakers mounted on one white wall, like the reference photo &mdash; hover a pair to light it from below, tap it to view it large below. The wall and the carousel stay in sync.</p>
   </div>
 
   <div class="anim-bar" role="group" aria-label="Reel animation controls">
@@ -134,7 +139,8 @@ function inr(n){ return "\u20B9" + n.toLocaleString("en-IN"); }
 PRODUCTS.forEach(function(p, i){
   var b = document.createElement("button");
   b.type = "button"; b.className = "tile"; b.setAttribute("data-i", i);
-  b.innerHTML = '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy"><span class="code">' + p.code + '</span><span class="name">' + p.title + '</span><span class="price">' + inr(p.price) + '</span>';
+  b.setAttribute("aria-label", p.title + ", " + inr(p.price));
+  b.innerHTML = '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy"><span class="wall-shadow" aria-hidden="true"></span><span class="wall-label">' + p.code + ' &middot; ' + inr(p.price) + '</span>';
   b.addEventListener("click", function(){ pauseAnimation("Paused — you took control. Press Play to resume the reel animation."); show(i, true); });
   wall.appendChild(b);
   var s = document.createElement("div");
