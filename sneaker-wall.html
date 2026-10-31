@@ -19,8 +19,14 @@
   .page-head{padding:36px 0 8px}
   .page-head h1{margin:0 0 8px;font-size:38px;letter-spacing:-.01em}
   .page-head p{margin:0;color:#555;max-width:720px;line-height:1.6}
-  .wall{background:#e6e6e6;padding:28px;border-radius:18px;margin:24px 0}
-  .wall-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .anim-bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0 0;padding:14px 16px;background:#111;color:#fff;border-radius:12px;font-size:14px}
+  .anim-bar .anim-status{color:#ccc;flex:1;min-width:220px}
+  .anim-bar button{border:1px solid #fff;background:transparent;color:#fff;border-radius:99px;padding:9px 18px;cursor:pointer;font:inherit;font-weight:700}
+  .anim-bar button:hover{background:#fff;color:#111}
+  .wall{background:#e6e6e6;padding:28px;border-radius:18px;margin:24px 0;overflow:hidden}
+  .wall-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;will-change:transform}
+  .wall-panning .wall-grid{animation:wallPan 9s ease-in-out forwards;transform-origin:50% 50%}
+  @keyframes wallPan{0%{transform:scale(1) translate(0,0)}50%{transform:scale(1.04) translate(-1%,.5%)}100%{transform:scale(1.08) translate(-2%,-1%)}}
   .tile{background:#f2f2f2;border:2px solid transparent;border-radius:14px;padding:12px;cursor:pointer;text-align:left;font:inherit;width:100%}
   .tile img{width:100%;aspect-ratio:1/1;object-fit:contain;display:block;background:#fff;border-radius:10px}
   .tile .code{display:block;margin-top:10px;font-size:11px;letter-spacing:.12em;color:#666;font-weight:700}
@@ -30,10 +36,13 @@
   .tile.active{border-color:#ff6a1a;box-shadow:0 10px 30px rgba(255,106,26,.35)}
   .carousel{background:#e6e6e6;border-radius:18px;padding:28px;margin:0 0 36px;overflow:hidden}
   .stage{position:relative;background:#f2f2f2;border-radius:14px;overflow:hidden}
-  .track{display:flex;transition:transform .45s ease}
-  .slide{min-width:100%;display:flex;align-items:center;justify-content:center;padding:10px}
-  .slide img{width:100%;max-height:520px;object-fit:contain;display:block}
-  .glow{height:10px;margin:0 12% 6px;background:linear-gradient(90deg,transparent,#ff6a1a,transparent);filter:blur(2px);border-radius:99px}
+  .track{display:flex;transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+  .slide{min-width:100%;display:flex;align-items:center;justify-content:center;padding:10px;overflow:hidden}
+  .slide img{width:100%;max-height:520px;object-fit:contain;display:block;animation:shoeZoom 6s ease-in-out infinite alternate}
+  @keyframes shoeZoom{from{transform:scale(1)}to{transform:scale(1.05)}}
+  .glow{height:10px;margin:0 12% 6px;background:linear-gradient(90deg,transparent,#ff6a1a,transparent);filter:blur(2px);border-radius:99px;animation:glowPulse 2.8s ease-in-out infinite}
+  @keyframes glowPulse{0%,100%{opacity:.7;transform:scaleX(.95)}50%{opacity:1;transform:scaleX(1.05)}}
+  @media (prefers-reduced-motion: reduce){.wall-panning .wall-grid,.slide img,.glow{animation:none}}
   .arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid #ddd;background:#fff;font-size:26px;cursor:pointer;z-index:2}
   .arrow.prev{left:14px}.arrow.next{right:14px}
   .info{text-align:center;padding:18px 10px 4px}
@@ -69,7 +78,14 @@
     <p>Ten demo sneakers on one grey wall, in the layout of the reference reel. Tap any pair to view it large below &mdash; the wall and the carousel stay in sync.</p>
   </div>
 
-  <section class="wall" aria-label="Sneaker collection wall">
+  <div class="anim-bar" role="group" aria-label="Reel animation controls">
+    <strong>Reel animation</strong>
+    <button type="button" id="animToggle">Pause animation</button>
+    <button type="button" id="replayBtn">Replay from wall</button>
+    <span class="anim-status" id="animStatus">Playing: slow pan across the wall, then sliding carousel, then back to the wall.</span>
+  </div>
+
+  <section class="wall" id="wallSection" aria-label="Sneaker collection wall">
     <div class="wall-grid" id="wallGrid"></div>
   </section>
 
@@ -119,7 +135,7 @@ PRODUCTS.forEach(function(p, i){
   var b = document.createElement("button");
   b.type = "button"; b.className = "tile"; b.setAttribute("data-i", i);
   b.innerHTML = '<img src="' + p.img + '" alt="' + p.title + '" loading="lazy"><span class="code">' + p.code + '</span><span class="name">' + p.title + '</span><span class="price">' + inr(p.price) + '</span>';
-  b.addEventListener("click", function(){ show(i, true); });
+  b.addEventListener("click", function(){ pauseAnimation("Paused — you took control. Press Play to resume the reel animation."); show(i, true); });
   wall.appendChild(b);
   var s = document.createElement("div");
   s.className = "slide";
@@ -127,7 +143,7 @@ PRODUCTS.forEach(function(p, i){
   track.appendChild(s);
   var d = document.createElement("button");
   d.type = "button"; d.className = "dot"; d.setAttribute("aria-label", "Go to " + p.title);
-  d.addEventListener("click", function(){ show(i, false); });
+  d.addEventListener("click", function(){ pauseAnimation("Paused — you took control. Press Play to resume the reel animation."); show(i, false); });
   dots.appendChild(d);
 });
 var sizeBox = document.getElementById("sizes");
@@ -155,11 +171,11 @@ function show(i, scroll){
   document.getElementById("viewBtn").href = "product.html?id=" + p.id;
   if (scroll) { document.querySelector(".carousel").scrollIntoView({behavior:"smooth", block:"start"}); }
 }
-document.getElementById("prevBtn").addEventListener("click", function(){ show(current - 1, false); });
-document.getElementById("nextBtn").addEventListener("click", function(){ show(current + 1, false); });
+document.getElementById("prevBtn").addEventListener("click", function(){ pauseAnimation("Paused — you took control. Press Play to resume the reel animation."); show(current - 1, false); });
+document.getElementById("nextBtn").addEventListener("click", function(){ pauseAnimation("Paused — you took control. Press Play to resume the reel animation."); show(current + 1, false); });
 document.addEventListener("keydown", function(e){
-  if (e.key === "ArrowLeft") show(current - 1, false);
-  if (e.key === "ArrowRight") show(current + 1, false);
+  if (e.key === "ArrowLeft") { pauseAnimation("Paused — you took control. Press Play to resume the reel animation."); show(current - 1, false); }
+  if (e.key === "ArrowRight") { pauseAnimation("Paused — you took control. Press Play to resume the reel animation."); show(current + 1, false); }
 });
 var tx = null;
 var stage = document.getElementById("stage");
@@ -167,8 +183,8 @@ stage.addEventListener("touchstart", function(e){ tx = e.changedTouches[0].clien
 stage.addEventListener("touchend", function(e){
   if (tx === null) return;
   var dx = e.changedTouches[0].clientX - tx;
-  if (dx < -40) show(current + 1, false);
-  if (dx > 40) show(current - 1, false);
+  if (dx < -40) { pauseAnimation("Paused — you took control. Press Play to resume the reel animation."); show(current + 1, false); }
+  if (dx > 40) { pauseAnimation("Paused — you took control. Press Play to resume the reel animation."); show(current - 1, false); }
   tx = null;
 }, {passive:true});
 document.getElementById("addBtn").addEventListener("click", function(){
@@ -186,7 +202,62 @@ document.getElementById("addBtn").addEventListener("click", function(){
     document.getElementById("cartNote").textContent = "Demo bag unavailable in this browser mode.";
   }
 });
+/* Reel-style animation: slow pan/zoom across the wall, then smooth
+   horizontal slides through the single-product carousel, then back to
+   the wide wall — looping, like the reference reel. Manual navigation
+   pauses it; Play resumes it. Hidden tabs pause it automatically. */
+var animOn = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var animTimer = null, animInterval = null;
+var animToggle = document.getElementById("animToggle");
+var animStatus = document.getElementById("animStatus");
+var wallSection = document.getElementById("wallSection");
+function stopSequence(){
+  if (animTimer) clearTimeout(animTimer);
+  if (animInterval) clearInterval(animInterval);
+  animTimer = null; animInterval = null;
+  wallSection.classList.remove("wall-panning");
+}
+function pauseAnimation(msg){
+  animOn = false; stopSequence();
+  animToggle.textContent = "Play animation";
+  if (msg) animStatus.textContent = msg;
+}
+function runSequence(){
+  stopSequence();
+  if (!animOn) return;
+  animToggle.textContent = "Pause animation";
+  animStatus.textContent = "Playing: slow pan across the wall, then sliding carousel, then back to the wall.";
+  wallSection.classList.add("wall-panning");
+  animTimer = setTimeout(function(){
+    show(0, false);
+    document.querySelector(".carousel").scrollIntoView({behavior:"smooth", block:"start"});
+    animStatus.textContent = "Playing: single-product carousel, sliding through the pairs.";
+    animInterval = setInterval(function(){
+      if (current >= PRODUCTS.length - 1) {
+        clearInterval(animInterval); animInterval = null;
+        animTimer = setTimeout(function(){
+          wallSection.scrollIntoView({behavior:"smooth", block:"start"});
+          animTimer = setTimeout(runSequence, 1200);
+        }, 2500);
+      } else { show(current + 1, false); }
+    }, 2800);
+  }, 9000);
+}
+animToggle.addEventListener("click", function(){
+  if (animOn) { pauseAnimation("Paused. Press Play to resume the reel animation."); }
+  else { animOn = true; runSequence(); }
+});
+document.getElementById("replayBtn").addEventListener("click", function(){
+  stopSequence(); show(0, false);
+  wallSection.scrollIntoView({behavior:"smooth", block:"start"});
+  animOn = true; runSequence();
+});
+document.addEventListener("visibilitychange", function(){
+  if (document.hidden) { stopSequence(); }
+  else if (animOn) { runSequence(); }
+});
 show(0, false);
+if (animOn) { runSequence(); } else { animToggle.textContent = "Play animation"; animStatus.textContent = "Animation off (reduced-motion setting). Press Play to run the reel animation."; }
 </script>
 </body>
 </html>
