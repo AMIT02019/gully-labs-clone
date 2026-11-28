@@ -40,6 +40,9 @@
   --font-product-weight: 600;
   --font-product-letter-spacing: 0.0em;
 
+  /* Live Reference Accent Font */
+  --font-silkscreen: 'Silkscreen', monospace;
+
   /* Colors */
   --color-black: #0f0f10;
   --color-dark: #18181a;
@@ -270,6 +273,67 @@ input, select, textarea {
 
 .scd-btn:hover {
   opacity: 0.9;
+}
+
+/* Flash Sale Ticker Strip (Live Gully Labs Reference) */
+.gl-bf-strip {
+  background-color: #000000;
+  color: #ffe94d;
+  font-family: var(--font-silkscreen);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 12px;
+  line-height: 1.2;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 233, 77, 0.25);
+  display: flex;
+  align-items: center;
+}
+
+.gl-bf-strip .marquee-track {
+  gap: 2.5rem;
+  padding-right: 2.5rem;
+  animation: marquee 32s linear infinite;
+}
+
+.gl-bf-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #003bd0;
+  color: #ffffff;
+  font-family: var(--font-silkscreen);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 6px 9px 5px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 59, 208, 0.35);
+}
+
+.gl-bf-sec-sub {
+  font-family: var(--font-silkscreen);
+  font-size: 11px;
+  color: #003bd0;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.gl-bf-eyebrow {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 3px;
+  font-family: var(--font-silkscreen);
 }
 
 /* ==========================================================================
@@ -706,21 +770,22 @@ input, select, textarea {
   opacity: 0;
 }
 
-/* Badge in top left */
+/* Badge in top left - Live Gully Labs Silkscreen Badge */
 .card-badge {
   position: absolute;
   top: 10px;
   left: 10px;
   background-color: var(--color-blue);
   color: #ffffff;
-  font-family: var(--font-body-family);
-  font-size: 0.6875rem;
+  font-family: var(--font-silkscreen);
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
+  padding: 6px 9px 5px;
+  border-radius: 2px;
   z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 59, 208, 0.35);
 }
 
 /* Plus button in top right */

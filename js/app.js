@@ -209,8 +209,8 @@ function initHeroSlider() {
    ========================================================================== */
 function createProductCardHTML(product) {
   const secondaryImg = product.secondaryImage || product.primaryImage;
-  const badgeHTML = product.badge ? `<span class="card-badge">${product.badge}</span>` : '';
-  const ratingText = product.rating ? `<span>★</span> ${product.rating} | ${product.reviewsCount} reviews` : '<span>★</span> 5.0';
+  const badgeHTML = product.badge ? `<span class="card-badge gl-bf-badge">${product.badge}</span>` : '';
+  const ratingText = product.rating ? `<span style="color:var(--color-blue); font-weight:900;">★</span> ${product.rating} <span style="color:#666; font-size:0.85em;">(${product.reviewsCount})</span>` : '<span style="color:var(--color-blue); font-weight:900;">★</span> 5.0';
   const defaultSize = product.sizes && product.sizes.length ? product.sizes[2] || product.sizes[0] : 'UK 8';
 
   const sizesHTML = (product.sizes || []).slice(0, 5).map(size => `
@@ -224,9 +224,8 @@ function createProductCardHTML(product) {
       <div class="card-media">
         ${badgeHTML}
         <button type="button" class="card-plus-btn" onclick="handleCardQuickAdd('${product.id}', this)" aria-label="Quick add">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2.5 6H6M9.5 6H6M6 6V2.5M6 6V9.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
         </button>
         <span class="card-rating">${ratingText}</span>

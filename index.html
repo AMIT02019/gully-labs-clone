@@ -6,6 +6,9 @@
   <title>Gully Labs — Hand Lasted Indian Sneakers</title>
   <meta name="description" content="Hand-lasted Indian sneakers rooted in culture, storytelling, and bespoke craftsmanship. Engineered with full-grain leather, anatomical wooden lasts, and modern streetwear aesthetics.">
   <link rel="icon" type="image/png" href="assets/images/img_000_4ea6318a.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sneaker-showcase.css">
   <link rel="stylesheet" href="css/ascenta-last-dept.css">
@@ -16,17 +19,15 @@
   <div class="top-bar">
     <div class="marquee-container">
       <div class="marquee-track">
-        <span class="marquee-item">Welcome to our store</span>
-        <span class="marquee-item"><span class="highlight">✨ 200 Exclusive pairs with Sienna ✨</span></span>
-        <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
+        <span class="marquee-item">Black Friday Flash Sale Is Live</span>
+        <span class="marquee-item"><span class="highlight">✨ Easy 30 Days Exchange ✨</span></span>
         <span class="marquee-item">Hand Lasted Indian Sneakers</span>
         <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
         <span class="marquee-item">Crafted with Full-Grain Indian Leather</span>
       </div>
       <div class="marquee-track" aria-hidden="true">
-        <span class="marquee-item">Welcome to our store</span>
-        <span class="marquee-item"><span class="highlight">✨ 200 Exclusive pairs with Sienna ✨</span></span>
-        <span class="marquee-item">Easy 30 Days Returns and Exchanges</span>
+        <span class="marquee-item">Black Friday Flash Sale Is Live</span>
+        <span class="marquee-item"><span class="highlight">✨ Easy 30 Days Exchange ✨</span></span>
         <span class="marquee-item">Hand Lasted Indian Sneakers</span>
         <span class="marquee-item"><span class="highlight">Free Express Shipping Across India</span></span>
         <span class="marquee-item">Crafted with Full-Grain Indian Leather</span>
@@ -41,6 +42,14 @@
       <b id="cdDays">02</b><u>d</u> : <b id="cdHours">14</b><u>h</u> : <b id="cdMins">30</b><u>m</u> : <b id="cdSecs">21</b><u>s</u>
     </span>
     <a href="#bestsellers" class="scd-btn">SHOP NOW</a>
+  </div>
+
+  <!-- 3. Black Friday Flash Sale Strip (Live Reference) -->
+  <div class="gl-bf-strip" aria-label="Flash sale announcement">
+    <div class="marquee-track">
+      <span>BLACK FRIDAY FLASH SALE ✦ 10% OFF ON EVERYTHING ✦ FREE SOCKS WITH ORDERS ABOVE ₹3,000 ✦ BLACK FRIDAY FLASH SALE ✦ 10% OFF ON EVERYTHING ✦ FREE SOCKS WITH ORDERS ABOVE ₹3,000</span>
+      <span aria-hidden="true">BLACK FRIDAY FLASH SALE ✦ 10% OFF ON EVERYTHING ✦ FREE SOCKS WITH ORDERS ABOVE ₹3,000 ✦ BLACK FRIDAY FLASH SALE ✦ 10% OFF ON EVERYTHING ✦ FREE SOCKS WITH ORDERS ABOVE ₹3,000</span>
+    </div>
   </div>
 
   <!-- 3. Site Sticky Navigation Header -->
@@ -299,10 +308,14 @@
       <div class="container">
         <div class="section-head">
           <div>
+            <span class="gl-bf-eyebrow">SUB-CONTINENTAL ARCHIVE // HAND-LASTED</span>
             <h2 class="section-title">New Arrivals</h2>
             <p class="section-sub">Latest drops featuring seasonal washed suedes, earth tones, and archival shapes.</p>
           </div>
-          <a href="shop.html?collection=New%20Arrivals" class="view-all-link">View All Drops &rarr;</a>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+            <span class="gl-bf-sec-sub">FRESH DROPS</span>
+            <a href="shop.html?collection=New%20Arrivals" class="view-all-link">View All Drops &rarr;</a>
+          </div>
         </div>
         <div class="product-grid" id="newArrivalsGrid">
           <!-- Populated dynamically via app.js -->
@@ -315,15 +328,19 @@
       <div class="container">
         <div class="section-head">
           <div>
+            <span class="gl-bf-eyebrow">THE DAILY BEATERS // TIMELESS CRAFT</span>
             <h2 class="section-title">Bestsellers</h2>
             <p class="section-sub">Our most wanted silhouettes crafted in small limited batches.</p>
           </div>
-          <div class="filter-tabs" data-target="bestsellersGrid">
-            <button type="button" class="tab-btn active" data-filter="all">All</button>
-            <button type="button" class="tab-btn" data-filter="sneakers">Sneakers</button>
-            <button type="button" class="tab-btn" data-filter="slides">Slides</button>
-            <button type="button" class="tab-btn" data-filter="apparel">Apparel</button>
-            <button type="button" class="tab-btn" data-filter="accessories">Accessories</button>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+            <span class="gl-bf-sec-sub">MOST LOVED</span>
+            <div class="filter-tabs" data-target="bestsellersGrid">
+              <button type="button" class="tab-btn active" data-filter="all">All</button>
+              <button type="button" class="tab-btn" data-filter="sneakers">Sneakers</button>
+              <button type="button" class="tab-btn" data-filter="slides">Slides</button>
+              <button type="button" class="tab-btn" data-filter="apparel">Apparel</button>
+              <button type="button" class="tab-btn" data-filter="accessories">Accessories</button>
+            </div>
           </div>
         </div>
         <div class="product-grid" id="bestsellersGrid">
@@ -445,10 +462,14 @@
       <div class="container">
         <div class="section-head">
           <div>
+            <span class="gl-bf-eyebrow">EXPERIMENTAL SILHOUETTES // ARCHIVE</span>
             <h2 class="section-title">Hidden Gems</h2>
             <p class="section-sub">Low-profile experimental drops and collector editions cherished by footwear enthusiasts.</p>
           </div>
-          <a href="shop.html" class="view-all-link">Browse Archive &rarr;</a>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+            <span class="gl-bf-sec-sub">LIMITED PAIRS</span>
+            <a href="shop.html" class="view-all-link">Browse Archive &rarr;</a>
+          </div>
         </div>
         <div class="product-grid" id="hiddenGemsGrid">
           <!-- Populated dynamically via app.js -->
@@ -709,13 +730,13 @@
       </div>
     </section>
 
-    <!-- 13. Multicolumn Trust Props (Right Above Footer) -->
+    <!-- 13. Multicolumn Trust Props (Live Gully Labs Reference) -->
     <section class="trust-section">
       <div class="container">
         <div class="trust-grid">
           <div class="trust-item">
             <div class="trust-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <circle cx="12" cy="12" r="10"></circle>
                 <line x1="2" y1="12" x2="22" y2="12"></line>
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -723,13 +744,13 @@
             </div>
             <div class="trust-text">
               <h4>Global Shipping</h4>
-              <p>Reliable tracked courier delivery to over 40+ countries.</p>
+              <p>Shipping to the US, UK and many more</p>
             </div>
           </div>
 
           <div class="trust-item">
             <div class="trust-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <rect x="1" y="3" width="15" height="13"></rect>
                 <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
                 <circle cx="5.5" cy="18.5" r="2.5"></circle>
@@ -738,34 +759,34 @@
             </div>
             <div class="trust-text">
               <h4>Next Day Dispatch</h4>
-              <p>Hand-inspected, packed, and dispatched within 24 hours.</p>
+              <p>Dispatch within 24 hours of order</p>
             </div>
           </div>
 
           <div class="trust-item">
             <div class="trust-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <polyline points="23 4 23 10 17 10"></polyline>
                 <polyline points="1 20 1 14 7 14"></polyline>
                 <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
               </svg>
             </div>
             <div class="trust-text">
-              <h4>30 Days Returns</h4>
-              <p>Hassle-free size exchanges and doorstep returns.</p>
+              <h4>Returns and Exchanges</h4>
+              <p>Easy 30 days Returns and Exchanges</p>
             </div>
           </div>
 
           <div class="trust-item">
             <div class="trust-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <rect x="2" y="5" width="20" height="14" rx="2"></rect>
                 <line x1="2" y1="10" x2="22" y2="10"></line>
               </svg>
             </div>
             <div class="trust-text">
               <h4>Cash on Delivery</h4>
-              <p>Available across 19,000+ Indian pincodes.</p>
+              <p>Opt for COD among other payment methods</p>
             </div>
           </div>
         </div>
@@ -776,9 +797,9 @@
     <section class="newsletter-section">
       <div class="container">
         <div class="newsletter-box">
-          <span style="color:var(--color-yellow); font-size:0.75rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase;">Secret Drops & Access</span>
+          <span class="gl-bf-eyebrow" style="color:var(--color-yellow); margin-bottom:8px;">COMMUNITY FIRST ACCESS</span>
           <h3>Join The Gully</h3>
-          <p>Subscribe for early access to numbered collaborations, secret warehouse archives, and private community releases.</p>
+          <p>Built with the community. Shared with the community. First access, always.</p>
           <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Welcome to The Gully family!'); this.reset();">
             <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
             <button type="submit" class="newsletter-btn">Subscribe</button>
@@ -795,7 +816,7 @@
         <div class="footer-brand">
           <img src="assets/images/img_119_66279144.png" alt="Gully Labs">
           <p>
-            Hand-lasted Indian sneakers rooted in vernacular culture. Reimagining modern footwear through artisanal shoemaking heritage.
+            Built with the community. Shared with the community. First access, always. Hand-lasted Indian sneakers rooted in subcontinental craftsmanship.
           </p>
           <div class="social-row">
             <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
@@ -813,30 +834,36 @@
         <div class="footer-col">
           <h5>Shop</h5>
           <ul class="footer-links">
+            <li><a href="shop.html">Shop All</a></li>
             <li><a href="#bestsellers">Bestsellers</a></li>
+            <li><a href="shop.html?maxPrice=5000">Shoes Under ₹5000</a></li>
             <li><a href="#new-arrivals">New Arrivals</a></li>
             <li><a href="#collections">Shop by Collection</a></li>
-            <li><a href="#apparel">Apparel & Shackets</a></li>
-            <li><a href="shop.html">Shop All Catalog</a></li>
+            <li><a href="#sneaker-wall-section">Sneaker Wall</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>About Gully</h5>
+          <h5>Studio</h5>
           <ul class="footer-links">
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="help.html#contact">Find a Store</a></li>
             <li><a href="#story">The Hand-Lasted Story</a></li>
-            <li><a href="story.html">Indian Leather Tanneries</a></li>
-            <li><a href="#reviews">Press & Media</a></li>
             <li><a href="help.html#size-guide">Size Guide</a></li>
-            <li><a href="#reviews">Verified Reviews</a></li>
+            <li><a href="story.html#careers">Careers</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Support & Concierge</h5>
+          <h5>Help & Policies</h5>
           <ul class="footer-links">
-            <li><a href="mailto:support@gullylabs.com">support@gullylabs.com</a></li>
-            <li><a href="help.html#track">Track Your Order</a></li>
+            <li><a href="help.html#returns">Exchanges or Returns Policy</a></li>
+            <li><a href="help.html#exchange-form">Apply for Exchange/Return</a></li>
+            <li><a href="help.html#shipping">Shipping Policy</a></li>
+            <li><a href="help.html#terms">Terms & Services</a></li>
+            <li><a href="help.html#privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
             <li><a href="help.html#returns">30-Day Returns & Exchanges</a></li>
             <li><a href="help.html#shipping">Shipping Information</a></li>
             <li><a href="help.html">Help & FAQ</a></li>
