@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="assets/images/img_000_4ea6318a.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sneaker-showcase.css">
+  <link rel="stylesheet" href="css/ascenta-last-dept.css">
 </head>
 <body>
 
@@ -332,36 +333,75 @@
     </section>
 
     <!-- ==========================================================================
-         FEATURED SNEAKER SHOWCASE MODULE (INSPIRED BY REFERENCE REEL)
-         SECTION 1: Sneaker Collection Wall / Shop Grid (10 Products)
-         SECTION 2: Single-Product Interactive Carousel with Glowing Orange Bar
+         ASCENTA STUDIO "LAST DEPT." INTERACTIVE ILLUMINATED FOOTWEAR WALL
+         - 10 Hand-Lasted Silhouettes on illuminated glass shelves
+         - Interactive shelf LED lighting & hover tracking
+         - Spatial camera flight video transitions & high-res detail frame
+         - UK sizing selector & live cart integration
          ========================================================================== -->
-    <section class="sneaker-showcase-wrapper" id="sneaker-wall-section" aria-label="Sneaker Collection Wall and Spotlight Carousel">
-      <div class="container">
-        <!-- SECTION 1 — SNEAKER COLLECTION WALL / SHOP GRID -->
-        <div class="sneaker-panel">
-          <div class="sneaker-section-header">
-            <div>
-              <span class="sneaker-section-eyebrow">Archival Wall 01 // 10 Silhouettes</span>
-              <h2 class="sneaker-section-title">Sneaker Collection Wall</h2>
-              <p class="sneaker-section-desc">
-                Ten hand-lasted Indian silhouettes captured side-on at uniform studio elevation on a mid-grey backdrop. Click any pair to inspect in the spotlight study below.
-              </p>
+    <section class="ascenta-section-wrapper" id="sneaker-wall-section" aria-label="Gully Labs Archival Sneaker Wall">
+      <div class="ascenta-container">
+        <div class="ascenta-stage-frame">
+          <!-- Stage Top Bar -->
+          <div class="ascenta-stage-header">
+            <div class="ascenta-brand">
+              <svg viewBox="0 0 32 32" class="ascenta-brand-mark" aria-hidden="true"><path d="M3 3v26h10M16 3h5l8 8v10l-8 8h-5V3Z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+              <span>GULLY LABS <span class="ascenta-brand-dot">//</span> LAST DEPT.</span>
             </div>
-            <span class="sneaker-count-pill">10 Silhouettes &bull; Hand-Lasted</span>
+            <nav class="ascenta-nav" aria-label="Collection navigation">
+              <span class="ascenta-nav-collection">
+                <a href="#scene" id="ascenta-details" class="ascenta-nav-link" aria-current="page">Collection <span class="ascenta-nav-count">01</span></a>
+                <button type="button" id="ascenta-back" class="ascenta-nav-btn" hidden><span aria-hidden="true">&larr;</span> Collection</button>
+              </span>
+              <button type="button" class="ascenta-nav-btn" data-studio-open>Studio Notes</button>
+              <a href="showcase.html" class="ascenta-nav-link ascenta-fullscreen-link" target="_blank" rel="noopener">Dedicated Wall &nearr;</a>
+            </nav>
           </div>
 
-          <div class="sneaker-wall-grid" id="sneakerWallGrid">
-            <!-- Populated dynamically via js/sneaker-showcase.js -->
+          <!-- Main Lit Wall Scene Viewport -->
+          <div class="ascenta-scene-viewport">
+            <div class="scene" id="scene" tabindex="-1" aria-label="Gully Labs Archival footwear collection" data-mode="wall">
+              <picture>
+                <source media="(max-width:760px)" srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+                <img class="wall" src="media-v15/wall-1920.webp" srcset="media-v15/wall-1920.webp 1920w, media-v15/wall-3200.webp 3200w" sizes="100vw" fetchpriority="high" alt="Ten original footwear silhouettes displayed on glass shelves against a dark grey slate wall">
+              </picture>
+              <div class="collection-intro">
+                <p>GULLY LABS / SERIES 01</p>
+                <h1>A different<br>perspective.</h1>
+              </div>
+              <video class="camera" id="forward" muted playsinline preload="none" hidden></video>
+              <video class="camera" id="reverse" muted playsinline preload="none" hidden></video>
+              <div class="detail-frame" id="destination" hidden></div>
+            </div>
           </div>
-        </div>
 
-        <!-- SECTION 2 — SINGLE-PRODUCT CAROUSEL -->
-        <div class="sneaker-carousel-section" id="sneakerCarouselSection">
-          <!-- Populated dynamically via js/sneaker-showcase.js -->
+          <!-- Stage Bottom Status Bar -->
+          <div class="ascenta-stage-footer">
+            <div class="ascenta-edition">
+              <span class="ascenta-live-dot" aria-hidden="true"></span>
+              SERIES 01 <span style="opacity:0.35;">/</span> 10 SILHOUETTES
+            </div>
+            <p id="status" class="ascenta-status" role="status">Hover to illuminate shelf. Click silhouette to fly in.</p>
+            <button type="button" class="ascenta-footer-btn" data-studio-open>About this studio wall <span aria-hidden="true">&nearr;</span></button>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Studio Notes Dialog -->
+    <dialog class="ascenta-studio-dialog" id="studio-dialog" aria-labelledby="studio-title">
+      <button type="button" class="ascenta-studio-close" aria-label="Close studio notes">Close <span aria-hidden="true">&times;</span></button>
+      <p class="ascenta-studio-kicker">GULLY LABS / STUDIO NOTES</p>
+      <h2 id="studio-title">A study in form.<br>A different perspective.</h2>
+      <p>Ten hand-lasted Indian silhouettes. One shared architectural wall. An archival collection of textures, proportions, and unexpected details, made to be explored up close.</p>
+      <div class="ascenta-studio-facts">
+        <span>01 / EXPLORE THE WALL</span>
+        <span>02 / FIND YOUR SILHOUETTE</span>
+        <span>03 / MAKE IT YOURS</span>
+      </div>
+      <p class="ascenta-studio-disclosure">Gully Labs Archival Series 01. Engineered for craftsmanship, tactile exploration, and daily wear.</p>
+      <button type="button" class="ascenta-studio-explore">Explore the collection <span aria-hidden="true">&nearr;</span></button>
+    </dialog>
 
     <!-- 7. The Art of Hand-Lasting (Craft Editorial Banner) -->
     <section class="editorial-craft-section" id="story">
@@ -916,7 +956,6 @@
   <!-- Scripts -->
   <script src="data/products.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/sneaker-showcase-data.js"></script>
-  <script src="js/sneaker-showcase.js"></script>
+  <script defer src="js/ascenta-last-dept.js"></script>
 </body>
 </html>
