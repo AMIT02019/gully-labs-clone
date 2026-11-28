@@ -336,62 +336,32 @@
          SECTION 1: Sneaker Collection Wall / Shop Grid (10 Products)
          SECTION 2: Single-Product Interactive Carousel with Glowing Orange Bar
          ========================================================================== -->
-    <section class="sneaker-showcase-wrapper" id="sneaker-wall-section" aria-label="Gully Labs Archival Sneaker Wall">
+    <section class="sneaker-showcase-wrapper" id="sneaker-wall-section" aria-label="Sneaker Collection Wall and Spotlight Carousel">
       <div class="container">
-        <div class="gully-sneaker-stage">
-          <!-- Stage Top Bar -->
-          <div class="gully-stage-header">
-            <div class="gully-stage-brand">
-              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3v26h10M16 3h5l8 8v10l-8 8h-5V3Z"/></svg>
-              <span>GULLY LABS <span style="color:#efa767;">//</span> ARCHIVAL WALL</span>
+        <!-- SECTION 1 — SNEAKER COLLECTION WALL / SHOP GRID -->
+        <div class="sneaker-panel">
+          <div class="sneaker-section-header">
+            <div>
+              <span class="sneaker-section-eyebrow">Archival Wall 01 // 10 Silhouettes</span>
+              <h2 class="sneaker-section-title">Sneaker Collection Wall</h2>
+              <p class="sneaker-section-desc">
+                Ten hand-lasted Indian silhouettes captured side-on at uniform studio elevation on a mid-grey backdrop. Click any pair to inspect in the spotlight study below.
+              </p>
             </div>
-            <nav class="gully-stage-nav" aria-label="Collection navigation">
-              <span class="nav-collection">
-                <a href="#scene" id="details" aria-current="page">Collection <span class="nav-count">01</span></a>
-                <button id="back" hidden><span aria-hidden="true">←</span> Collection</button>
-              </span>
-              <button data-studio-open>Studio Notes</button>
-              <a href="showcase.html" style="color:#efa767; font-weight:600;">Dedicated Wall ↗</a>
-            </nav>
-            <div class="header-actions" id="header-actions"></div>
+            <span class="sneaker-count-pill">10 Silhouettes &bull; Hand-Lasted</span>
           </div>
 
-          <!-- Main Lit Wall Scene -->
-          <div class="scene" id="scene" tabindex="-1" aria-label="Gully Labs Archival footwear collection" data-mode="wall">
-            <picture>
-              <source media="(max-width:760px)" srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
-              <img class="wall" src="media-v15/wall-1920.webp" srcset="media-v15/wall-1920.webp 1920w, media-v15/wall-3200.webp 3200w" sizes="100vw" fetchpriority="high" alt="Ten original footwear silhouettes displayed on glass shelves against a dark grey slate wall">
-            </picture>
-            <div class="collection-intro"><p>GULLY LABS / SERIES 01</p><h1>A different perspective.</h1></div>
-            <nav class="collection-index" aria-label="Choose a silhouette">
-              <div class="index-heading"><span>SELECT A SILHOUETTE</span><span>01—10</span></div>
-              <div class="index-designs"></div>
-            </nav>
-            <video class="camera" id="forward" muted playsinline preload="none" hidden></video>
-            <video class="camera" id="reverse" muted playsinline preload="none" hidden></video>
-            <div class="detail-frame" id="destination" hidden></div>
+          <div class="sneaker-wall-grid" id="sneakerWallGrid">
+            <!-- Populated dynamically via js/sneaker-showcase.js -->
           </div>
+        </div>
 
-          <!-- Stage Bottom Status Bar -->
-          <div class="gully-stage-footer">
-            <span class="footer-edition"><span class="live-dot" aria-hidden="true"></span> SERIES 01 <span class="footer-divider">/</span> 10 SILHOUETTES</span>
-            <p id="status" role="status">Hover to illuminate. Select to explore.</p>
-            <button data-studio-open>About this studio wall <span aria-hidden="true">↗</span></button>
-          </div>
+        <!-- SECTION 2 — SINGLE-PRODUCT CAROUSEL -->
+        <div class="sneaker-carousel-section" id="sneakerCarouselSection">
+          <!-- Populated dynamically via js/sneaker-showcase.js -->
         </div>
       </div>
     </section>
-
-    <!-- Studio Notes Dialog -->
-    <dialog class="studio-dialog" id="studio-dialog" aria-labelledby="studio-title">
-      <button class="studio-close" aria-label="Close studio notes">Close <span aria-hidden="true">×</span></button>
-      <p class="studio-kicker">GULLY LABS / STUDIO NOTES</p>
-      <h2 id="studio-title">A study in form.<br>A different perspective.</h2>
-      <p>Ten hand-lasted Indian silhouettes. One shared architectural wall. An archival collection of textures, proportions, and unexpected details, made to be explored up close.</p>
-      <div class="studio-facts"><span>01 / EXPLORE THE WALL</span><span>02 / FIND YOUR SILHOUETTE</span><span>03 / MAKE IT YOURS</span></div>
-      <p class="studio-disclosure">Gully Labs Archival Series 01. Engineered for craftsmanship, tactile exploration, and daily wear.</p>
-      <button class="studio-explore">Explore the collection <span aria-hidden="true">↗</span></button>
-    </dialog>
 
     <!-- 7. The Art of Hand-Lasting (Craft Editorial Banner) -->
     <section class="editorial-craft-section" id="story">
@@ -945,8 +915,8 @@
 
   <!-- Scripts -->
   <script src="data/products.js"></script>
-  <script src="js/site.js"></script>
   <script src="js/app.js"></script>
-  <script defer src="js/sneaker-showcase.js"></script>
+  <script src="js/sneaker-showcase-data.js"></script>
+  <script src="js/sneaker-showcase.js"></script>
 </body>
 </html>
